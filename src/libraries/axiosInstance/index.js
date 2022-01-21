@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import { getCookieFromBrowser } from 'libraries/jscookie';
-
 import configs from '~/env.config';
 
 const defaultOptions = {
