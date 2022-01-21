@@ -1,0 +1,9 @@
+export { default as MainSection } from './Main';
+export { default as NewsSection } from './News';
+export { default as AboutUsSection } from './AboutUs';
+export { default as CoursesSection } from './Courses';
+export { default as PartnersSection } from './Partners';
+export { default as ServicesSection } from './Services';
+export { default as VacanciesSection } from './Vacancies';
+export { default as BecomePartnerSection } from './BecomePartner';
+export { default as BecomeAccountantSection } from './BecomeAccountant';

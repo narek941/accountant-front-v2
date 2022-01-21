@@ -2,6 +2,12 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
+import {
+  HeaderContainer,
+  FooterContainer,
+  CanvasContainer,
+} from 'containers/index';
+
 const HelmetLayout = ({ children, title, metaDescription, metaImg }) => (
   <>
     <Head>
@@ -9,7 +15,10 @@ const HelmetLayout = ({ children, title, metaDescription, metaImg }) => (
       {metaDescription && <meta name="description" content={metaDescription} />}
       <meta property="og:image" content={metaImg} />
     </Head>
+    <HeaderContainer />
     {children}
+    <FooterContainer />
+    <CanvasContainer />
   </>
 );
 

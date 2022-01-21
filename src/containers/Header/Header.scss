@@ -1,0 +1,32 @@
+.container {
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 16px 0;
+  position: fixed;
+  background: $white;
+}
+
+.wrapper {
+  @extend %flex-between;
+}
+
+.nav {
+  @extend %flex-align;
+
+  &__item {
+    color: $blue-100;
+    cursor: pointer;
+    padding: 13px;
+    @extend %regular-16;
+
+    &:last-child {
+      padding: 13px 0 13px 13px;
+    }
+  }
+}
+
+.burger {
+  display: none;
+  margin-right: -24px;
+}
