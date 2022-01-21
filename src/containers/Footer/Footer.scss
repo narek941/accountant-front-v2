@@ -14,6 +14,16 @@
 .routes {
   @extend %flex-align;
 
+  &:first-child {
+    div {
+      &:last-child {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
   &__item {
     width: 32px;
     height: 32px;
