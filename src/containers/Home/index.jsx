@@ -1,19 +1,15 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { sectionsList } from 'utils/index';
 
 import styles from './Home.scss';
 
 const HomeContainer = () => {
-  const renderSections = useMemo(
-    () =>
-      sectionsList.map(({ id, component }) => (
-        <section key={id} id={id} className="section">
-          {component}
-        </section>
-      )),
-    [sectionsList],
-  );
+  const renderSections = sectionsList.map(({ id, Component }) => (
+    <section key={id} id={id} className="section">
+      <Component />
+    </section>
+  ));
 
   return <main className={styles.wrapper}>{renderSections}</main>;
 };
