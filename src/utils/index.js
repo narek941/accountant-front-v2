@@ -1,3 +1,4 @@
+export * from './coursesList';
 export * from './navigationList';
 
 export { default as noop } from './noop';
