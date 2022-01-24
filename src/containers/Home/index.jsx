@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 
 import { sectionsList } from 'utils/index';
-import { LoginForm } from 'components/Forms/login/LoginForm';
 
 import styles from './Home.scss';
 
@@ -16,12 +15,7 @@ const HomeContainer = () => {
     [sectionsList],
   );
 
-  return (
-    <main className={styles.wrapper}>
-      {/* {renderSections} */}
-      <LoginForm />
-    </main>
-  );
+  return <main className={styles.wrapper}>{renderSections}</main>;
 };
 
 export default HomeContainer;

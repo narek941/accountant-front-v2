@@ -4,7 +4,15 @@ import { useController, useFormContext } from 'react-hook-form';
 
 import { noop } from 'utils/index';
 
-const Input = ({ name, type, value, className }) => {
+const Input = ({
+  name,
+  type,
+  value,
+  className,
+  placeholder,
+  options,
+  required,
+}) => {
   const {
     control,
     formState: { errors },
@@ -13,46 +21,58 @@ const Input = ({ name, type, value, className }) => {
 
   const errorText = errors[name]?.message;
 
-  const onBlur = () => {
-    field.onBlur();
-  };
+  const onBlur = () => {};
   const onFocus = () => {};
 
-  console.log(errorText, 'errorText');
   return (
     <>
-      <input
-        type={type}
-        name={field.name}
-        value={value}
-        pattern={type === 'number' ? '[0-9]*' : null}
-        inputMode={type === 'number' ? 'numeric' : null}
-        onChange={field.onChange}
-        className={className}
-        placeholder={field.placeholder}
-        autoComplete="off"
-      />
+      {required && <p>*</p>}
+      {!options.length ? (
+        <input
+          type={type}
+          name={field.name}
+          value={value}
+          pattern={type === 'number' ? '[0-9]*' : null}
+          inputMode={type === 'number' ? 'numeric' : null}
+          onChange={field.onChange}
+          className={className}
+          placeholder={placeholder}
+          autoComplete="off"
+        />
+      ) : (
+        <select name={field.name}>
+          {options.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+      )}
+
       {errorText && <p>{errorText}</p>}
     </>
   );
 };
+export default Input;
 
 Input.propTypes = {
+  required: PropTypes.bool,
   name: PropTypes.string,
   type: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  options: PropTypes.array,
   className: PropTypes.string,
   placeholder: PropTypes.string,
 };
 
 Input.defaultProps = {
-  type: 'text',
   name: null,
-  value: undefined,
+  options: [],
+  type: 'text',
   onChange: noop,
   className: null,
+  required: false,
+  value: undefined,
   placeholder: null,
 };
-
-export default Input;

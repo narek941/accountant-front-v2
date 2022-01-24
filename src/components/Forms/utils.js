@@ -2,8 +2,11 @@ import * as Yup from 'yup';
 
 export const useComposeFormSchema = (fields) => {
   const schemaMap = {
-    email: Yup.string().required('forms:required_field'),
-    password: Yup.string().required('forms:required_field'),
+    name: Yup.string().required('Այս դաշտը պարտադիր է'),
+    phoneNumber: Yup.string().required('Այս դաշտը պարտադիր է'),
+    email: Yup.string().required('Այս դաշտը պարտադիր է'),
+    lessonFormation: Yup.string(),
+    lessonType: Yup.string(),
   };
 
   const schema = fields.reduce(
