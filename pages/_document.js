@@ -12,7 +12,12 @@ export default class extends Document {
             content="default"
           />
           <meta name="format-detection" content="telephone=no" />
-          <link rel="shortcut icon" href="public/favicon.ico" />
+          <link rel="shortcut icon" href="favicon.ico" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
         </Head>
         <body>
           <Main />
