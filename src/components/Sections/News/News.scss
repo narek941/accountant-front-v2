@@ -10,16 +10,30 @@
   max-height: 294px;
 
   &__item {
+    margin: 0 10px;
+    display: flex !important;
+    padding: 32px;
+    min-height: 455px;
     border-radius: 8px;
     @extend %blur;
+
+    &_img {
+      height: 212px;
+    }
+
+    &_text {
+      color: $blue-100;
+      margin-left: 16px;
+      @extend %semiBold-20;
+    }
   }
 }
 
 .arrow {
-  left: calc(50% - 42px);
+  left: calc(50% - 58px);
   width: 48px;
   height: 48px;
-  bottom: -104px;
+  bottom: -260px;
   cursor: pointer;
   z-index: 2;
   position: absolute;
@@ -30,7 +44,7 @@
 
   &__next {
     left: unset;
-    right: calc(50% - 64px);
+    right: calc(50% - 56px);
     transform: rotate(90deg);
   }
 
