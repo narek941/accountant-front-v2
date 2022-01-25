@@ -20,6 +20,12 @@ export const useComposeFormSchema = (fields) => {
       .typeError('Այս դաշտը պետք է բաղկացած լինի թվերից')
       .required('Այս դաշտը պարտադիր է'),
     activityDescription: Yup.string().required('Այս դաշտը պարտադիր է'),
+    birthday: Yup.string().required('Այս դաշտը պարտադիր է'),
+    profession: Yup.string().required('Այս դաշտը պարտադիր է'),
+    experience: Yup.number()
+      .typeError('Այս դաշտը պետք է բաղկացած լինի թվերից')
+      .required('Այս դաշտը պարտադիր է'),
+    interests: Yup.string().required('Այս դաշտը պարտադիր է'),
   };
 
   const schema = fields.reduce(

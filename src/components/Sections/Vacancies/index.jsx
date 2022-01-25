@@ -1,8 +1,11 @@
 import React from 'react';
+
+import { BecomeEmployeeForm } from 'components/index';
 // import Slider from 'react-slick';
 
 // import Slide from './Slide';
-import styles from './Vacancies.scss';
+
+// import styles from './Vacancies.scss';
 // import NextArrow from './NextArrow';
 // import PrevArrow from './PrevArrow';
 
@@ -24,8 +27,9 @@ const VacanciesSection = () => {
 
   return (
     <div>
-      <h2 className={styles.title}>Թափուր հաստիքներ</h2>
-      <div />
+      {/* <h2 className={styles.title}>Թափուր հաստիքներ</h2> */}
+      {/* <div /> */}
+      <BecomeEmployeeForm />
       {/* <Slider {...settings}>{renderNewsList}</Slider>  */}
     </div>
   );

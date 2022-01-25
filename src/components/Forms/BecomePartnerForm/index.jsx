@@ -12,15 +12,15 @@ const BecomePartnerForm = () => {
     schemaKeys: becomePartnerScheme,
   });
 
-  const handleBecomePartnerForm = (e) => {
+  const handlePartnerForm = (e) => {
     // eslint-disable-next-line no-console
-    console.log(e, 'handleBecomePartnerForm');
+    console.log(e, 'handlePartnerForm');
   };
 
   return (
     <div>
       <FormWrapper {...{ formMethods }}>
-        <h2>Դարձիր գործընկեր</h2>
+        <h2>Դիմել աշխատանքի համար</h2>
         <Input {...becomePartnerFields.name} />
         <Input {...becomePartnerFields.phoneNumber} />
         <Input {...becomePartnerFields.email} />
@@ -31,10 +31,7 @@ const BecomePartnerForm = () => {
         <Input {...becomePartnerFields.address} />
         <Input {...becomePartnerFields.quantityOfEmployees} />
         <Input {...becomePartnerFields.activityDescription} />
-        <Button
-          disabled={!isValid}
-          onClick={handleSubmit(handleBecomePartnerForm)}
-        >
+        <Button disabled={!isValid} onClick={handleSubmit(handlePartnerForm)}>
           Դարձիր գործընկեր
         </Button>
       </FormWrapper>
