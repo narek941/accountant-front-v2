@@ -7,7 +7,6 @@
 
 .slider {
   position: relative;
-  max-height: 294px;
 
   &__item {
     margin: 0 10px;
@@ -33,7 +32,7 @@
   left: calc(50% - 58px);
   width: 48px;
   height: 48px;
-  bottom: -260px;
+  bottom: -124px;
   cursor: pointer;
   z-index: 2;
   position: absolute;
