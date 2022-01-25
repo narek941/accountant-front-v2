@@ -46,7 +46,7 @@ const partnersList = [
     img: 'images/partners/Partner11.png',
   },
   {
-    id: shortid.generat(),
+    id: shortid.generate(),
     img: 'images/partners/Partner12.png',
   },
 ];
