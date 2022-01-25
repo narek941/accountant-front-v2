@@ -23,7 +23,7 @@ export const becomeAccountantFields = {
     options: ['0-ից', 'Խորացված'],
   },
   lessonFormation: {
-    name: 'lessonType',
+    name: 'lessonFormation',
     label: 'Դասընթացի ձևը',
     options: ['Խմբակային', 'Անհատական'],
   },

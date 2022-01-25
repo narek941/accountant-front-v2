@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import { ScrollView } from 'components/index';
 import { I18nContext } from 'context/index';
@@ -11,15 +11,11 @@ import { LogoIcon, BurgerIcon } from '../../icons';
 const HeaderContainer = () => {
   const t = useContext(I18nContext);
 
-  const renderNavigationLinks = useMemo(
-    () =>
-      navigationList.map(({ id, name, link }) => (
-        <ScrollView key={id} link={link} className={styles.nav__item}>
-          {t(name)}
-        </ScrollView>
-      )),
-    [navigationList],
-  );
+  const renderNavigationLinks = navigationList.map(({ id, name, link }) => (
+    <ScrollView key={id} link={link} className={styles.nav__item}>
+      {t(name)}
+    </ScrollView>
+  ));
 
   return (
     <header className={styles.container}>

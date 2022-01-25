@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useController, useFormContext } from 'react-hook-form';
 
@@ -8,49 +8,79 @@ const Input = ({
   name,
   type,
   value,
-  className,
-  placeholder,
+  label,
   options,
   required,
+  className,
+  placeholder,
 }) => {
   const {
     control,
+    setValue,
     formState: { errors },
   } = useFormContext();
-  const { field, fieldState } = useController({ name, control });
+
+  const { field } = useController({ name, control });
+
+  const [selectedOption, setSelectedOption] = useState(
+    options.length && options[0],
+  );
+  useEffect(() => {
+    setValue(name, selectedOption);
+  }, [name, selectedOption, setValue]);
+
+  const handleSelectChange = (e) => {
+    setSelectedOption(e.target.value);
+  };
 
   const errorText = errors[name]?.message;
 
-  const onBlur = () => {};
-  const onFocus = () => {};
+  // const onBlur = () => {};
+  // const onFocus = () => {};
 
   return (
-    <>
-      {required && <p>*</p>}
+    <div style={{ marginTop: '10px' }}>
+      <span
+        style={{
+          width: '200px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        {label && <p>{label}</p>}
+        {required && <p>*</p>}
+      </span>
+
       {!options.length ? (
         <input
           type={type}
-          name={field.name}
           value={value}
+          name={field.name}
+          autoComplete="off"
+          className={className}
+          onChange={field.onChange}
+          placeholder={placeholder}
           pattern={type === 'number' ? '[0-9]*' : null}
           inputMode={type === 'number' ? 'numeric' : null}
-          onChange={field.onChange}
-          className={className}
-          placeholder={placeholder}
-          autoComplete="off"
         />
       ) : (
-        <select name={field.name}>
-          {options.map((item) => (
-            <option key={item} value={item}>
-              {item}
-            </option>
-          ))}
-        </select>
+        <div>
+          <select
+            name={field.name}
+            onChange={handleSelectChange}
+            value={selectedOption}
+          >
+            {options.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>
       )}
-
       {errorText && <p>{errorText}</p>}
-    </>
+    </div>
   );
 };
 export default Input;
@@ -60,6 +90,7 @@ Input.propTypes = {
   name: PropTypes.string,
   type: PropTypes.string,
   value: PropTypes.string,
+  label: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.array,
   className: PropTypes.string,
@@ -70,6 +101,7 @@ Input.defaultProps = {
   name: null,
   options: [],
   type: 'text',
+  label: '',
   onChange: noop,
   className: null,
   required: false,

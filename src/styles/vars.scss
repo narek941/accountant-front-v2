@@ -24,3 +24,8 @@ $wide-l: 1440px;
   display: flex;
   align-items: center;
 }
+
+%blur {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}

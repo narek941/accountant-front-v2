@@ -1,29 +1,36 @@
 import React from 'react';
 
+import { Button } from 'components/index';
+
 import { becomeAccountantFields, becomeAccountantScheme } from './fields';
 
 import Input from '../../Input';
 import { useForm, FormWrapper } from '../use-form';
 
 const BecomeAccountantForm = () => {
-  const { formMethods, isSubmitting, handleSubmit } = useForm({
+  const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: becomeAccountantScheme,
   });
 
-  const handleLogin = (e) => {
-    console.log(e);
+  const handleBecomeAccountantForm = (e) => {
+    // eslint-disable-next-line no-console
+    console.log(e, 'handleBecomeAccountantForm');
   };
 
   return (
     <FormWrapper {...{ formMethods }}>
+      <h2>Դարձիր հաշվապահ</h2>
       <Input {...becomeAccountantFields.name} />
       <Input {...becomeAccountantFields.phoneNumber} />
       <Input {...becomeAccountantFields.email} />
       <Input {...becomeAccountantFields.lessonType} />
       <Input {...becomeAccountantFields.lessonFormation} />
-      <button type="button" onClick={handleSubmit(handleLogin)}>
+      <Button
+        disabled={!isValid}
+        onClick={handleSubmit(handleBecomeAccountantForm)}
+      >
         Գրանցվել
-      </button>
+      </Button>
     </FormWrapper>
   );
 };

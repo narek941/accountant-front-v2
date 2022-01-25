@@ -19,4 +19,10 @@
   canvas {
     user-select: none;
   }
+
+  .partners_slider {
+    .slick-slide {
+      padding: 0 8px;
+    }
+  }
 }

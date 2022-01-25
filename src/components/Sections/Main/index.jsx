@@ -9,7 +9,7 @@ import {
 import styles from './Main.scss';
 
 import { LogoIcon } from '../../../icons';
-import ScrollView from '../../../components/ScrollView';
+import ScrollView from '../../ScrollView';
 
 const MainSection = () => {
   const t = useContext(I18nContext);
@@ -17,12 +17,7 @@ const MainSection = () => {
   return (
     <div className={`container ${styles.wrapper}`}>
       <LogoIcon className={styles.wrapper__logo} />
-      <h3 className={styles.wrapper__title}>
-        Acc Accountant - ը ստեղծվել է մատուցելու որակյալ ծառայություններ,
-        որպեսզի ձեր բիզնեսը կրկնակի խնայի՝ ժամանակ, ֆինանսներ, աշխատուժ,
-        տեխնիկական միջոցներ,որոնք կարող են ուղղվել բիզնեսի իրական պոտենցիալ
-        զարգացմանը։ Ձեր հուսալի գործընկերը հարկային դաշտում և բիզնեսում։
-      </h3>
+      <h3 className={styles.wrapper__title}>{t('mainTitle')}</h3>
       <ScrollView
         className={styles.wrapper__link}
         link={BECOME_PARTNER_SECTION_ID}
