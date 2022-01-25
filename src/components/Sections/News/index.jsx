@@ -21,7 +21,7 @@ const NewsSection = () => {
   };
 
   const renderNewsList = newsList.map(({ id, img, text }) => (
-    <Slide id={id} img={img} text={text} />
+    <Slide key={id} img={img} text={text} />
   ));
 
   return (
