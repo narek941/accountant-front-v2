@@ -25,6 +25,7 @@ const VacanciesSection = () => {
   return (
     <div>
       <h2 className={styles.title}>Թափուր հաստիքներ</h2>
+      <div />
       {/* <Slider {...settings}>{renderNewsList}</Slider>  */}
     </div>
   );
