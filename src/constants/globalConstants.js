@@ -7,6 +7,7 @@ export const MAIN_SECTION_ID = 'section_main';
 export const NEWS_SECTION_ID = 'section_news';
 export const COURSES_SECTION_ID = 'section_courses';
 export const ABOUT_US_SECTION_ID = 'section_aboutUs';
+export const CONTACT_US_SECTION_ID = 'section_contactUs';
 export const PARTNERS_SECTION_ID = 'section_partners';
 export const SERVICES_SECTION_ID = 'section_services';
 export const VACANCIES_SECTION_ID = 'section_vacancies';

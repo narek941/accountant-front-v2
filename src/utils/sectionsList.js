@@ -2,6 +2,7 @@ import {
   MainSection,
   NewsSection,
   AboutUsSection,
+  ContactUsSection,
   CoursesSection,
   PartnersSection,
   ServicesSection,
@@ -14,6 +15,7 @@ import {
   NEWS_SECTION_ID,
   COURSES_SECTION_ID,
   ABOUT_US_SECTION_ID,
+  CONTACT_US_SECTION_ID,
   PARTNERS_SECTION_ID,
   SERVICES_SECTION_ID,
   VACANCIES_SECTION_ID,
@@ -57,6 +59,10 @@ const sectionsList = [
   {
     id: ABOUT_US_SECTION_ID,
     Component: AboutUsSection,
+  },
+  {
+    id: CONTACT_US_SECTION_ID,
+    Component: ContactUsSection,
   },
 ];
 
