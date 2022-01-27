@@ -19,7 +19,6 @@ const BecomeEmployeeForm = () => {
 
   return (
     <FormWrapper {...{ formMethods }}>
-      <h2>Դիմել աշխատանքի համար</h2>
       <Input {...becomeEmployeeFields.name} />
       <Input {...becomeEmployeeFields.phoneNumber} />
       <Input {...becomeEmployeeFields.email} />

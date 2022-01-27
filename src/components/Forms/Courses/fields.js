@@ -1,4 +1,4 @@
-export const contactUsFields = {
+export const coursesFields = {
   name: {
     name: 'name',
     label: 'full_name',
@@ -17,12 +17,6 @@ export const contactUsFields = {
     placeholder: 'email',
     required: true,
   },
-  interests: {
-    name: 'interests',
-    label: 'interests',
-    placeholder: 'interests',
-    required: true,
-  },
 };
 
-export const contactUsScheme = Object.keys(contactUsFields);
+export const coursesScheme = Object.keys(coursesFields);

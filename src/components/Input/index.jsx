@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useController, useFormContext } from 'react-hook-form';
 
 import { noop } from 'utils/index';
+import { I18nContext } from 'context/index';
 
 const Input = ({
   name,
@@ -14,6 +15,8 @@ const Input = ({
   className,
   placeholder,
 }) => {
+  const t = useContext(I18nContext);
+
   const {
     control,
     setValue,
@@ -25,6 +28,7 @@ const Input = ({
   const [selectedOption, setSelectedOption] = useState(
     options.length && options[0],
   );
+
   useEffect(() => {
     setValue(name, selectedOption);
   }, [name, selectedOption, setValue]);
@@ -37,7 +41,6 @@ const Input = ({
 
   // const onBlur = () => {};
   // const onFocus = () => {};
-
   return (
     <div style={{ marginTop: '10px' }}>
       <span
@@ -48,7 +51,7 @@ const Input = ({
           justifyContent: 'space-between',
         }}
       >
-        {label && <p>{label}</p>}
+        {label && <p>{t(label)}</p>}
         {required && <p>*</p>}
       </span>
 
@@ -60,7 +63,7 @@ const Input = ({
           autoComplete="off"
           className={className}
           onChange={field.onChange}
-          placeholder={placeholder}
+          placeholder={t(placeholder)}
           pattern={type === 'number' ? '[0-9]*' : null}
           inputMode={type === 'number' ? 'numeric' : null}
         />
@@ -69,11 +72,11 @@ const Input = ({
           <select
             name={field.name}
             onChange={handleSelectChange}
-            value={selectedOption}
+            value={t(selectedOption)}
           >
             {options.map((item) => (
               <option key={item} value={item}>
-                {item}
+                {t(item)}
               </option>
             ))}
           </select>

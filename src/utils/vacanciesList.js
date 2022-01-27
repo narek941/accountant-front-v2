@@ -1,8 +1,16 @@
 import shortid from 'shortid';
 
+import {
+  Vacancies_icon1,
+  Vacancies_icon2,
+  Vacancies_icon3,
+  Vacancies_icon4,
+} from '../icons';
+
 const vacanciesList = [
   {
     id: shortid.generate(),
+    Icon: Vacancies_icon1,
     title: 'Հաշվետար',
     textSteps: [
       {
@@ -29,6 +37,7 @@ const vacanciesList = [
   },
   {
     id: shortid.generate(),
+    Icon: Vacancies_icon2,
     title: 'Հաշվապահ',
     textSteps: [
       {
@@ -59,6 +68,7 @@ const vacanciesList = [
   },
   {
     id: shortid.generate(),
+    Icon: Vacancies_icon3,
     title: 'Գլխավոր հաշվապահ',
     textSteps: [
       {
@@ -89,6 +99,7 @@ const vacanciesList = [
   },
   {
     id: shortid.generate(),
+    Icon: Vacancies_icon4,
     title: 'Հաշվապահության դասընթացավար',
     textSteps: [
       {
@@ -108,6 +119,7 @@ const vacanciesList = [
   {
     id: shortid.generate(),
     title: 'Հաշվետար',
+    Icon: Vacancies_icon1,
     textSteps: [
       {
         id: shortid.generate(),
@@ -133,6 +145,7 @@ const vacanciesList = [
   },
   {
     id: shortid.generate(),
+    Icon: Vacancies_icon2,
     title: 'Հաշվապահ',
     textSteps: [
       {
@@ -163,6 +176,7 @@ const vacanciesList = [
   },
   {
     id: shortid.generate(),
+    Icon: Vacancies_icon3,
     title: 'Գլխավոր հաշվապահ',
     textSteps: [
       {
@@ -193,6 +207,7 @@ const vacanciesList = [
   },
   {
     id: shortid.generate(),
+    Icon: Vacancies_icon4,
     title: 'Հաշվապահության դասընթացավար',
     textSteps: [
       {

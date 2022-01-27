@@ -1,31 +1,31 @@
 export const becomeAccountantFields = {
   name: {
     name: 'name',
-    label: 'Անուն ազգանուն',
-    placeholder: 'Անուն ազգանուն',
+    label: 'full_name',
+    placeholder: 'full_name',
     required: true,
   },
   phoneNumber: {
     name: 'phoneNumber',
-    label: 'Հեռախոսահամար',
+    label: 'phone_number',
     placeholder: '+374',
     required: true,
   },
   email: {
     name: 'email',
-    label: 'Էլ. փոստ',
-    placeholder: 'Էլ. փոստ',
+    label: 'email',
+    placeholder: 'email',
     required: true,
   },
   lessonType: {
     name: 'lessonType',
-    label: 'Դասընթացի տեսակը',
-    options: ['0-ից', 'Խորացված'],
+    label: 'course_type',
+    options: ['beginner', 'advanced'],
   },
   lessonFormation: {
     name: 'lessonFormation',
-    label: 'Դասընթացի ձևը',
-    options: ['Խմբակային', 'Անհատական'],
+    label: 'course_kind',
+    options: ['grouped', 'individual'],
   },
 };
 

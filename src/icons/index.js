@@ -1,4 +1,5 @@
 export * from './services';
+export * from './vacancies';
 
 export { default as FbIcon } from './Fb.svg';
 export { default as LogoIcon } from './Logo.svg';

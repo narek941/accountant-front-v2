@@ -1,3 +1,15 @@
 .wrapper {
   display: flex;
+  justify-content: center;
+
+  &__main_block {
+    @extend %flex-center-row;
+
+    &__title {
+      color: $blue-100;
+      padding: 56px 0;
+      text-align: center;
+      @extend %semiBold-32;
+    }
+  }
 }
