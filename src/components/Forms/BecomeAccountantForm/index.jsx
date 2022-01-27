@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Button } from 'components/index';
+import { useForm, FormWrapper } from 'hooks/useForm';
 
 import { becomeAccountantFields, becomeAccountantScheme } from './fields';
 
 import Input from '../../Input';
-import { useForm, FormWrapper } from '../use-form';
 
 const BecomeAccountantForm = () => {
   const { formMethods, handleSubmit, isValid } = useForm({

@@ -8,7 +8,7 @@ export { default as NextLink } from './NextLink';
 export { default as ScrollView } from './ScrollView';
 
 // Forms
-export { default as CoursesForm } from './Forms/Courses';
+export { default as CoursesForm } from './Sections/Courses/Form';
 export { default as ContactUsForm } from './Forms/ContactUsForm';
 export { default as BecomePartnerForm } from './Forms/BecomePartnerForm';
 export { default as BecomeEmployeeForm } from './Forms/BecomeEmployeeForm';

@@ -5,6 +5,8 @@ import { useController, useFormContext } from 'react-hook-form';
 import { noop } from 'utils/index';
 import { I18nContext } from 'context/index';
 
+import styles from './Input.scss';
+
 const Input = ({
   name,
   type,
@@ -42,18 +44,15 @@ const Input = ({
   // const onBlur = () => {};
   // const onFocus = () => {};
   return (
-    <div style={{ marginTop: '10px' }}>
-      <span
-        style={{
-          width: '200px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}
-      >
-        {label && <p>{t(label)}</p>}
-        {required && <p>*</p>}
-      </span>
+    <div className={styles.wrapper}>
+      <div className={styles.wrapper__label}>
+        {label && (
+          <p className={styles.wrapper__label_text}>
+            {t(label)}
+            {required && <span>*</span>}
+          </p>
+        )}
+      </div>
 
       {!options.length ? (
         <input
@@ -61,7 +60,7 @@ const Input = ({
           value={value}
           name={field.name}
           autoComplete="off"
-          className={className}
+          className={styles.wrapper__field}
           onChange={field.onChange}
           placeholder={t(placeholder)}
           pattern={type === 'number' ? '[0-9]*' : null}
@@ -82,7 +81,7 @@ const Input = ({
           </select>
         </div>
       )}
-      {errorText && <p>{errorText}</p>}
+      {errorText && <p className={styles.wrapper__error}>{errorText}</p>}
     </div>
   );
 };

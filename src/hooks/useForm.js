@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FormProvider, useForm as useReactHookForm } from 'react-hook-form';
 
-import { useComposeFormSchema } from './utils';
+import { useComposeFormSchema } from 'components/Forms/utils';
 
 export const useForm = ({ schemaKeys, defaultValues, options }) => {
   const schema = useComposeFormSchema(schemaKeys);

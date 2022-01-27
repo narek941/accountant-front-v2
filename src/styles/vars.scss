@@ -25,14 +25,21 @@ $wide-l: 1440px;
   align-items: center;
 }
 
-%blur {
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-}
-
-
 %flex-center-row {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
+
+%blur {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+%form{
+  padding: 32px;
+  background: $grey-100;
+  border-radius: 24px;
+}
+

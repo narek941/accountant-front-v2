@@ -11,5 +11,10 @@
       text-align: center;
       @extend %semiBold-32;
     }
+
+    &__form{
+      @extend %form;
+
+    }
   }
 }

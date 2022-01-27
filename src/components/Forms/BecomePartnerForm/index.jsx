@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Button } from 'components/index';
+import { useForm, FormWrapper } from 'hooks/useForm';
 
 import { becomePartnerFields, becomePartnerScheme } from './fields';
 
 import Input from '../../Input';
-import { useForm, FormWrapper } from '../use-form';
 
 const BecomePartnerForm = () => {
   const { formMethods, handleSubmit, isValid } = useForm({
