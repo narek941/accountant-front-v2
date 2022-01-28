@@ -75,13 +75,6 @@
     }
   }
   &__address {
-    &__map {
-      background-color: #1d2c4d;
-      border-radius: 10px;
-      width: 587px;
-      height: 260px;
-    }
-
     &__info {
       color: $black;
       &__header {
@@ -105,5 +98,20 @@
   p {
     @extend %regular-12;
     text-align: center;
+  }
+}
+
+.wrapper {
+  position: absolute;
+  &__layout {
+    position: relative;
+    background: #1d2c4d;
+    &_container {
+      overflow: hidden;
+
+      width: 587px;
+      height: 260px;
+      border-radius: 20px;
+    }
   }
 }

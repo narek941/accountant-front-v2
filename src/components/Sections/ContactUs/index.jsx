@@ -2,7 +2,9 @@ import React from 'react';
 
 import styles from './ContactUs.scss';
 
+import Map from '../../Map';
 import Input from '../../Input/index';
+import { MAP_KEY } from '../../../constants';
 import { MailIcon, PhoneIcon, LocationIcon } from '../../../icons';
 
 const ContactUsSection = () => {
@@ -82,7 +84,15 @@ const ContactUsSection = () => {
           />
         </form>
         <div className={styles.contact__address}>
-          <div className={styles.contact__address__map}>ACC</div>
+          <Map
+            mapElement={<div style={{ height: `100%` }} />}
+            loadingElement={<div style={{ height: `100%` }} />}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${MAP_KEY}`}
+            containerElement={
+              <div className={styles.wrapper__layout_container} />
+            }
+          />
+
           <div className={styles.contact__address__info}>
             <h3 className={styles.contact__address__info__header}>
               Կոնտակտներ
