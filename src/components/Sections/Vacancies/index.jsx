@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
 
-import { vacanciesList } from 'utils/index';
-import { BecomeEmployeeForm } from 'components/index';
 import { useToggle } from 'hooks/index';
+import { vacanciesList } from 'utils/index';
 
+import Form from './Form';
 import Slide from './Slide';
 import NextArrow from './NextArrow';
 import PrevArrow from './PrevArrow';
@@ -44,7 +44,8 @@ const VacanciesSection = () => {
       ) : (
         <>
           <h2 className={styles.title}>Դիմել աշխատանքի համար</h2>
-          <BecomeEmployeeForm />
+
+          <Form />
         </>
       )}
     </div>

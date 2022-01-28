@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { Button } from 'components/index';
+import { Button, Input } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/useForm';
 
 import { becomePartnerFields, becomePartnerScheme } from './fields';
 
-import Input from '../../Input';
-
-const BecomePartnerForm = () => {
+const Form = () => {
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: becomePartnerScheme,
   });
@@ -38,4 +36,4 @@ const BecomePartnerForm = () => {
     </div>
   );
 };
-export default BecomePartnerForm;
+export default Form;

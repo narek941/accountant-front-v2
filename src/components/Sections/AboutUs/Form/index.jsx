@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { Button } from 'components/index';
+import { Button, Input } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/useForm';
 
 import { contactUsFields, contactUsScheme } from './fields';
 
-import Input from '../../Input';
-
-const ContactUsForm = () => {
+const Form = () => {
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: contactUsScheme,
   });
@@ -30,4 +28,4 @@ const ContactUsForm = () => {
     </FormWrapper>
   );
 };
-export default ContactUsForm;
+export default Form;

@@ -14,7 +14,6 @@ const Input = ({
   label,
   options,
   required,
-  className,
   placeholder,
 }) => {
   const t = useContext(I18nContext);
@@ -95,7 +94,6 @@ Input.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func,
   options: PropTypes.array,
-  className: PropTypes.string,
   placeholder: PropTypes.string,
 };
 
@@ -105,7 +103,6 @@ Input.defaultProps = {
   type: 'text',
   label: '',
   onChange: noop,
-  className: null,
   required: false,
   value: undefined,
   placeholder: null,

@@ -1,13 +1,11 @@
 import React from 'react';
 
-import { Button } from 'components/index';
+import { Button, Input } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/useForm';
 
 import { becomeAccountantFields, becomeAccountantScheme } from './fields';
 
-import Input from '../../Input';
-
-const BecomeAccountantForm = () => {
+const Form = () => {
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: becomeAccountantScheme,
   });
@@ -34,4 +32,4 @@ const BecomeAccountantForm = () => {
     </FormWrapper>
   );
 };
-export default BecomeAccountantForm;
+export default Form;

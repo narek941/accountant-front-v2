@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { ContactUsForm } from 'components/index';
+import Form from './Form';
 
 const AboutUsSection = () => {
   return (
     <div>
-      <ContactUsForm />
+      <Form />
     </div>
   );
 };

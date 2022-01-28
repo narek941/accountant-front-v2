@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { BecomeAccountantForm } from 'components/index';
+import Form from './Form';
 
 const BecomeAccountantSection = () => {
   return (
     <div>
-      <BecomeAccountantForm />
+      <Form />
     </div>
   );
 };
