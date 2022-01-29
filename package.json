@@ -21,6 +21,7 @@
     }
   },
   "dependencies": {
+    "@hookform/resolvers": "2.8.8",
     "@next/bundle-analyzer": "^9.3.6",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
@@ -48,7 +49,7 @@
     "react-dom": "17.0.1",
     "react-facebook-login": "^4.1.1",
     "react-google-login": "^5.2.2",
-    "react-hook-form": "^6.15.1",
+    "react-hook-form": "^7.15.3",
     "react-js-pagination": "^3.0.3",
     "react-multi-carousel": "^2.6.2",
     "react-redux": "^7.2.1",
@@ -65,13 +66,14 @@
     "reselect": "^4.0.0",
     "shortid": "^2.2.15",
     "use-mobile-detect-hook": "^1.0.4",
-    "websocket": "^1.0.34"
+    "websocket": "^1.0.34",
+    "yup": "0.32.11"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.6",
     "babel-eslint": "^10.1.0",
     "babel-plugin-inline-react-svg": "^1.1.1",
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-react-app": "^5.2.1",

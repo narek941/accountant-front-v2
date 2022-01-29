@@ -1,3 +1,5 @@
+export * from './useForm';
+
 export { default as useToggle } from './useToggle';
 export { default as useWindowSize } from './useWindowSize';
 export { default as useOutsideClick } from './useOutsideClick';

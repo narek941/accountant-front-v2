@@ -1,7 +1,13 @@
 import React from 'react';
 
+import Form from './Form';
+
 const AboutUsSection = () => {
-  return <div>AboutUs</div>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 };
 
 export default AboutUsSection;
