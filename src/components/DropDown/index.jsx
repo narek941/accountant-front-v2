@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { noop } from 'utils/index';
-import { ArrowIcon } from '../../icons';
 import { I18nContext } from 'context/index';
 import { useOutsideClick } from 'hooks/index';
 
 import styles from './DropDown.scss';
+
+import { ArrowIcon } from '../../icons';
 
 const DropDown = ({ data, onChane }) => {
   const t = useContext(I18nContext);
