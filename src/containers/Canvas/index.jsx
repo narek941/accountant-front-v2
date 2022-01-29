@@ -25,16 +25,16 @@ const CanvasContainer = () => (
         },
         modes: {
           bubble: {
-            distance: 400,
+            distance: 600,
             duration: 2,
             opacity: 0.8,
             size: 40,
           },
           push: {
-            quantity: 4,
+            quantity: 1,
           },
           repulse: {
-            distance: 400,
+            distance: 500,
             duration: 1,
           },
         },
@@ -45,7 +45,7 @@ const CanvasContainer = () => (
         },
         links: {
           color: '#243b98',
-          distance: 150,
+          distance: 250,
           enable: true,
           opacity: 0.5,
           width: 1,
@@ -72,11 +72,11 @@ const CanvasContainer = () => (
           value: 0.5,
         },
         shape: {
-          type: 'triangle',
+          type: 'circle',
         },
         size: {
           random: true,
-          value: 5,
+          value: 25,
         },
       },
       detectRetina: true,

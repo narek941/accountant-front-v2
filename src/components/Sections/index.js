@@ -1,7 +1,6 @@
 export { default as MainSection } from './Main';
 export { default as NewsSection } from './News';
 export { default as AboutUsSection } from './AboutUs';
-export { default as ContactUsSection } from './ContactUs';
 export { default as CoursesSection } from './Courses';
 export { default as PartnersSection } from './Partners';
 export { default as ServicesSection } from './Services';

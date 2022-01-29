@@ -6,10 +6,9 @@ import {
   withGoogleMap,
 } from 'react-google-maps';
 
-import { mapStyles } from '../../utils/index';
+import { mapStyles } from 'utils/index';
 
 const location = {
-  // address: '75 Մարշալ Բաղրամյանի պողոտա, Երևան 0033, Հայաստան',
   lat: 40.1950407,
   lng: 44.4952705,
 };
@@ -34,6 +33,7 @@ const InjectableGoogleMap = () => (
     />
   </GoogleMap>
 );
+
 const Map = withScriptjs(withGoogleMap(InjectableGoogleMap));
 
 export default Map;

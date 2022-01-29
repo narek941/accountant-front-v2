@@ -1,0 +1,78 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: $blue-100;
+  margin: 56px 0 40px;
+  text-align: center;
+  @extend %semiBold-32;
+}
+
+.content {
+  gap: 50px;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+
+  &__contact {
+    width: 100%;
+  }
+
+  &__info {
+    color: $black;
+
+    &__header {
+      margin-top: 27px;
+      color: $blue-100;
+      @extend %semiBold-20;
+    }
+
+    &__routes {
+      @extend %flex-align;
+      padding: 14px 0;
+      gap: 5px;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  height: fit-content;
+  max-width: 574px;
+  @extend %form;
+  @extend %blur;
+
+  &_submit {
+    width: 100%;
+    color: $white;
+    padding: 13.5px 0;
+    border-radius: 48px;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
+    background-color: $blue-100;
+    @extend %regular-16;
+
+    &:disabled {
+      color: $grey-200;
+      @extend %blur;
+    }
+  }
+}
+
+.map {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  max-width: 587px;
+  border-radius: 20px;
+}
+
+.footer {
+  padding: 60px 0 24px;
+
+  p {
+    @extend %regular-12;
+    text-align: center;
+  }
+}

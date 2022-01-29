@@ -10,3 +10,4 @@ export { default as partnersList } from './partnersList';
 export { default as vacanciesList } from './vacanciesList';
 export { default as mapStyles } from './mapStyles';
 export { default as createActionName } from './createActionName';
+export { default as composeFormSchema } from './composeFormSchema';

@@ -168,7 +168,18 @@ body {
   font-style: normal;
   font-weight: normal;
   overflow-y: scroll;
+  overflow-x: hidden;
+
   -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $blue-300;
+    border-radius: 16px;
+  }
 
   *:focus {
     outline: none;
