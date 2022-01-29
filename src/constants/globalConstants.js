@@ -1,6 +1,7 @@
 export const APP_BASE_NAME = 'KRISTOBAT';
 
 export const IS_SERVER = typeof window === 'undefined';
+export const MAP_KEY = 'AIzaSyCr_etG2_MVpj9Nr_ZPusCj0bCEIduA9sQ';
 
 // sections
 export const MAIN_SECTION_ID = 'section_main';
