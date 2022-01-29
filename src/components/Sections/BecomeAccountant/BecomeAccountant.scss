@@ -1,0 +1,48 @@
+.wrapper {
+  @extend %flex-center-row;
+}
+
+.title {
+  color: $blue-100;
+  margin: 56px 0 32px;
+  @extend %semiBold-32;
+}
+
+.subtitle {
+  color: $black;
+  margin-bottom: 40px;
+  max-width: 566px;
+  text-align: center;
+  @extend %regular-16;
+}
+
+.login {
+  color: $white;
+  min-width: 288px;
+  padding: 14px 0 13px;
+  background: $blue-100;
+  border-radius: 48px;
+  @extend %regular-16;
+}
+
+.form {
+  width: 100%;
+  max-width: 352px;
+  @extend %form;
+  @extend %blur;
+
+  &_submit {
+    width: 100%;
+    color: $white;
+    padding: 13.5px 0;
+    border-radius: 48px;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
+    background-color: $blue-100;
+    @extend %regular-16;
+
+    &:disabled {
+      color: $grey-200;
+      @extend %blur;
+    }
+  }
+}

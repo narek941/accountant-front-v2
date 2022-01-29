@@ -1,11 +1,13 @@
 import React from 'react';
 
 import { Button, Input } from 'components/index';
-import { useForm, FormWrapper } from 'hooks/useForm';
+import { useForm, FormWrapper } from 'hooks/index';
 
 import { becomeAccountantFields, becomeAccountantScheme } from './fields';
 
-const Form = () => {
+import styles from '../BecomeAccountant.scss';
+
+const AccountantForm = () => {
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: becomeAccountantScheme,
   });
@@ -16,20 +18,21 @@ const Form = () => {
   };
 
   return (
-    <FormWrapper {...{ formMethods }}>
-      <h2>Դարձիր հաշվապահ</h2>
+    <FormWrapper
+      onSubmit={handleSubmit(handleBecomeAccountantForm)}
+      className={styles.form}
+      {...{ formMethods }}
+    >
       <Input {...becomeAccountantFields.name} />
       <Input {...becomeAccountantFields.phoneNumber} />
       <Input {...becomeAccountantFields.email} />
       <Input {...becomeAccountantFields.lessonType} />
       <Input {...becomeAccountantFields.lessonFormation} />
-      <Button
-        disabled={!isValid}
-        onClick={handleSubmit(handleBecomeAccountantForm)}
-      >
+      <Button type="submit" className={styles.form_submit} disabled={!isValid}>
         Գրանցվել
       </Button>
     </FormWrapper>
   );
 };
-export default Form;
+
+export default AccountantForm;

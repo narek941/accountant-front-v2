@@ -1,11 +1,13 @@
 import React from 'react';
 
 import { Button, Input } from 'components/index';
-import { useForm, FormWrapper } from 'hooks/useForm';
+import { useForm, FormWrapper } from 'hooks/index';
 
 import { becomeEmployeeFields, becomeEmployeeScheme } from './fields';
 
-const Form = () => {
+import styles from '../Vacancies.scss';
+
+const VacanciesForm = () => {
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: becomeEmployeeScheme,
   });
@@ -16,20 +18,21 @@ const Form = () => {
   };
 
   return (
-    <FormWrapper {...{ formMethods }}>
+    <FormWrapper
+      onSubmit={handleSubmit(handleBecomeEmployeeForm)}
+      className={styles.form}
+      {...{ formMethods }}
+    >
       <Input {...becomeEmployeeFields.name} />
       <Input {...becomeEmployeeFields.phoneNumber} />
       <Input {...becomeEmployeeFields.email} />
       <Input {...becomeEmployeeFields.birthday} />
       <Input {...becomeEmployeeFields.profession} />
       <Input {...becomeEmployeeFields.experience} />
-      <Button
-        disabled={!isValid}
-        onClick={handleSubmit(handleBecomeEmployeeForm)}
-      >
+      <Button type="submit" className={styles.form_submit} disabled={!isValid}>
         Գրանցվել
       </Button>
     </FormWrapper>
   );
 };
-export default Form;
+export default VacanciesForm;

@@ -2,10 +2,10 @@ import React, { useMemo } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FormProvider, useForm as useReactHookForm } from 'react-hook-form';
 
-import { useComposeFormSchema } from 'hooks/useComposeFormSchema';
+import { composeFormSchema } from 'utils/index';
 
 export const useForm = ({ schemaKeys, defaultValues, options }) => {
-  const schema = useComposeFormSchema(schemaKeys);
+  const schema = composeFormSchema(schemaKeys);
   const formOptions = {
     resolver: yupResolver(schema),
     mode: 'all',
@@ -23,8 +23,10 @@ export const useForm = ({ schemaKeys, defaultValues, options }) => {
 };
 
 // eslint-disable-next-line react/prop-types
-export const FormWrapper = ({ formMethods, children }) => (
+export const FormWrapper = ({ formMethods, className, onSubmit, children }) => (
   <FormProvider {...formMethods}>
-    <div>{children}</div>
+    <form className={className} onSubmit={onSubmit}>
+      {children}
+    </form>
   </FormProvider>
 );

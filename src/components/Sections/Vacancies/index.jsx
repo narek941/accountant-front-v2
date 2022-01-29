@@ -4,16 +4,17 @@ import Slider from 'react-slick';
 import { useToggle } from 'hooks/index';
 import { vacanciesList } from 'utils/index';
 
-import Form from './Form';
 import Slide from './Slide';
-import NextArrow from './NextArrow';
-import PrevArrow from './PrevArrow';
 import styles from './Vacancies.scss';
+import PrevArrow from './PrevArrow';
+import NextArrow from './NextArrow';
+import VacanciesForm from './VacanciesForm';
 
 import Button from '../../Button';
 
 const VacanciesSection = () => {
-  const [value, toggle] = useToggle(false);
+  const [isOpen, setisOpen] = useToggle(false);
+
   const settings = {
     dots: false,
     speed: 500,
@@ -33,20 +34,18 @@ const VacanciesSection = () => {
 
   return (
     <div className="container">
-      {!value ? (
+      <h2 className={styles.title}>
+        {!isOpen ? 'Թափուր հաստիքներ' : 'Դիմել աշխատանքի համար'}
+      </h2>
+      {!isOpen ? (
         <>
-          <h2 className={styles.title}>Թափուր հաստիքներ</h2>
           <Slider {...settings}>{renderVacanciesList}</Slider>
-          <Button onClick={toggle} className={styles.button}>
+          <Button onClick={() => setisOpen()} className={styles.button}>
             Դիմել
           </Button>
         </>
       ) : (
-        <>
-          <h2 className={styles.title}>Դիմել աշխատանքի համար</h2>
-
-          <Form />
-        </>
+        <VacanciesForm />
       )}
     </div>
   );

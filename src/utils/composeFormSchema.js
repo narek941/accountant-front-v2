@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-export const useComposeFormSchema = (fields) => {
+const composeFormSchema = (fields) => {
   const schemaMap = {
     name: Yup.string().required('Այս դաշտը պարտադիր է'),
     phoneNumber: Yup.number()
@@ -38,3 +38,5 @@ export const useComposeFormSchema = (fields) => {
 
   return Yup.object(schema);
 };
+
+export default composeFormSchema;

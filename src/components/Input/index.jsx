@@ -7,6 +7,8 @@ import { I18nContext } from 'context/index';
 
 import styles from './Input.scss';
 
+import DropDown from '../DropDown';
+
 const Input = ({
   name,
   type,
@@ -34,8 +36,8 @@ const Input = ({
     setValue(name, selectedOption);
   }, [name, selectedOption, setValue]);
 
-  const handleSelectChange = (e) => {
-    setSelectedOption(e.target.value);
+  const handleDropDownChange = (e) => {
+    setSelectedOption(e);
   };
 
   const errorText = errors[name]?.message;
@@ -66,19 +68,7 @@ const Input = ({
           inputMode={type === 'number' ? 'numeric' : null}
         />
       ) : (
-        <div>
-          <select
-            name={field.name}
-            onChange={handleSelectChange}
-            value={t(selectedOption)}
-          >
-            {options.map((item) => (
-              <option key={item} value={item}>
-                {t(item)}
-              </option>
-            ))}
-          </select>
-        </div>
+        <DropDown data={options} onChane={handleDropDownChange} />
       )}
       {errorText && <p className={styles.wrapper__error}>{errorText}</p>}
     </div>

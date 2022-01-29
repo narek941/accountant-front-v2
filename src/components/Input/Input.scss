@@ -1,25 +1,34 @@
 .wrapper {
   margin-bottom: 16px;
 
-  &__label{
+  &__label {
     margin-bottom: 8px;
     @extend %flex-align;
 
-    &_text{
+    &_text {
       color: $blue-100;
       text-align: center;
       @extend %semiBold-16;
 
       span {
-        color: #EB5758;
+        color: $red;
       }
-
     }
   }
 
-  &__field{
+  &__field {
+    width: 100%;
+    color: $grey-200;
     border: none;
+    padding: 14px 24px 13px 24px;
     border-radius: 24px;
     @extend %blur;
+    @extend %regular-16;
+  }
+
+  &__error {
+    color: $red;
+    margin-top: 4px;
+    @extend %semiBold-14;
   }
 }
