@@ -10,7 +10,7 @@ const CanvasContainer = () => (
           value: '#fbfafa',
         },
       },
-      fpsLimit: 60,
+      fpsLimit: 30,
       interactivity: {
         events: {
           onClick: {
@@ -25,7 +25,7 @@ const CanvasContainer = () => (
         },
         modes: {
           bubble: {
-            distance: 600,
+            distance: 140,
             duration: 2,
             opacity: 0.8,
             size: 40,
@@ -34,8 +34,8 @@ const CanvasContainer = () => (
             quantity: 1,
           },
           repulse: {
-            distance: 500,
-            duration: 1,
+            distance: 200,
+            duration: 0.4,
           },
         },
       },
@@ -45,7 +45,7 @@ const CanvasContainer = () => (
         },
         links: {
           color: '#243b98',
-          distance: 250,
+          distance: 300,
           enable: true,
           opacity: 0.5,
           width: 1,
@@ -56,10 +56,10 @@ const CanvasContainer = () => (
         move: {
           direction: 'none',
           enable: true,
-          outMode: 'bounce',
-          random: false,
-          speed: 1,
-          straight: false,
+          outMode: 'destroy',
+          random: true,
+          speed: 0.6,
+          straight: true,
         },
         number: {
           density: {
