@@ -54,7 +54,6 @@ const Input = ({
           </p>
         )}
       </div>
-
       {!options.length ? (
         <input
           type={type}
