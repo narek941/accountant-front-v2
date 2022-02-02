@@ -45,7 +45,7 @@ const PartnerForm = () => {
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        console.log(error, 'handlePartnerForm');
+        console.log(error, '/mail/partnership');
         setRequestSent(false);
       });
   };

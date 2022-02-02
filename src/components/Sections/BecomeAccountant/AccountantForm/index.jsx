@@ -35,7 +35,7 @@ const AccountantForm = () => {
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        console.log(error, 'handleBecomeAccountantForm');
+        console.log(error, 'mail/accountant');
         setRequestSent(false);
       });
   };

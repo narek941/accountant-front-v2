@@ -27,7 +27,7 @@ const CoursesForm = () => {
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        console.log(error, 'handleCoursesForm');
+        console.log(error, 'mail/excel');
         setRequestSent(false);
       });
   };
@@ -49,7 +49,6 @@ const CoursesForm = () => {
         >
           Գրանցվել
         </Button>
-        {requestSent && <p>Successfully sent</p>}
       </FormWrapper>
     </>
   );
