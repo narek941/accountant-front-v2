@@ -1,5 +1,4 @@
 .wrapper {
-  //   width: 100%;
   position: relative;
 }
 
@@ -56,10 +55,12 @@
     color: $blue-100;
     cursor: pointer;
     padding: 14px 24px 13px;
-    display: flex;
-    align-items: center;
+    @extend %flex-align;
     @extend %regular-16;
 
+    span {
+      @extend %flex-align;
+    }
     &:hover {
       font-weight: 600;
     }

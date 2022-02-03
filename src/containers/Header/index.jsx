@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import Cookies from 'js-cookie';
 
 import { LanguageDrop, ScrollView } from 'components/index';
 import { I18nContext } from 'context/index';
@@ -12,7 +11,6 @@ import { LogoIcon, BurgerIcon } from '../../icons';
 
 const HeaderContainer = () => {
   const t = useContext(I18nContext);
-  const defaultLang = Cookies.get('next-i18next');
 
   const handleFlags = (code) => {
     i18n.changeLanguage(code);
@@ -30,11 +28,7 @@ const HeaderContainer = () => {
         <nav className={styles.nav}>
           {renderNavigationLinks}
           <BurgerIcon className={styles.burger} />
-          <LanguageDrop
-            data={languageList}
-            handleFlags={handleFlags}
-            defaultLang={defaultLang}
-          />
+          <LanguageDrop data={languageList} handleFlags={handleFlags} />
         </nav>
       </div>
     </header>

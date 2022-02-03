@@ -1,7 +1,8 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { getCookie } from 'libraries/index';
 import { noop } from 'utils/index';
 import { I18nContext } from 'context/index';
 import { useOutsideClick } from 'hooks/index';
@@ -15,7 +16,13 @@ const LanguageDrop = ({ data, handleFlags }) => {
   const ref = useRef(null);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(data[0].index);
+
+  useEffect(() => {
+    const cookieLang = getCookie('next-i18next');
+    const activeLanguage = data.findIndex((item) => item.code === cookieLang);
+    setActiveIndex(activeLanguage);
+  }, [data]);
 
   useOutsideClick(ref, () => {
     setIsOpen(false);
@@ -43,7 +50,7 @@ const LanguageDrop = ({ data, handleFlags }) => {
       <span>
         <item.Icon />
       </span>
-      {t(item.code)}
+      <span>{t(item.code)}</span>
     </div>
   ));
 
@@ -70,13 +77,11 @@ const LanguageDrop = ({ data, handleFlags }) => {
 LanguageDrop.propTypes = {
   data: PropTypes.array,
   handleFlags: PropTypes.func,
-  defaultLang: PropTypes.string,
 };
 
 LanguageDrop.defaultProps = {
   data: [],
   handleFlags: noop,
-  defaultLang: 'am',
 };
 
 export default LanguageDrop;
