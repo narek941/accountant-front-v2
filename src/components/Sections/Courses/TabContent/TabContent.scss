@@ -1,0 +1,14 @@
+.content {
+  max-width: 455px;
+  width: 100%;
+  @extend %blur;
+  @extend %regular-14;
+  p {
+    margin-bottom: 10px;
+    @extend %regular-14;
+  }
+  h2 {
+    margin: 20px 0;
+    @extend %regular-14;
+  }
+}
