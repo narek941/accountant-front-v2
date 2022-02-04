@@ -21,12 +21,14 @@ const CoursesSection = () => {
   const [isOpen, setIsOpen] = useToggle(false);
   const [active, setActive] = useState(0);
   const [isGroup, setIsGroup] = useState(false);
-  const handleToggle = () => {
-    setIsGroup(!isGroup);
-  };
+
   const sellectedCourse = isGroup
     ? coursesNavigationList[active].groupCourse
     : coursesNavigationList[active].personalCourse;
+
+  const handleToggle = () => {
+    setIsGroup(!isGroup);
+  };
   return (
     <div className={`container ${styles.wrapper}`}>
       <h2 className={styles.wrapper__title}>Դասընթացներ</h2>
@@ -42,7 +44,6 @@ const CoursesSection = () => {
                 })}
                 key={type.id}
                 role="button"
-                // active={active === index}
                 onClick={() => setActive(index)}
               >
                 <type.Icon />

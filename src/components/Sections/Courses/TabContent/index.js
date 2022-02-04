@@ -32,6 +32,6 @@ TabContent.propTypes = {
 
 TabContent.defaultProps = {
   infoSteps: [],
-  course: [],
+  course: null,
 };
 export default TabContent;

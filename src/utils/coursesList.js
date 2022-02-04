@@ -111,5 +111,11 @@ export const coursesNavigationList = [
     id: shortid.generate(),
     Icon: ExcelIcon,
     title: 'Microsoft Excel',
+    infoSteps: [
+      {
+        id: shortid.generate(),
+        text: 'րություն կտա կարճ ժամանակում ձեռք բերել պրակտիկ գիտելիքներ և դ,',
+      },
+    ],
   },
 ];
