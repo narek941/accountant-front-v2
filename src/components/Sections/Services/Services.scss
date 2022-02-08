@@ -10,6 +10,22 @@
   grid-gap: 20px;
   grid-template-columns: repeat(4, minmax(320px, 1fr));
 
+  @include breakpoint(wide-l) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    grid-gap: 10px;
+  }
+
+  @include breakpoint(wide) {
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+    grid-gap: 20px;
+    grid-column-end: span 2;
+  }
+  @include breakpoint(tablet) {
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+  }
+
   &__item {
     padding: 24px;
     overflow: hidden;
@@ -41,7 +57,10 @@
       background: $white;
       transition: top 0.2s ease-in-out;
       border-radius: 8px;
-
+      @include breakpoint(desktop) {
+        display: flex;
+        flex-direction: column;
+      }
       &_text {
         height: calc(100% - 64px);
         overflow-y: scroll;
@@ -59,5 +78,25 @@
         @extend %regular-16;
       }
     }
+  }
+  &__item:last-child {
+    @include breakpoint(wide-l) {
+      grid-column-end: span 2;
+    }
+  }
+}
+.btn {
+  max-width: 350px;
+  margin: 0 auto;
+  display: none;
+  width: 100%;
+  color: $white;
+  padding: 14px 24px 13px 24px;
+  background: $blue-100;
+  border-radius: 48px;
+  @extend %regular-16;
+
+  @include breakpoint(tablet) {
+    display: block;
   }
 }
