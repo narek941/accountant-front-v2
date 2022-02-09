@@ -27,7 +27,6 @@ const ServicesSection = () => {
     <div className="container">
       <h2 className={styles.title}>Services</h2>
       <div className={styles.list}>{renderServicesList}</div>
-      <Button className={styles.btn}>More</Button>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 .title {
   color: $blue-100;
-  margin: 56px 0;
+  margin: 56px auto;
   text-align: center;
   @extend %semiBold-32;
 }
@@ -11,22 +11,26 @@
   grid-template-columns: repeat(4, minmax(320px, 1fr));
 
   @include breakpoint(wide-l) {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    grid-gap: 10px;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
   }
 
-  @include breakpoint(wide) {
-    grid-template-columns: repeat(2, minmax(350px, 1fr));
-    grid-gap: 20px;
-    grid-column-end: span 2;
+  @include breakpoint(desktop) {
+    grid-gap: 10spx;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
-  @include breakpoint(tablet) {
-    max-width: 350px;
-    display: block;
+
+  @include breakpoint(tablet-m) {
+    gap: 16px;
+    width: 100%;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 288px;
   }
 
   &__item {
+    margin: 20px;
     padding: 24px;
     overflow: hidden;
     min-height: 262px;
@@ -34,6 +38,10 @@
     flex-direction: column;
     @extend %blur;
     @extend %flex-center;
+
+    @include breakpoint(desktop) {
+      margin: 0;
+    }
 
     &:hover {
       .list__item_info {
@@ -57,10 +65,7 @@
       background: $white;
       transition: top 0.2s ease-in-out;
       border-radius: 8px;
-      @include breakpoint(desktop) {
-        display: flex;
-        flex-direction: column;
-      }
+
       &_text {
         height: calc(100% - 64px);
         overflow-y: scroll;
@@ -79,24 +84,14 @@
       }
     }
   }
-  &__item:last-child {
-    @include breakpoint(wide-l) {
-      grid-column-end: span 2;
+  &__item:nth-last-child(1):nth-child(odd) {
+    @include breakpoint(desktop) {
+      margin: 20px auto;
+      grid-column: span 2;
     }
-  }
-}
-.btn {
-  max-width: 350px;
-  margin: 0 auto;
-  display: none;
-  width: 100%;
-  color: $white;
-  padding: 14px 24px 13px 24px;
-  background: $blue-100;
-  border-radius: 48px;
-  @extend %regular-16;
 
-  @include breakpoint(tablet) {
-    display: block;
+    @include breakpoint(tablet-m) {
+      grid-column: unset;
+    }
   }
 }
