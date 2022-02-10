@@ -18,10 +18,19 @@ const NewsSection = () => {
     prevArrow: <PrevArrow />,
     slidesToShow: 2,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1150,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
-  const renderNewsList = newsList.map(({ id, img, text }) => (
-    <Slide key={id} img={img} text={text} />
+  const renderNewsList = newsList.map(({ id, img, title, text }) => (
+    <Slide key={id} img={img} title={title} text={text} />
   ));
 
   return (
