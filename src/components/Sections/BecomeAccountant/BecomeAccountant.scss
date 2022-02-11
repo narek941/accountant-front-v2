@@ -6,6 +6,13 @@
   color: $blue-100;
   margin: 56px 0 32px;
   @extend %semiBold-32;
+
+  @include breakpoint(tablet-m) {
+    margin: 56px 0 16px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
 }
 
 .subtitle {
@@ -14,6 +21,13 @@
   max-width: 566px;
   text-align: center;
   @extend %regular-16;
+
+  @include breakpoint(tablet-m) {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 19px;
+    margin-bottom: 16px;
+  }
 }
 
 .login {

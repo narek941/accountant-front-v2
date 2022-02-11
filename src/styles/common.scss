@@ -8,14 +8,15 @@
       max-width: 100%;
       padding: 0 50px;
     }
+    
     @media (max-width: 768px) {
-      max-width: 100%;
       padding: 0 24px;
     }
-    @media (max-width: 320px) {
-      max-width: 100%;
+
+    @media (max-width: 568px) {
       padding: 0 16px;
     }
+
   }
 
   section {

@@ -3,6 +3,12 @@
   padding: 56px 0;
   text-align: center;
   @extend %semiBold-32;
+
+  @include breakpoint(tablet-m) {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
 }
 
 .slider {
