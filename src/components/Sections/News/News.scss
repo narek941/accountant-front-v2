@@ -3,6 +3,12 @@
   padding: 56px 0;
   text-align: center;
   @extend %semiBold-32;
+
+  @include breakpoint(tablet-m) {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
 }
 
 .slider {
@@ -10,20 +16,42 @@
 
   &__item {
     margin: 0 10px;
-    display: flex !important;
-    padding: 32px;
+    padding: 20px;
     min-height: 455px;
+    max-width: 660px;
+    width: 100%;
     border-radius: 8px;
     @extend %blur;
 
-    &_img {
-      height: 212px;
+    &_wrapper {
+      display: flex !important;
+
+      @include breakpoint(tablet-m) {
+        flex-direction: column;
+        max-width: 288px;
+        gap: 17px;
+      }
     }
 
-    &_text {
+    &_img {
+      height: 212px;
+      width: 100%;
+    }
+
+    &_title {
       color: $blue-100;
       margin-left: 16px;
       @extend %semiBold-20;
+
+      @include breakpoint(tablet-m) {
+        margin: 0;
+      }
+    }
+    &_text {
+      @extend %regular-14;
+      max-width: 282px;
+      width: 100%;
+      margin-top: 17px;
     }
   }
 }
