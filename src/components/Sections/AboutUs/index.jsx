@@ -39,7 +39,7 @@ const AboutUsSection = () => (
       </div>
     </div>
     <div className={styles.footer}>
-      <p>©2021 ACC ACCOUNTANT. All rights reserved.</p>
+      <p>©2022 ACC ACCOUNTANT. All rights reserved.</p>
       <p>Powered by ShellLogix</p>
     </div>
   </div>

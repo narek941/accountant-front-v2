@@ -1,0 +1,74 @@
+.wrapper {
+  position: relative;
+}
+
+.header {
+  gap: 5px;
+  width: 100%;
+  color: $blue-100;
+  cursor: pointer;
+  padding: 14px 24px 13px;
+  transition: background-color 0.2s ease-in;
+  user-select: none;
+  border-radius: 24px;
+  text-transform: capitalize;
+  @extend %blur;
+  @extend %flex-center;
+
+  &__open {
+    background-color: $grey-100;
+    border-radius: 24px 24px 0px 0px;
+  }
+
+  &__icon {
+    cursor: pointer;
+    transition: 0.3s ease-in;
+
+    path {
+      fill: $blue-100;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  overflow-y: auto;
+  max-height: 192px;
+  background: $grey-100;
+  transition: font-weight 0.3s ease-in;
+  border-radius: 0px 0px 24px 24px;
+  text-transform: capitalize;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $blue-300;
+    border-radius: 16px;
+  }
+
+  &__item {
+    gap: 5px;
+    color: $blue-100;
+    cursor: pointer;
+    padding: 14px 24px 13px;
+    @extend %flex-align;
+    @extend %regular-16;
+
+    span {
+      @extend %flex-align;
+    }
+    &:hover {
+      font-weight: 600;
+    }
+
+    &_active {
+      cursor: default;
+      font-weight: 600;
+      pointer-events: none;
+    }
+  }
+}

@@ -1,20 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Button, Input } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/index';
+import { axiosInstance } from 'libraries/index';
 
 import { becomeAccountantFields, becomeAccountantScheme } from './fields';
 
 import styles from '../BecomeAccountant.scss';
 
 const AccountantForm = () => {
+  const [requestSent, setRequestSent] = useState(false);
+
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: becomeAccountantScheme,
   });
 
-  const handleBecomeAccountantForm = (e) => {
-    // eslint-disable-next-line no-console
-    console.log(e, 'handleBecomeAccountantForm');
+  const handleBecomeAccountantForm = ({
+    email,
+    name,
+    phoneNumber,
+    lessonType,
+    lessonFormation,
+  }) => {
+    axiosInstance
+      .post('/mail/accountant', {
+        email,
+        fullName: name,
+        phoneNumber,
+        courseType: lessonType,
+        courseKind: lessonFormation,
+      })
+      .then(() => {
+        setRequestSent(true);
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error, 'mail/accountant');
+        setRequestSent(false);
+      });
   };
 
   return (
@@ -28,7 +51,11 @@ const AccountantForm = () => {
       <Input {...becomeAccountantFields.email} />
       <Input {...becomeAccountantFields.lessonType} />
       <Input {...becomeAccountantFields.lessonFormation} />
-      <Button type="submit" className={styles.form_submit} disabled={!isValid}>
+      <Button
+        type="submit"
+        className={styles.form_submit}
+        disabled={!isValid || requestSent}
+      >
         Գրանցվել
       </Button>
     </FormWrapper>

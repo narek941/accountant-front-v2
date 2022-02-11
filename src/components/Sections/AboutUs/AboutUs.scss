@@ -8,6 +8,15 @@
   margin: 56px 0 40px;
   text-align: center;
   @extend %semiBold-32;
+
+  @include breakpoint(tablet-m) {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  @include breakpoint(tablet-m) {
+    margin: 56px 0 24px;
+  }
 }
 
 .content {
@@ -16,23 +25,44 @@
   display: flex;
   justify-content: space-between;
 
+  @include breakpoint(tablet) {
+    display: block;
+  }
   &__contact {
     width: 100%;
+
+    @include breakpoint(tablet) {
+      gap: 38px;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+
+      h3 {
+        margin: 0;
+      }
+    }
+    @include breakpoint(tablet-m) {
+      flex-direction: column-reverse;
+    }
   }
 
   &__info {
     color: $black;
 
+    @include breakpoint(tablet) {
+      width: 100%;
+      max-width: 304px;
+    }
     &__header {
-      margin-top: 27px;
       color: $blue-100;
+      margin-top: 27px;
       @extend %semiBold-20;
     }
 
     &__routes {
-      @extend %flex-align;
       padding: 14px 0;
       gap: 5px;
+      @extend %flex-align;
     }
   }
 }
@@ -48,8 +78,8 @@
     width: 100%;
     color: $white;
     padding: 13.5px 0;
-    border-radius: 48px;
     transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
+    border-radius: 48px;
     background-color: $blue-100;
     @extend %regular-16;
 
@@ -66,6 +96,12 @@
   overflow: hidden;
   max-width: 587px;
   border-radius: 20px;
+  @include breakpoint(tablet) {
+    height: 171px;
+  }
+  @include breakpoint(tablet-m) {
+    height: 133px;
+  }
 }
 
 .footer {
