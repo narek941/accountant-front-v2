@@ -5,7 +5,7 @@ import { useToggle } from 'hooks/index';
 
 import styles from './Courses.scss';
 import CoursesForm from './CoursesForm';
-import TabContent from './TabContent';
+import CourseContent from './CourseContent';
 
 import Button from '../../Button';
 import { coursesNavigationList } from '../../../utils/index';
@@ -35,12 +35,12 @@ const CoursesSection = () => {
       {isOpen ? (
         <CoursesForm />
       ) : (
-        <div className={styles.tabContainer}>
-          <div className={styles.tabContainer__types}>
+        <div className={styles.course}>
+          <div className={styles.course__types}>
             {coursesNavigationList.map((type, index) => (
               <div
-                className={classNames(styles.tabContainer__types_tabs, {
-                  [styles.tabContainer__types_tabs_active]: active === index,
+                className={classNames(styles.course__types_tabs, {
+                  [styles.course__types_tabs_active]: active === index,
                 })}
                 key={type.id}
                 role="button"
@@ -52,21 +52,21 @@ const CoursesSection = () => {
             ))}
           </div>
 
-          <div className={styles.tabContainer__content}>
-            <div className={styles.content__tabs}>
+          <div className={styles.course__info}>
+            <div className={styles.course__info_tabs}>
               <div
                 role="button"
                 onClick={handleToggle}
-                className={classNames(styles.content__tabs_btn, {
-                  [styles.content__tabs_btn_active]: isGroup,
+                className={classNames(styles.course__info_tabs_btn, {
+                  [styles.course__info_tabs_btn_active]: isGroup,
                 })}
               >
                 <GroupIcon />
                 <p>Խմբակային</p>
               </div>
               <div
-                className={classNames(styles.content__tabs_btn, {
-                  [styles.content__tabs_btn_active]: !isGroup,
+                className={classNames(styles.course__info_tabs_btn, {
+                  [styles.course__info_tabs_btn_active]: !isGroup,
                 })}
                 role="button"
                 onClick={handleToggle}
@@ -75,28 +75,28 @@ const CoursesSection = () => {
                 <p>Անհատական</p>
               </div>
             </div>
-            <TabContent
+            <CourseContent
               infoSteps={coursesNavigationList[active].infoSteps}
               course={sellectedCourse}
             />
           </div>
 
-          <div className={styles.tabContainer__priceList}>
-            <div className={styles.tabContainer__priceList_item}>
+          <div className={styles.course__priceList}>
+            <div className={styles.course__priceList_item}>
               <TimeIcon />
               <span>{sellectedCourse?.period}</span>
             </div>
-            <div className={styles.tabContainer__priceList_item}>
+            <div className={styles.course__priceList_item}>
               <LessonsIcon />
               <span>{sellectedCourse?.lessons}</span>
             </div>
-            <div className={styles.tabContainer__priceList_item}>
+            <div className={styles.course__priceList_item}>
               <PriceIcon />
               <span>{sellectedCourse?.price}</span>
             </div>
             <Button
               onClick={setIsOpen}
-              className={styles.tabContainer__priceList_login}
+              className={styles.course__priceList_login}
             >
               Գրանցվել
             </Button>

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './TabContent.scss';
+import styles from './Courses.scss';
 
-const TabContent = ({ infoSteps, course }) => {
+const CourseContent = ({ infoSteps, course }) => {
   const renderCourse = course?.info?.map((item) => (
     <p key={item.id}>{item.text}</p>
   ));
@@ -18,20 +18,20 @@ const TabContent = ({ infoSteps, course }) => {
   ));
 
   return (
-    <div className={styles.content}>
+    <div className={styles.course__info_content}>
       {renderCourse}
       <h2>Դասընթացը Ձեզ համար է, եթե՝</h2>
       {renderInfoSteps}
     </div>
   );
 };
-TabContent.propTypes = {
+CourseContent.propTypes = {
   infoSteps: PropTypes.array,
   course: PropTypes.object,
 };
 
-TabContent.defaultProps = {
+CourseContent.defaultProps = {
   infoSteps: [],
   course: null,
 };
-export default TabContent;
+export default CourseContent;

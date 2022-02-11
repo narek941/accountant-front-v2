@@ -1,11 +1,181 @@
 .wrapper {
   @extend %flex-center-row;
 
+  @include breakpoint(tablet) {
+    display: block;
+  }
   &__title {
     color: $blue-100;
     padding: 56px 0;
     text-align: center;
     @extend %semiBold-32;
+
+    @include breakpoint(tablet-m) {
+      margin: 56px 0 16px;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+    }
+  }
+
+  .course {
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint(tablet-l) {
+      gap: 10px;
+      display: grid;
+      padding: 10px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include breakpoint(tablet-m) {
+      display: block;
+    }
+    &__types {
+      margin: 0 40px 0 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      max-height: 540px;
+      overflow-y: auto;
+      flex-direction: column;
+      max-width: 372px;
+      width: 100%;
+      @extend %semiBold-16;
+
+      @include breakpoint(tablet-l) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        margin: 0;
+      }
+
+      @include breakpoint(tablet) {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+      }
+
+      @include breakpoint(tablet-m) {
+        display: flex;
+        flex-direction: row;
+        max-width: 100vw;
+      }
+      &_tabs {
+        color: $blue-100;
+        cursor: pointer;
+        display: flex;
+        padding: 5px 18px;
+        align-items: center;
+        margin-bottom: 32px;
+        border-radius: 5px 25px 25px 5px;
+        background-color: $white;
+        @extend %blur;
+
+        @include breakpoint(tablet) {
+          margin-right: 26px;
+        }
+
+        svg {
+          @include breakpoint(tablet) {
+            min-width: 24px;
+            height: 24px;
+          }
+        }
+        svg path {
+          fill: $blue-100;
+        }
+
+        span {
+          margin-left: 16px;
+        }
+      }
+
+      &_tabs_active {
+        color: $white;
+        background-color: $blue-100;
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+
+    &__info {
+      width: 100%;
+      text-align: left;
+      @extend %regular-14;
+
+      @include breakpoint(tablet-l) {
+        grid-column: 1 / 4;
+        grid-row: 2;
+      }
+      &_tabs {
+        gap: 10px;
+        margin-bottom: 24px;
+        @extend %flex-between;
+
+        &_btn {
+          width: 50%;
+          cursor: pointer;
+          padding-bottom: 16px;
+          @extend %blur;
+          @extend %flex-align;
+
+          p {
+            margin-left: 16px;
+          }
+        }
+        &_btn_active {
+          border-bottom: 2px solid $blue-100;
+          padding-bottom: 14px;
+          pointer-events: none;
+        }
+      }
+      &_content {
+        max-height: 455px;
+        overflow-y: auto;
+        @extend %blur;
+
+        @include breakpoint(tablet-l) {
+          overflow-y: hidden;
+          max-height: unset;
+        }
+
+        p {
+          margin-bottom: 10px;
+          @extend %regular-14;
+        }
+
+        h2 {
+          margin: 20px 0;
+          @extend %regular-14;
+        }
+      }
+    }
+    &__priceList {
+      height: fit-content;
+      @extend %blur;
+
+      @include breakpoint(tablet-l) {
+        grid-column: 3;
+        grid-row: 1;
+      }
+      &_item {
+        gap: 20px;
+        margin-bottom: 20px;
+        @extend %flex-align;
+      }
+
+      &_login {
+        color: $white;
+        padding: 14px 0 13px;
+        min-width: 288px;
+        background: $blue-100;
+        border-radius: 48px;
+        @extend %regular-16;
+      }
+    }
   }
 
   &__form {
@@ -25,95 +195,6 @@
         color: $grey-200;
         @extend %blur;
       }
-    }
-  }
-}
-.content__tabs {
-  gap: 10px;
-  margin-bottom: 24px;
-  @extend %flex-between;
-
-  &_btn {
-    width: 50%;
-    cursor: pointer;
-    padding-bottom: 16px;
-    @extend %flex-align;
-
-    p {
-      margin-left: 16px;
-    }
-  }
-  &_btn_active {
-    border-bottom: 2px solid $blue-100;
-    pointer-events: none;
-  }
-}
-
-.tabContainer {
-  gap: 60px;
-  display: flex;
-  justify-content: space-between;
-
-  &__types {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    max-height: 540px;
-    overflow-y: auto;
-    flex-direction: column;
-    @extend %semiBold-16;
-    @extend %blur;
-
-    &_tabs {
-      color: $blue-100;
-      cursor: pointer;
-      display: flex;
-      padding: 5px 18px;
-      align-items: center;
-      margin-bottom: 32px;
-      border-radius: 5px 25px 25px 5px;
-      background-color: $white;
-
-      svg path {
-        fill: $blue-100;
-      }
-
-      span {
-        margin-left: 16px;
-      }
-    }
-
-    &_tabs_active {
-      color: $white;
-      background-color: $blue-100;
-      svg path {
-        fill: $white;
-      }
-    }
-  }
-
-  &__content {
-    @extend %blur;
-  }
-
-  &__priceList {
-    height: fit-content;
-    @extend %blur;
-
-    &_item {
-      gap: 20px;
-      margin-bottom: 20px;
-      @extend %flex-align;
-    }
-
-    &_login {
-      color: $white;
-      padding: 14px 0 13px;
-      min-width: 288px;
-      background: $blue-100;
-      border-radius: 48px;
-      @extend %regular-16;
     }
   }
 }
