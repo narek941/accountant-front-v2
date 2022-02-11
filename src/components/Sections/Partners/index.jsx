@@ -17,6 +17,15 @@ const PartnersSection = () => {
     prevArrow: <PrevArrow />,
     slidesToShow: 4,
     slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const renderPartnersList = partnersList.map(({ id, img }) => (
