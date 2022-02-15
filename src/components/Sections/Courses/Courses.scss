@@ -1,9 +1,6 @@
 .wrapper {
   @extend %flex-center-row;
 
-  @include breakpoint(tablet) {
-    display: block;
-  }
   &__title {
     color: $blue-100;
     padding: 56px 0;
@@ -21,6 +18,7 @@
   .course {
     gap: 20px;
     display: flex;
+    width: 100%;
     justify-content: space-between;
 
     @include breakpoint(tablet-l) {
@@ -50,16 +48,13 @@
         margin: 0;
       }
 
-      @include breakpoint(tablet) {
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 19px;
-      }
-
       @include breakpoint(tablet-m) {
         display: flex;
         flex-direction: row;
         max-width: 100vw;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
       }
       &_tabs {
         color: $blue-100;
@@ -73,7 +68,9 @@
         @extend %blur;
 
         @include breakpoint(tablet) {
-          margin-right: 26px;
+          margin-right: 16px;
+          min-width: 224px;
+          min-height: 48px;
         }
 
         svg {
@@ -104,6 +101,8 @@
     &__info {
       width: 100%;
       text-align: left;
+      max-width: 455px;
+
       @extend %regular-14;
 
       @include breakpoint(tablet-l) {
@@ -133,17 +132,18 @@
         }
       }
       &_content {
-        max-height: 455px;
+        max-height: 532px;
         overflow-y: auto;
         @extend %blur;
 
         @include breakpoint(tablet-l) {
           overflow-y: hidden;
           max-height: unset;
+          max-width: unset;
         }
 
         p {
-          margin-bottom: 10px;
+          margin: 0 5px 10px;
           @extend %regular-14;
         }
 
@@ -170,15 +170,21 @@
       &_login {
         color: $white;
         padding: 14px 0 13px;
-        min-width: 288px;
+        width: 288px;
         background: $blue-100;
         border-radius: 48px;
         @extend %regular-16;
+
+        @include breakpoint(tablet) {
+          width: 250px;
+        }
       }
     }
   }
 
   &__form {
+    width: 100%;
+    max-width: 352px;
     @extend %form;
     @extend %blur;
 
