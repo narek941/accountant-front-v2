@@ -8,14 +8,15 @@ import AccountantForm from './AccountantForm';
 
 const BecomeAccountantSection = () => {
   const [isOpen, setIsOpen] = useToggle(false);
+  const handleBack = () => setIsOpen();
 
   return (
     <div className={`container ${styles.wrapper}`}>
-      <h2 className={styles.title}>Դարձիր հաշվապահ</h2>
       {isOpen ? (
-        <AccountantForm />
+        <AccountantForm handleBack={handleBack} />
       ) : (
         <>
+          <h2 className={styles.title}>Դարձիր հաշվապահ</h2>
           <p className={styles.subtitle}>
             Acc Accountant - ը ստեղծվել է մատուցելու որակյալ ծառայություններ,
             որպեսզի ձեր բիզնեսը կրկնակի խնայի՝ ժամանակ, ֆինանսներ, աշխատուժ,

@@ -8,14 +8,15 @@ import PartnerForm from './PartnerForm';
 
 const BecomePartnerSection = () => {
   const [isOpen, setIsOpen] = useToggle(false);
+  const handleBack = () => setIsOpen();
 
   return (
     <div className={`container ${styles.wrapper}`}>
-      <h2 className={styles.title}>Դարձի՛ր գործընկեր</h2>
       {isOpen ? (
-        <PartnerForm />
+        <PartnerForm handleBack={handleBack} />
       ) : (
         <>
+          <h2 className={styles.title}>Դարձի՛ր գործընկեր</h2>
           <p className={styles.subtitle}>
             Acc Accountant - ը ստեղծվել է մատուցելու որակյալ ծառայություններ,
             որպեսզի ձեր բիզնեսը կրկնակի խնայի՝ ժամանակ, ֆինանսներ, աշխատուժ,
