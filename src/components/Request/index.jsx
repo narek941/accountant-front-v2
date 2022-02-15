@@ -11,20 +11,20 @@ import { LogoIcon } from '../../icons';
 
 const Request = ({ handleBack, isSent }) => {
   return (
-    <>
-      <LogoIcon className={styles.logo} />
+    <div className={`container ${styles.wrapper}`}>
+      <LogoIcon className={styles.wrapper__logo} />
       {isSent ? (
-        <p className={styles.title}>Ձեր հայտը հաստատվել է։</p>
+        <p className={styles.wrapper__title}>Ձեր հայտը հաստատվել է։</p>
       ) : (
-        <p className={classNames(styles.title, styles.alert)}>
+        <p className={classNames(styles.wrapper__title, styles.wrapper__alert)}>
           Ձեր հայտը չի հաստատվել,Խնդրում ենք փորձել մի փոքր ուշ:
         </p>
       )}
 
-      <Button className={styles.btn} onClick={handleBack}>
+      <Button className={styles.wrapper__btn} onClick={handleBack}>
         Գլխավոր էջ
       </Button>
-    </>
+    </div>
   );
 };
 
