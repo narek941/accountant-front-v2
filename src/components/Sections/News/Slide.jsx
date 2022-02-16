@@ -7,8 +7,8 @@ const Slide = ({ id, img, title, text }) => {
   const render = text.map(({ subId, subTitle, subText }) => (
     <span key={subId}>
       <p>{subTitle}</p>
-      {subText?.map((i) => (
-        <p>🔹️{i}</p>
+      {subText?.map((item) => (
+        <p key={item.id}>🔹️{item.text}</p>
       ))}
     </span>
   ));
