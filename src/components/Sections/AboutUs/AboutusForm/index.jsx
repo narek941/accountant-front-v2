@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Input } from 'components/index';
+import { Button, Input, TextArea } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/index';
 import { axiosInstance } from 'libraries/index';
 
@@ -42,7 +42,7 @@ const AboutusForm = () => {
       <Input {...contactUsFields.name} />
       <Input {...contactUsFields.phoneNumber} />
       <Input {...contactUsFields.email} />
-      <Input {...contactUsFields.interests} />
+      <TextArea {...contactUsFields.interests} />
       <Button
         type="submit"
         className={styles.form_submit}
