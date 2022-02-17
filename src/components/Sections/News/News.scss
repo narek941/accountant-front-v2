@@ -18,7 +18,6 @@
     padding: 32px;
     @extend %blur;
     &_wrapper {
-      position: relative;
       @include breakpoint(tablet-m) {
         flex-direction: column;
         max-width: 288px;
@@ -42,6 +41,7 @@
       color: $blue-100;
       @extend %semiBold-20;
     }
+
     &_text {
       @extend %regular-14;
       margin-top: 17px;

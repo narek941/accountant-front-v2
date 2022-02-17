@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Input } from 'components/index';
+import { Button, Input, TextArea } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/index';
 import { axiosInstance } from 'libraries/index';
 
@@ -65,7 +65,7 @@ const PartnerForm = () => {
       <Input {...becomePartnerFields.taxType} />
       <Input {...becomePartnerFields.address} />
       <Input {...becomePartnerFields.quantityOfEmployees} />
-      <Input {...becomePartnerFields.activityDescription} />
+      <TextArea {...becomePartnerFields.activityDescription} />
       <Button
         type="submit"
         className={styles.form_submit}
