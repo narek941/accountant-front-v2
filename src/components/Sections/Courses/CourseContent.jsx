@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
+import { Button } from 'components/index';
+import { useWindowSize } from 'hooks/index';
 
 import styles from './Courses.scss';
 
 const CourseContent = ({ infoSteps, course }) => {
+  const { isMobile } = useWindowSize();
+  const [isShow, setIsShow] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleMore = () => {
+    setIsShow(!isShow);
+    setIsClicked(true);
+  };
+  const buttonName = !isShow && 'Ավելին';
+  const isLoad = (isShow || !isMobile) && true;
+
   const renderCourse = course?.info?.map((item) => (
     <p key={item.id}>{item.text}</p>
   ));
@@ -20,8 +34,20 @@ const CourseContent = ({ infoSteps, course }) => {
   return (
     <div className={styles.course__info_content}>
       {renderCourse}
-      <h2>Դասընթացը Ձեզ համար է, եթե՝</h2>
-      {renderInfoSteps}
+      {!isClicked && (
+        <Button
+          className={styles.course__info_content_showBtn}
+          onClick={handleMore}
+        >
+          {buttonName}
+        </Button>
+      )}
+      {isLoad && (
+        <>
+          <h2>Դասընթացը Ձեզ համար է, եթե՝</h2>
+          {renderInfoSteps}
+        </>
+      )}
     </div>
   );
 };
