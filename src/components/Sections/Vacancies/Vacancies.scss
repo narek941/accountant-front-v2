@@ -52,9 +52,6 @@
 
       @include breakpoint(tablet-m) {
         width: 100%;
-        font-weight: normal;
-        font-size: 12px;
-        line-height: 16px;
       }
       &_order {
         padding-right: 5px;
