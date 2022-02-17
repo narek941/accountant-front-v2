@@ -13,7 +13,9 @@ import VacanciesForm from './VacanciesForm';
 import Button from '../../Button';
 
 const VacanciesSection = () => {
-  const [isOpen, setisOpen] = useToggle(false);
+  const [isOpen, setIsOpen] = useToggle(false);
+
+  const handleBack = () => setIsOpen();
 
   const settings = {
     dots: false,
@@ -58,12 +60,12 @@ const VacanciesSection = () => {
       {!isOpen ? (
         <>
           <Slider {...settings}>{renderVacanciesList}</Slider>
-          <Button onClick={() => setisOpen()} className={styles.button}>
+          <Button onClick={() => setIsOpen()} className={styles.button}>
             Դիմել
           </Button>
         </>
       ) : (
-        <VacanciesForm />
+        <VacanciesForm handleBack={handleBack} />
       )}
     </div>
   );

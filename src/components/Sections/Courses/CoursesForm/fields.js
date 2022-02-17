@@ -17,6 +17,16 @@ export const coursesFields = {
     placeholder: 'email',
     required: true,
   },
+  lessonType: {
+    name: 'lessonType',
+    label: 'course_type',
+    options: ['beginner', 'advanced', 'excel'],
+  },
+  lessonFormation: {
+    name: 'lessonFormation',
+    label: 'course_kind',
+    options: ['grouped', 'individual'],
+  },
 };
 
 export const coursesScheme = Object.keys(coursesFields);
