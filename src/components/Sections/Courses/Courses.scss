@@ -151,6 +151,15 @@
           margin: 20px 0;
           @extend %regular-14;
         }
+        &_showBtn {
+          display: none;
+          color: $blue-100;
+          padding-top: 21px;
+          background-color: unset;
+          @include breakpoint(tablet-m) {
+            display: block;
+          }
+        }
       }
     }
     &__priceList {
@@ -174,6 +183,9 @@
         background: $blue-100;
         border-radius: 48px;
         @extend %regular-16;
+        @include breakpoint(tablet-m) {
+          width: 100%;
+        }
       }
     }
   }
