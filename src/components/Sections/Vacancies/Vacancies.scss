@@ -3,18 +3,15 @@
   padding: 56px 0;
   text-align: center;
   @extend %semiBold-32;
-
   @include breakpoint(tablet-m) {
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
+    padding: 56px 0 16px;
   }
 }
-
 .slider {
   position: relative;
-  gap: 10px;
-
   &__item {
     margin: 0 10px;
     padding: 32px 16px 16px;
@@ -22,18 +19,11 @@
     border-radius: 8px;
     min-height: 384px;
     max-width: 320px;
-    width: 95%;
     flex-direction: column;
     @extend %blur;
     @extend %flex-align;
-
     @include breakpoint(tablet-l) {
-      min-height: auto;
-      margin: 10px;
-    }
-    @include breakpoint(tablet-m) {
       margin: 10px auto;
-      width: 100%;
     }
     &_title {
       text-align: center;
@@ -41,29 +31,22 @@
       color: $blue-100;
       @extend %semiBold-20;
     }
-
     &_wrapper {
       margin-top: 36px;
     }
-
     &_text {
       display: flex;
       @extend %regular-14;
-
-      @include breakpoint(tablet-m) {
-        width: 100%;
-      }
       &_order {
         padding-right: 5px;
       }
     }
   }
 }
-
 .arrow {
   width: 48px;
   height: 48px;
-  top: calc(50% - 42px);
+  top: calc(50% - 48px);
   cursor: pointer;
   z-index: 2;
   position: absolute;
@@ -73,18 +56,25 @@
   right: unset;
   @extend %blur;
   @extend %flex-center;
-
+  @include breakpoint(tablet) {
+    left: -16px;
+    width: 32px;
+    height: 32px;
+  }
   &__next {
     left: unset;
     right: -42px;
     transform: rotate(90deg);
+    @include breakpoint(tablet) {
+      right: -16px;
+      width: 32px;
+      height: 32px;
+    }
   }
-
   svg path {
     fill: $blue-100;
   }
 }
-
 .button {
   width: 100%;
   max-width: 288px;
@@ -94,15 +84,16 @@
   padding: 14px 24px 13px;
   background: $blue-100;
   border-radius: 48px;
+  @include breakpoint(tablet) {
+    margin: 24px auto 0;
+  }
 }
-
 .form {
   width: 100%;
   margin: 0 auto;
   max-width: 352px;
   @extend %form;
   @extend %blur;
-
   &_submit {
     width: 100%;
     color: $white;
@@ -111,7 +102,6 @@
     transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
     background-color: $blue-100;
     @extend %regular-16;
-
     &:disabled {
       color: $grey-200;
       @extend %blur;

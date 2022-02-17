@@ -36,11 +36,11 @@ const VacanciesSection = () => {
         },
       },
       {
-        breakpoint: 576,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          rows: 4,
+          rows: 1,
         },
       },
     ],
