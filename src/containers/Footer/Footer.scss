@@ -9,6 +9,37 @@
 
 .wrapper {
   @extend %flex-between;
+
+  &__animation {
+    width: 100%;
+    transform: translateX(120%);
+    transition: all 0.3s;
+    @extend %flex-between;
+
+    &_active {
+      transform: translateX(0);
+      margin-right: 22px;
+    }
+  }
+
+  &__switcher {
+    width: 32px;
+    right: 0;
+    height: 32px;
+    cursor: pointer;
+    position: absolute;
+    transform: rotate(-90deg);
+    @extend %flex-center;
+    transition: all 0.3s;
+
+    &_active {
+      transform: rotate(90deg);
+    }
+
+    path {
+      fill: $blue-100;
+    }
+  }
 }
 
 .routes {

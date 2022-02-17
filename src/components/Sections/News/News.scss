@@ -12,45 +12,44 @@
 }
 
 .slider {
-  position: relative;
-
   &__item {
-    margin: 0 10px;
-    padding: 20px;
-    min-height: 455px;
     max-width: 660px;
     width: 100%;
     border-radius: 8px;
+    min-height: 455px;
+    padding: 32px;
     @extend %blur;
 
     &_wrapper {
-      display: flex !important;
-
       @include breakpoint(tablet-m) {
         flex-direction: column;
         max-width: 288px;
         gap: 17px;
+        margin: 0 auto;
       }
     }
 
     &_img {
-      height: 212px;
+      max-height: 212px;
+      max-width: 50%;
       width: 100%;
+      height: 100%;
+      float: left;
+      padding: 0 16px 8px 0;
+      box-sizing: content-box;
+
+      @include breakpoint(tablet-m) {
+        max-width: 100%;
+      }
     }
 
     &_title {
       color: $blue-100;
-      margin-left: 16px;
       @extend %semiBold-20;
-
-      @include breakpoint(tablet-m) {
-        margin: 0;
-      }
     }
+
     &_text {
       @extend %regular-14;
-      max-width: 282px;
-      width: 100%;
       margin-top: 17px;
     }
   }
