@@ -46,7 +46,7 @@
 .arrow {
   width: 48px;
   height: 48px;
-  top: calc(50% - 48px);
+  top: calc(50% - 24px);
   cursor: pointer;
   z-index: 2;
   position: absolute;
@@ -56,7 +56,9 @@
   right: unset;
   @extend %blur;
   @extend %flex-center;
+
   @include breakpoint(tablet) {
+    top: calc(50% - 16px);
     left: -16px;
     width: 32px;
     height: 32px;
@@ -67,8 +69,6 @@
     transform: rotate(90deg);
     @include breakpoint(tablet) {
       right: -16px;
-      width: 32px;
-      height: 32px;
     }
   }
   svg path {
