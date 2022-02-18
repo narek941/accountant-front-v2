@@ -24,7 +24,9 @@ const HeaderContainer = () => {
   return (
     <header className={styles.container}>
       <div className={`container ${styles.wrapper}`}>
-        <LogoIcon />
+        <span>
+          <LogoIcon />
+        </span>
         <nav className={styles.nav}>
           {renderNavigationLinks}
           <BurgerIcon className={styles.burger} />
