@@ -47,8 +47,12 @@ const CoursesSection = () => {
                   role="button"
                   onClick={() => setActive(index)}
                 >
-                  <type.Icon />
-                  <span>{type.title}</span>
+                  <span>
+                    <type.Icon />
+                  </span>
+                  <span className={styles.course__types_tabs_title}>
+                    {type.title}
+                  </span>
                 </div>
               ))}
             </div>
@@ -62,7 +66,10 @@ const CoursesSection = () => {
                     [styles.course__info_tabs_btn_active]: isGroup,
                   })}
                 >
-                  <GroupIcon />
+                  <span>
+                    <GroupIcon />
+                  </span>
+
                   <p>Խմբակային</p>
                 </div>
                 <div
@@ -72,7 +79,10 @@ const CoursesSection = () => {
                   role="button"
                   onClick={handleToggle}
                 >
-                  <PersonalIcon />
+                  <span>
+                    <PersonalIcon />
+                  </span>
+
                   <p>Անհատական</p>
                 </div>
               </div>
@@ -84,15 +94,23 @@ const CoursesSection = () => {
 
             <div className={styles.course__priceList}>
               <div className={styles.course__priceList_item}>
-                <TimeIcon />
+                <span>
+                  <TimeIcon />
+                </span>
                 <span>{sellectedCourse?.period}</span>
               </div>
               <div className={styles.course__priceList_item}>
-                <LessonsIcon />
+                <span>
+                  <LessonsIcon />
+                </span>
+
                 <span>{sellectedCourse?.lessons}</span>
               </div>
               <div className={styles.course__priceList_item}>
-                <PriceIcon />
+                <span>
+                  <PriceIcon />
+                </span>
+
                 <span>{sellectedCourse?.price}</span>
               </div>
               <Button
