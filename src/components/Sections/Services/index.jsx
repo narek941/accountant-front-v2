@@ -13,14 +13,12 @@ const ServicesSection = () => {
   const { isMobile } = useWindowSize();
   const [isShow, setIsShow] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-
   const handleMore = () => {
     setIsShow(!isShow);
     setIsClicked(true);
   };
   const loadCount = isShow || !isMobile ? servicesList.length : 3;
   const buttonName = !isShow && 'Ավելին';
-
   const renderServicesList = servicesList
     .slice(0, loadCount)
     .map(({ id, Icon, text, hoverText }) => (
@@ -31,8 +29,7 @@ const ServicesSection = () => {
             <Button>Դառնալ գործընկեր</Button>
           </ScrollView>
         </div>
-        <Icon />
-        <p className={styles.list__item_text}>{text}</p>
+        <Icon /> <p className={styles.list__item_text}>{text}</p>
       </div>
     ));
   return (
@@ -41,7 +38,7 @@ const ServicesSection = () => {
       <div className={styles.list}>
         {renderServicesList}
         {!isClicked && (
-          <Button className={styles.showBtn} onClick={handleMore}>
+          <Button className={styles.list_showBtn} onClick={handleMore}>
             {buttonName}
           </Button>
         )}
@@ -49,5 +46,4 @@ const ServicesSection = () => {
     </div>
   );
 };
-
 export default ServicesSection;
