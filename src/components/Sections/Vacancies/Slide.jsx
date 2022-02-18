@@ -13,7 +13,9 @@ const Slide = ({ Icon, title, textSteps }) => {
 
   return (
     <div className={styles.slider__item}>
-      <Icon />
+      <span>
+        <Icon />
+      </span>
       <p className={styles.slider__item_title}>{title}</p>
       <div className={styles.slider__item_wrapper}>{renderTextSteps}</div>
     </div>
