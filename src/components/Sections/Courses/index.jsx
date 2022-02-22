@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import classNames from 'classnames';
 
 import { useToggle } from 'hooks/index';
+import { I18nContext } from 'context/index';
 
 import styles from './Courses.scss';
 import CoursesForm from './CoursesForm';
@@ -22,6 +23,8 @@ const CoursesSection = () => {
   const [active, setActive] = useState(0);
   const [isGroup, setIsGroup] = useState(false);
   const handleBack = () => setIsOpen();
+  const t = useContext(I18nContext);
+
   const sellectedCourse = isGroup
     ? coursesNavigationList[active].groupCourse
     : coursesNavigationList[active].personalCourse;
@@ -35,7 +38,7 @@ const CoursesSection = () => {
         <CoursesForm handleBack={handleBack} />
       ) : (
         <>
-          <h2 className={styles.wrapper__title}>Դասընթացներ</h2>
+          <h2 className={styles.wrapper__title}>{t('courses')}</h2>
           <div className={styles.course}>
             <div className={styles.course__types}>
               {coursesNavigationList.map((type, index) => (
@@ -48,7 +51,7 @@ const CoursesSection = () => {
                   onClick={() => setActive(index)}
                 >
                   <type.Icon />
-                  <span>{type.title}</span>
+                  <span>{t(type.title)}</span>
                 </div>
               ))}
             </div>
@@ -63,7 +66,7 @@ const CoursesSection = () => {
                   })}
                 >
                   <GroupIcon />
-                  <p>Խմբակային</p>
+                  <p>{t('grouped')}</p>
                 </div>
                 <div
                   className={classNames(styles.course__info_tabs_btn, {
@@ -73,7 +76,7 @@ const CoursesSection = () => {
                   onClick={handleToggle}
                 >
                   <PersonalIcon />
-                  <p>Անհատական</p>
+                  <p>{t('individual')}</p>
                 </div>
               </div>
               <CourseContent
@@ -99,7 +102,7 @@ const CoursesSection = () => {
                 onClick={setIsOpen}
                 className={styles.course__priceList_login}
               >
-                Գրանցվել
+                {t('register')}
               </Button>
             </div>
           </div>

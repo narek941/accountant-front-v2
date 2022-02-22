@@ -6,7 +6,7 @@ export const coursesNavigationList = [
   {
     id: shortid.generate(),
     Icon: ChartIcon,
-    title: 'Հաշվապահական հաշվառում 0-ից',
+    title: 'introduction_to_accounting',
 
     infoSteps: [
       {
@@ -99,11 +99,15 @@ export const coursesNavigationList = [
   {
     id: shortid.generate(),
     Icon: SearchIcon,
-    title: 'Հաշվապահական հաշվառում խորացված',
+    title: 'advanced_accounting',
     infoSteps: [
       {
         id: shortid.generate(),
-        text: 'չունեք բարձրագույն կրթություն, բայց ցանկանում եք մասնագիտություն սովորել,',
+        text: 'չունեք բարձրագույն կրթություն, բայց ցանկանում եք մասնագիտություն սովորել,րություն կտա կարճ ժամանակում ձեռք բերել պրակտիկ գիտելիքնե',
+      },
+      {
+        id: shortid.generate(),
+        text: 'ավարտել եք որևէ ԲՈՒՀ, սակայն չեք կարողանում գտնել լավ աշխատանք,',
       },
     ],
   },
@@ -114,7 +118,11 @@ export const coursesNavigationList = [
     infoSteps: [
       {
         id: shortid.generate(),
-        text: 'րություն կտա կարճ ժամանակում ձեռք բերել պրակտիկ գիտելիքներ և դ,',
+        text: 'րություն կտա կարճ ժամանակում ձեռք բերել պրակտիկ գիտելիքներ և դրություն կտա կարճ ժամանակում ձեռք բերել պրակտիկ գիտելիքնե,',
+      },
+      {
+        id: shortid.generate(),
+        text: 'ավարտել եք որևէ ԲՈՒՀ, սակայն չեք կարողանում գտնել լավ աշխատանք,',
       },
     ],
   },

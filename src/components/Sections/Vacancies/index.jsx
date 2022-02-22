@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 
 import { useToggle } from 'hooks/index';
 import { vacanciesList } from 'utils/index';
+import { I18nContext } from 'context/index';
 
 import Slide from './Slide';
 import styles from './Vacancies.scss';
@@ -13,8 +14,8 @@ import VacanciesForm from './VacanciesForm';
 import Button from '../../Button';
 
 const VacanciesSection = () => {
+  const t = useContext(I18nContext);
   const [isOpen, setIsOpen] = useToggle(false);
-
   const handleBack = () => setIsOpen();
 
   const settings = {
@@ -55,13 +56,13 @@ const VacanciesSection = () => {
   return (
     <div className="container">
       <h2 className={styles.title}>
-        {!isOpen ? 'Թափուր հաստիքներ' : 'Դիմել աշխատանքի համար'}
+        {!isOpen ? `${t('vacancies')}` : `${t('apply_for_job')}`}
       </h2>
       {!isOpen ? (
         <>
           <Slider {...settings}>{renderVacanciesList}</Slider>
           <Button onClick={() => setIsOpen()} className={styles.button}>
-            Դիմել
+            {t('apply')}
           </Button>
         </>
       ) : (

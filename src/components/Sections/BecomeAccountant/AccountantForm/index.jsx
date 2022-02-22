@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import noop from 'utils/noop';
 import { Button, Input, Request } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/index';
 import { axiosInstance } from 'libraries/index';
+import { I18nContext } from 'context/index';
 
 import { becomeAccountantFields, becomeAccountantScheme } from './fields';
 
@@ -13,6 +14,7 @@ import styles from '../BecomeAccountant.scss';
 const AccountantForm = ({ handleBack }) => {
   const [requestSent, setRequestSent] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  const t = useContext(I18nContext);
 
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: becomeAccountantScheme,
@@ -51,7 +53,7 @@ const AccountantForm = ({ handleBack }) => {
         <Request handleBack={handleBack} isSent={requestSent} />
       ) : (
         <>
-          <h2 className={styles.title}>Դարձիր հաշվապահ</h2>
+          <h2 className={styles.title}>{t('becomeAccountant')}</h2>
           <FormWrapper
             onSubmit={handleSubmit(handleBecomeAccountantForm)}
             className={styles.form}
@@ -67,7 +69,7 @@ const AccountantForm = ({ handleBack }) => {
               className={styles.form_submit}
               disabled={!isValid || requestSent}
             >
-              Գրանցվել
+              {t('register')}
             </Button>
           </FormWrapper>
         </>

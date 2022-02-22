@@ -69,7 +69,9 @@ const Input = ({
       ) : (
         <DropDown data={options} onChane={handleDropDownChange} />
       )}
-      {errorText && <p className={styles.wrapper__error}>{errorText}</p>}
+      {errorText && (
+        <p className={styles.wrapper__error}>{`${t(errorText)}`}</p>
+      )}
     </div>
   );
 };

@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import { noop } from 'utils/index';
+import { I18nContext } from 'context/index';
 
-const Button = ({ onClick, className, disabled, children, ...rest }) => (
-  <button
-    type="button"
-    {...rest}
-    disabled={disabled}
-    onClick={onClick}
-    className={className}
-  >
-    {children}
-  </button>
-);
+const Button = ({ onClick, className, disabled, children, ...rest }) => {
+  const t = useContext(I18nContext);
+  return (
+    <button
+      type="button"
+      {...rest}
+      disabled={disabled}
+      onClick={onClick}
+      className={className}
+      style={{ textTransform: 'capitalize' }}
+    >
+      {t(children)}
+    </button>
+  );
+};
 
 Button.propTypes = {
   onClick: PropTypes.func,

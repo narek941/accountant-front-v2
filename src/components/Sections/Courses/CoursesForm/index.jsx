@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import noop from 'utils/noop';
 import { useForm, FormWrapper } from 'hooks/index';
 import { axiosInstance } from 'libraries/index';
 import { Request } from 'components/index';
+import { I18nContext } from 'context/index';
 
 import { coursesScheme, coursesFields } from './fields';
 
@@ -15,7 +16,7 @@ import styles from '../Courses.scss';
 const CoursesForm = ({ handleBack }) => {
   const [requestSent, setRequestSent] = useState(false);
   const [isSent, setIsSent] = useState(false);
-
+  const t = useContext(I18nContext);
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: coursesScheme,
   });
@@ -52,7 +53,7 @@ const CoursesForm = ({ handleBack }) => {
         <Request handleBack={handleBack} isSent={requestSent} />
       ) : (
         <>
-          <h2 className={styles.wrapper__title}>Դասընթացներ</h2>
+          <h2 className={styles.wrapper__title}>{t('courses')}</h2>
 
           <FormWrapper
             {...{ formMethods }}
@@ -70,7 +71,7 @@ const CoursesForm = ({ handleBack }) => {
               className={styles.wrapper__form_submit}
               disabled={!isValid || requestSent}
             >
-              Գրանցվել
+              register
             </Button>
           </FormWrapper>
         </>
