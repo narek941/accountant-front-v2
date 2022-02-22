@@ -25,7 +25,7 @@ const CoursesSection = () => {
   const handleBack = () => setIsOpen();
   const t = useContext(I18nContext);
 
-  const sellectedCourse = isGroup
+  const selectedCourse = isGroup
     ? coursesNavigationList[active].groupCourse
     : coursesNavigationList[active].personalCourse;
 
@@ -81,22 +81,22 @@ const CoursesSection = () => {
               </div>
               <CourseContent
                 infoSteps={coursesNavigationList[active].infoSteps}
-                course={sellectedCourse}
+                course={selectedCourse}
               />
             </div>
 
             <div className={styles.course__priceList}>
               <div className={styles.course__priceList_item}>
                 <TimeIcon />
-                <span>{sellectedCourse?.period}</span>
+                <span>{selectedCourse?.period}</span>
               </div>
               <div className={styles.course__priceList_item}>
                 <LessonsIcon />
-                <span>{sellectedCourse?.lessons}</span>
+                <span>{selectedCourse?.lessons}</span>
               </div>
               <div className={styles.course__priceList_item}>
                 <PriceIcon />
-                <span>{sellectedCourse?.price}</span>
+                <span>{selectedCourse?.price}</span>
               </div>
               <Button
                 onClick={setIsOpen}
