@@ -21,14 +21,14 @@ const CourseContent = ({ infoSteps, course }) => {
   const isLoad = (isShow || !isMobile) && true;
 
   const renderCourse = course?.info?.map((item) => (
-    <p key={item.id}>{item.text}</p>
+    <p key={item.id}>{t(item.text)}</p>
   ));
 
   const renderInfoSteps = infoSteps?.map((item, index) => (
     <div key={item.id}>
       <p>
         <span className={styles.slider__item_text_order}>{index + 1}.</span>
-        {item.text}
+        {t(item.text)}
       </p>
     </div>
   ));
@@ -46,7 +46,7 @@ const CourseContent = ({ infoSteps, course }) => {
       )}
       {isLoad && (
         <>
-          <h2>Դասընթացը Ձեզ համար է, եթե՝</h2>
+          <h2>{t('course_is_for_you')}</h2>
           {renderInfoSteps}
         </>
       )}

@@ -11,88 +11,88 @@ export const coursesNavigationList = [
     infoSteps: [
       {
         id: shortid.generate(),
-        text: 'չունեք բարձրագույն կրթություն, բայց ցանկանում եք մասնագիտություն սովորել,',
+        text: 'introduction_to_accounting_info_step_one',
       },
       {
         id: shortid.generate(),
-        text: 'ավարտել եք որևէ ԲՈՒՀ, սակայն չեք կարողանում գտնել լավ աշխատանք,',
+        text: 'introduction_to_accounting_info_step_two',
       },
       {
         id: shortid.generate(),
-        text: 'ուզում եք աշխատել ազատ գրաֆիկով և համատեղ մի քանի կազմակերպության հետ (ֆրիլանս),',
+        text: 'introduction_to_accounting_info_step_three',
       },
       {
         id: shortid.generate(),
-        text: 'ժամանակին սովորել եք հաշվապահություն, սակայն հիմա գիտելիքները թարմացնելու կարիք ունեք',
+        text: 'introduction_to_accounting_info_step_four',
       },
       {
         id: shortid.generate(),
-        text: 'սովորում եք որևէ ԲՈՒՀ-ում և ցանկանում եք աշխատել ուսմանը զուգահեռ:',
+        text: 'introduction_to_accounting_info_step_five',
       },
     ],
     groupCourse: {
       info: [
         {
           id: shortid.generate(),
-          text: 'Ցանկացած կազմակերպության գործունեության հիմքում ընկած են հաշվարկներ և հաշվետվություններ ֆինանսական վիճակը վերահսկելու և բարելավելու համար: Այս ամենն իրականացնում է կազմակերպության հաշվապահը:',
+          text: 'introduction_to_accounting_group_step_one',
         },
         {
           id: shortid.generate(),
-          text: 'Մենք առաջարկում ենք հեղինակային մեթոդիկայով հաշվապահության դասընթաց, որը Ձեզ հնարավորություն կտա կարճ ժամանակում ձեռք բերել պրակտիկ գիտելիքներ և դասընթացն ավարտելուց հետո աշխատել ոլորտում:',
+          text: 'introduction_to_accounting_group_step_two',
         },
       ],
-      shedule: {
-        title: 'Ընդամենը 5 ամիսների ընթացքում կսովորեք․',
+      schedule: {
+        title: 'introduction_to_accounting_group_schedule_title',
         text: [
           {
             id: shortid.generate(),
-            text: ' Ֆինանսական հաշվառում (IAS)` 40 ժամ,',
+            text: 'introduction_to_accounting_group_schedule_step_one',
           },
           {
             id: shortid.generate(),
-            text: 'Հարկային հաշվառում՝ 40 ժամ',
+            text: 'introduction_to_accounting_group_schedule_step_two',
           },
           {
             id: shortid.generate(),
-            text: 'ՀԾ և պրակտիկա՝ 20 ժամ:',
+            text: 'introduction_to_accounting_group_schedule_step_three',
           },
         ],
       },
-      period: '5 ամիս',
-      lessons: '40 դաս / 2,5 ժամ',
-      price: '35 000 դր․ ',
+      period: 'introduction_to_accounting_group_period',
+      lessons: 'introduction_to_accounting_group_lessons',
+      price: 'introduction_to_accounting_group_price',
     },
     personalCourse: {
       info: [
         {
           id: shortid.generate(),
-          text: 'ետվություններ ֆինանսական վիճակը վերահսկելու և բարելավելու համար: Այս ամենն իրականացնում է կազմակերպության հաշվապահը:',
+          text: 'introduction_to_accounting_individual_step_one',
         },
         {
           id: shortid.generate(),
-          text: 'նարավորություն կտա կարճ ժամանակում ձեռք բերել պրակտիկ գիտելիքներ և դասընթացն ավարտելուց հետո աշխատել ոլորտում:',
+          text: 'introduction_to_accounting_individual_step_two',
         },
       ],
-      shedule: {
-        title: 'Ընդամենը 5 ամիսների ընթացքում կսովորեք․',
+      schedule: {
+        title: 'introduction_to_accounting_individual_schedule_title',
         text: [
           {
             id: shortid.generate(),
-            text: ' Ֆինանսական հաշվառում (IAS)` 40 ժամ,',
+            text: 'introduction_to_accounting_individual_schedule_step_one',
           },
           {
             id: shortid.generate(),
-            text: 'Հարկային հաշվառում՝ 40 ժամ',
+            text: 'introduction_to_accounting_individual_schedule_step_two',
           },
           {
             id: shortid.generate(),
-            text: 'ՀԾ և պրակտիկա՝ 20 ժամ:',
+            text: 'introduction_to_accounting_individual_schedule_step_three',
           },
         ],
       },
-      period: '2 ամիս      ',
-      lessons: '20 դաս / 10 ժամ',
-      price: '65 000 դր․',
+      period: 'introduction_to_accounting_individual_period',
+      lessons: 'introduction_to_accounting_individual_lessons',
+      price: '125 000 др․',
     },
   },
 
