@@ -4,112 +4,165 @@ const newsList = [
   {
     id: shortid.generate(),
     img: '/images/newsImg.png',
-    title: 'Շտապեք գրանցվել հաշվապահական հաշվառում 0-ից դասընթացին',
+    title: 'news_introduction_to_accounting_title',
     text: [
       {
         subId: shortid.generate(),
-        subTitle: 'Դասընթացներն իրենց մեջ ներառում են՝',
+        subTitle: 'news_introduction_to_accounting_course_subtitle_one',
         subText: [
           {
             id: shortid.generate(),
-            text: 'ընդհանուր հաշվապահության մասին տեղեկություն,',
+            text: 'news_introduction_to_accounting_course_subtitle_one_step_one',
           },
           {
             id: shortid.generate(),
-            text: 'հարկային և աշխատանքային օրենսգրքերի ուսումնասիրում,',
+            text: 'news_introduction_to_accounting_course_subtitle_one_step_two',
           },
           {
             id: shortid.generate(),
-            text: 'ՀԾ հաշվապահ և ՀԾ առևտուր/ըստ անհրաժեշտության/ ծրագրերի ուսուցում:',
+            text: 'news_introduction_to_accounting_course_subtitle_one_step_three',
           },
         ],
       },
       {
         subId: shortid.generate(),
-        subTitle: 'Դասընթացն անցկացվում է խմբակային՝ խմբում 6-8 ուսանող։',
+        subTitle: 'news_introduction_to_accounting_course_subtitle_two',
       },
       {
         subId: shortid.generate(),
-        subTitle:
-          'Դասընթացի տևողությունը 5 ամիս, շաբաթական 2 օր։ Դասերն անցկացվում են երեկոյան ժամերին։',
+        subTitle: 'news_introduction_to_accounting_course_subtitle_three',
       },
       {
         subId: shortid.generate(),
-        subTitle: '📍Առաջին 3 դասերն անցկացվում են անվճար։',
+        subTitle: 'news_introduction_to_accounting_course_subtitle_four',
       },
       {
         subId: shortid.generate(),
-        subTitle: 'Դասընթացն ավարտած ուսանողները կստանան՝',
+        subTitle: 'news_introduction_to_accounting_course_subtitle_five',
         subText: [
           {
             id: shortid.generate(),
-            text: 'մեկ տարի պրակտիկ խորհրդատվություն',
+            text: 'news_introduction_to_accounting_course_subtitle_five_step_one',
           },
           {
             id: shortid.generate(),
-            text: 'պրակտիկայի հնարավորություն մեր գրասենյակում',
+            text: 'news_introduction_to_accounting_course_subtitle_five_step_two',
           },
         ],
       },
       {
         subId: shortid.generate(),
-        subTitle: 'Դասընթացի ավարտին տրվում է վկայական։',
+        subTitle: 'news_introduction_to_accounting_course_subtitle_six',
       },
     ],
   },
   {
     id: shortid.generate(),
     img: '/images/newsImg.png',
-    title: 'Շտապեք գրանցվել հաշվապահական հաշվառում 0-ից դասընթացին',
+    title: 'news_advanced_accounting_title',
     text: [
       {
         subId: shortid.generate(),
-        subTitle: 'Դասընթացներն իրենց մեջ ներառում են՝',
+        subTitle: 'news_advanced_accounting_course_subtitle_one',
         subText: [
           {
             id: shortid.generate(),
-            text: 'ընդհանուր հաշվապահության մասին տեղեկություն,',
+            text: 'news_advanced_accounting_course_subtitle_one_step_one',
           },
           {
             id: shortid.generate(),
-            text: 'հարկային և աշխատանքային օրենսգրքերի ուսումնասիրում,',
+            text: 'news_advanced_accounting_course_subtitle_one_step_two',
           },
           {
             id: shortid.generate(),
-            text: 'ՀԾ հաշվապահ և ՀԾ առևտուր/ըստ անհրաժեշտության/ ծրագրերի ուսուցում:',
+            text: 'news_advanced_accounting_course_subtitle_one_step_three',
           },
         ],
       },
       {
         subId: shortid.generate(),
-        subTitle: 'Դասընթացն անցկացվում է խմբակային՝ խմբում 6-8 ուսանող։',
+        subTitle: 'news_advanced_accounting_course_subtitle_two',
       },
       {
         subId: shortid.generate(),
-        subTitle:
-          'Դասընթացի տևողությունը 5 ամիս, շաբաթական 2 օր։ Դասերն անցկացվում են երեկոյան ժամերին։',
+        subTitle: 'news_advanced_accounting_course_subtitle_three',
       },
       {
         subId: shortid.generate(),
-        subTitle: '📍Առաջին 3 դասերն անցկացվում են անվճար։',
+        subTitle: 'news_advanced_accounting_course_subtitle_four',
       },
       {
         subId: shortid.generate(),
-        subTitle: 'Դասընթացն ավարտած ուսանողները կստանան՝',
+        subTitle: 'news_advanced_accounting_course_subtitle_five',
         subText: [
           {
             id: shortid.generate(),
-            text: 'մեկ տարի պրակտիկ խորհրդատվություն',
+            text: 'news_advanced_accounting_course_subtitle_five_step_one',
           },
           {
             id: shortid.generate(),
-            text: 'պրակտիկայի հնարավորություն մեր գրասենյակում',
+            text: 'news_advanced_accounting_course_subtitle_five_step_two',
           },
         ],
       },
       {
         subId: shortid.generate(),
-        subTitle: 'Դասընթացի ավարտին տրվում է վկայական։',
+        subTitle: 'news_advanced_accounting_course_subtitle_six',
+      },
+    ],
+  },
+  {
+    id: shortid.generate(),
+    img: '/images/newsImg.png',
+    title: 'news_microsoft_excel_title',
+    text: [
+      {
+        subId: shortid.generate(),
+        subTitle: 'news_microsoft_excel_course_subtitle_one',
+        subText: [
+          {
+            id: shortid.generate(),
+            text: 'news_microsoft_excel_course_subtitle_one_step_one',
+          },
+          {
+            id: shortid.generate(),
+            text: 'news_microsoft_excel_course_subtitle_one_step_two',
+          },
+          {
+            id: shortid.generate(),
+            text: 'news_microsoft_excel_course_subtitle_one_step_three',
+          },
+        ],
+      },
+      {
+        subId: shortid.generate(),
+        subTitle: 'news_microsoft_excel_course_subtitle_two',
+      },
+      {
+        subId: shortid.generate(),
+        subTitle: 'news_microsoft_excel_course_subtitle_three',
+      },
+      {
+        subId: shortid.generate(),
+        subTitle: 'news_microsoft_excel_course_subtitle_four',
+      },
+      {
+        subId: shortid.generate(),
+        subTitle: 'news_microsoft_excel_course_subtitle_five',
+        subText: [
+          {
+            id: shortid.generate(),
+            text: 'news_microsoft_excel_course_subtitle_five_step_one',
+          },
+          {
+            id: shortid.generate(),
+            text: 'news_microsoft_excel_course_subtitle_five_step_two',
+          },
+        ],
+      },
+      {
+        subId: shortid.generate(),
+        subTitle: 'news_microsoft_excel_course_subtitle_six',
       },
     ],
   },

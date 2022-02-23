@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import noop from 'utils/noop';
 import { Button, Input, Request, TextArea } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/index';
 import { axiosInstance } from 'libraries/index';
+import { I18nContext } from 'context/index';
 
 import { becomePartnerFields, becomePartnerScheme } from './fields';
 
@@ -13,7 +14,7 @@ import styles from '../BecomePartner.scss';
 const PartnerForm = ({ handleBack }) => {
   const [requestSent, setRequestSent] = useState(false);
   const [isSent, setIsSent] = useState(false);
-
+  const t = useContext(I18nContext);
   const { formMethods, handleSubmit, isValid } = useForm({
     schemaKeys: becomePartnerScheme,
   });
@@ -61,7 +62,7 @@ const PartnerForm = ({ handleBack }) => {
         <Request handleBack={handleBack} isSent={requestSent} />
       ) : (
         <>
-          <h2 className={styles.title}>Դարձի՛ր գործընկեր</h2>
+          <h2 className={styles.title}>{t('becomePartner')}</h2>
 
           <FormWrapper
             onSubmit={handleSubmit(handlePartnerForm)}
@@ -83,7 +84,7 @@ const PartnerForm = ({ handleBack }) => {
               className={styles.form_submit}
               disabled={!isValid || requestSent}
             >
-              Դարձիր գործընկեր
+              becomePartner
             </Button>
           </FormWrapper>
         </>
