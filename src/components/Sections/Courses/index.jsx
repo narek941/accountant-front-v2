@@ -50,8 +50,12 @@ const CoursesSection = () => {
                   role="button"
                   onClick={() => setActive(index)}
                 >
-                  <type.Icon />
-                  <span>{t(type.title)}</span>
+                  <span>
+                    <type.Icon />
+                  </span>
+                  <span className={styles.course__types_tabs_title}>
+                    {t(type.title)}
+                  </span>
                 </div>
               ))}
             </div>
@@ -65,7 +69,9 @@ const CoursesSection = () => {
                     [styles.course__info_tabs_btn_active]: isGroup,
                   })}
                 >
-                  <GroupIcon />
+                  <span>
+                    <GroupIcon />
+                  </span>
                   <p>{t('grouped')}</p>
                 </div>
                 <div
@@ -75,7 +81,10 @@ const CoursesSection = () => {
                   role="button"
                   onClick={handleToggle}
                 >
-                  <PersonalIcon />
+                  <span>
+                    <PersonalIcon />
+                  </span>
+
                   <p>{t('individual')}</p>
                 </div>
               </div>
@@ -87,7 +96,9 @@ const CoursesSection = () => {
 
             <div className={styles.course__priceList}>
               <div className={styles.course__priceList_item}>
-                <TimeIcon />
+                <span>
+                  <TimeIcon />
+                </span>
                 <span>{t(selectedCourse?.period)}</span>
               </div>
               <div className={styles.course__priceList_item}>
@@ -95,7 +106,9 @@ const CoursesSection = () => {
                 <span>{t(selectedCourse?.lessons)}</span>
               </div>
               <div className={styles.course__priceList_item}>
-                <PriceIcon />
+                <span>
+                  <PriceIcon />
+                </span>
                 <span>{t(selectedCourse?.price)}</span>
               </div>
               <Button
