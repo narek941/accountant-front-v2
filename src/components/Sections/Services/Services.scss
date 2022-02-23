@@ -1,15 +1,18 @@
 .title {
   color: $blue-100;
-  margin: 56px auto;
+  margin: 0 auto 56px;
   text-align: center;
   @extend %semiBold-32;
+
+  @include breakpoint(tablet-l) {
+    margin: 0 auto 24px;
+  }
   @include breakpoint(tablet-m) {
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
   }
 }
-
 .list {
   display: grid;
   grid-gap: 20px;
@@ -21,7 +24,7 @@
   }
 
   @include breakpoint(desktop) {
-    grid-gap: 10spx;
+    grid-gap: 10px;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
 
@@ -35,7 +38,6 @@
   }
 
   &__item {
-    margin: 20px;
     padding: 24px;
     overflow: hidden;
     min-height: 262px;
@@ -43,10 +45,6 @@
     flex-direction: column;
     @extend %blur;
     @extend %flex-center;
-
-    @include breakpoint(desktop) {
-      margin: 0;
-    }
 
     &:hover {
       .list__item_info {
@@ -88,29 +86,30 @@
         @extend %regular-16;
       }
     }
+
+    &:nth-last-child(1):nth-child(odd) {
+      @include breakpoint(desktop) {
+        margin: 20px auto;
+        grid-column: span 2;
+      }
+      @include breakpoint(tablet-m) {
+        grid-column: unset;
+      }
+    }
   }
 
-  &__item:nth-last-child(2):nth-child(odd) {
-    @include breakpoint(desktop) {
-      margin: 20px auto;
-      grid-column: span 2;
-    }
+  &_showBtn {
+    width: 100%;
+    display: none;
+    color: $white;
+    max-width: 288px;
+    margin: 0 auto;
+    padding: 14px 24px 13px 24px;
+    background: $blue-100;
+    border-radius: 48px;
 
     @include breakpoint(tablet-m) {
-      grid-column: unset;
+      display: block;
     }
-  }
-}
-.showBtn {
-  width: 100%;
-  display: none;
-  color: $white;
-  max-width: 288px;
-  margin: 0 auto;
-  padding: 14px 24px 13px 24px;
-  background: $blue-100;
-  border-radius: 48px;
-  @include breakpoint(tablet-m) {
-    display: block;
   }
 }

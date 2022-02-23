@@ -15,7 +15,6 @@ const ServicesSection = () => {
   const { isMobile } = useWindowSize();
   const [isShow, setIsShow] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-
   const handleMore = () => {
     setIsShow(!isShow);
     setIsClicked(true);
@@ -43,7 +42,7 @@ const ServicesSection = () => {
       <div className={styles.list}>
         {renderServicesList}
         {!isClicked && (
-          <Button className={styles.showBtn} onClick={handleMore}>
+          <Button className={styles.list_showBtn} onClick={handleMore}>
             {buttonName}
           </Button>
         )}
@@ -51,5 +50,4 @@ const ServicesSection = () => {
     </div>
   );
 };
-
 export default ServicesSection;
