@@ -13,7 +13,7 @@ const Button = ({ onClick, className, disabled, children, ...rest }) => {
       disabled={disabled}
       onClick={onClick}
       className={className}
-      style={{ textTransform: 'capitalize' }}
+      style={{ textTransform: 'inherit' }}
     >
       {t(children)}
     </button>
