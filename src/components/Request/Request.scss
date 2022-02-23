@@ -1,0 +1,45 @@
+.wrapper {
+  flex: 1;
+  user-select: none;
+  flex-direction: column;
+  @extend %flex-center;
+
+  &__logo {
+    width: 188px;
+    height: 116px;
+    margin: 0 auto;
+  }
+  &__title {
+    width: 100%;
+    margin: 54px auto 0;
+    max-width: 516px;
+    text-align: center;
+    @extend %semiBold-16;
+
+    @include breakpoint(tablet-m) {
+      margin-top: 24px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+  &__btn {
+    color: $white;
+    min-width: 288px;
+    padding: 14px 0 13px;
+    background: $blue-100;
+    border-radius: 48px;
+    margin-top: 18px;
+    @extend %regular-16;
+
+    @include breakpoint(tablet-m) {
+      font-weight: normal;
+      margin-top: 32px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+  &__alert {
+    color: $red;
+  }
+}

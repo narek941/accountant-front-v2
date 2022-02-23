@@ -89,7 +89,8 @@
       }
     }
   }
-  &__item:nth-last-child(1):nth-child(odd) {
+
+  &__item:nth-last-child(2):nth-child(odd) {
     @include breakpoint(desktop) {
       margin: 20px auto;
       grid-column: span 2;
@@ -98,5 +99,18 @@
     @include breakpoint(tablet-m) {
       grid-column: unset;
     }
+  }
+}
+.showBtn {
+  width: 100%;
+  display: none;
+  color: $white;
+  max-width: 288px;
+  margin: 0 auto;
+  padding: 14px 24px 13px 24px;
+  background: $blue-100;
+  border-radius: 48px;
+  @include breakpoint(tablet-m) {
+    display: block;
   }
 }
