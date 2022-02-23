@@ -17,6 +17,7 @@ const LanguageDrop = ({ data, handleFlags }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(data[0].index);
+  const ActiveIcon = data[activeIndex].Icon;
 
   useEffect(() => {
     const cookieLang = getCookie('next-i18next');
@@ -47,10 +48,10 @@ const LanguageDrop = ({ data, handleFlags }) => {
       })}
       disabled={index === activeIndex}
     >
-      <span>
+      <span className={styles.content__item_flag}>
         <item.Icon />
       </span>
-      <span>{item.nativeCode}</span>
+      <span className={styles.content__item_code}>{item.nativeCode}</span>
     </div>
   ));
 
@@ -68,7 +69,11 @@ const LanguageDrop = ({ data, handleFlags }) => {
           className={styles.header__icon}
           style={{ transform: `rotate(${!isOpen ? 180 : 0}deg)` }}
         />
+        <div className={styles.header__activeIcon}>
+          <ActiveIcon />
+        </div>
       </div>
+
       {isOpen && <div className={styles.content}>{renderOptions}</div>}
     </div>
   );

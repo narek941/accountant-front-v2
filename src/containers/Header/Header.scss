@@ -20,6 +20,9 @@
     padding: 13px;
     @extend %regular-16;
 
+    @include breakpoint(tablet) {
+      display: none;
+    }
     &:last-child {
       padding: 13px 0 13px 13px;
     }
