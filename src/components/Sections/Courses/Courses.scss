@@ -133,7 +133,7 @@
         @extend %flex-between;
 
         &_btn {
-          width: 50%;
+          width: 100%;
           cursor: pointer;
           padding: 8px 0;
           @extend %blur;

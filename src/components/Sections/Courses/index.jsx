@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import classNames from 'classnames';
 
 import { useToggle } from 'hooks/index';
+import { I18nContext } from 'context/index';
 
 import styles from './Courses.scss';
 import CoursesForm from './CoursesForm';
@@ -22,7 +23,9 @@ const CoursesSection = () => {
   const [active, setActive] = useState(0);
   const [isGroup, setIsGroup] = useState(false);
   const handleBack = () => setIsOpen();
-  const sellectedCourse = isGroup
+  const t = useContext(I18nContext);
+
+  const selectedCourse = isGroup
     ? coursesNavigationList[active].groupCourse
     : coursesNavigationList[active].personalCourse;
 
@@ -35,7 +38,7 @@ const CoursesSection = () => {
         <CoursesForm handleBack={handleBack} />
       ) : (
         <>
-          <h2 className={styles.wrapper__title}>Դասընթացներ</h2>
+          <h2 className={styles.wrapper__title}>{t('courses')}</h2>
           <div className={styles.course}>
             <div className={styles.course__types}>
               {coursesNavigationList.map((type, index) => (
@@ -51,7 +54,7 @@ const CoursesSection = () => {
                     <type.Icon />
                   </span>
                   <span className={styles.course__types_tabs_title}>
-                    {type.title}
+                    {t(type.title)}
                   </span>
                 </div>
               ))}
@@ -69,8 +72,7 @@ const CoursesSection = () => {
                   <span>
                     <GroupIcon />
                   </span>
-
-                  <p>Խմբակային</p>
+                  <p>{t('grouped')}</p>
                 </div>
                 <div
                   className={classNames(styles.course__info_tabs_btn, {
@@ -83,12 +85,12 @@ const CoursesSection = () => {
                     <PersonalIcon />
                   </span>
 
-                  <p>Անհատական</p>
+                  <p>{t('individual')}</p>
                 </div>
               </div>
               <CourseContent
                 infoSteps={coursesNavigationList[active].infoSteps}
-                course={sellectedCourse}
+                course={selectedCourse}
               />
             </div>
 
@@ -97,27 +99,23 @@ const CoursesSection = () => {
                 <span>
                   <TimeIcon />
                 </span>
-                <span>{sellectedCourse?.period}</span>
+                <span>{t(selectedCourse?.period)}</span>
               </div>
               <div className={styles.course__priceList_item}>
-                <span>
-                  <LessonsIcon />
-                </span>
-
-                <span>{sellectedCourse?.lessons}</span>
+                <LessonsIcon />
+                <span>{t(selectedCourse?.lessons)}</span>
               </div>
               <div className={styles.course__priceList_item}>
                 <span>
                   <PriceIcon />
                 </span>
-
-                <span>{sellectedCourse?.price}</span>
+                <span>{t(selectedCourse?.price)}</span>
               </div>
               <Button
                 onClick={setIsOpen}
                 className={styles.course__priceList_login}
               >
-                Գրանցվել
+                {t('register')}
               </Button>
             </div>
           </div>
