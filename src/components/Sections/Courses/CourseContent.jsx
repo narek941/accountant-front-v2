@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import { Button } from 'components/index';
 import { useWindowSize } from 'hooks/index';
+import { I18nContext } from 'context/index';
 
 import styles from './Courses.scss';
 
@@ -10,23 +11,24 @@ const CourseContent = ({ infoSteps, course }) => {
   const { isMobile } = useWindowSize();
   const [isShow, setIsShow] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const t = useContext(I18nContext);
 
   const handleMore = () => {
     setIsShow(!isShow);
     setIsClicked(true);
   };
-  const buttonName = !isShow && 'Ավելին';
+  const buttonName = !isShow && `${t('more')}`;
   const isLoad = (isShow || !isMobile) && true;
 
   const renderCourse = course?.info?.map((item) => (
-    <p key={item.id}>{item.text}</p>
+    <p key={item.id}>{t(item.text)}</p>
   ));
 
   const renderInfoSteps = infoSteps?.map((item, index) => (
     <div key={item.id}>
       <p>
         <span className={styles.slider__item_text_order}>{index + 1}.</span>
-        {item.text}
+        {t(item.text)}
       </p>
     </div>
   ));
@@ -44,7 +46,7 @@ const CourseContent = ({ infoSteps, course }) => {
       )}
       {isLoad && (
         <>
-          <h2>Դասընթացը Ձեզ համար է, եթե՝</h2>
+          <h2>{t('course_is_for_you')}</h2>
           {renderInfoSteps}
         </>
       )}

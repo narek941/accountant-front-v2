@@ -69,7 +69,7 @@ const VacanciesForm = ({ handleBack }) => {
               className={styles.form_submit}
               disabled={!isValid || requestSent}
             >
-              Գրանցվել
+              register
             </Button>
           </FormWrapper>
         </>

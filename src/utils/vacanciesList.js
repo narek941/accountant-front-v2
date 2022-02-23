@@ -38,7 +38,7 @@ const vacanciesList = [
   {
     id: shortid.generate(),
     Icon: Vacancies_icon2,
-    title: 'Հաշվապահ',
+    title: 'clerk',
     textSteps: [
       {
         id: shortid.generate(),
@@ -69,7 +69,7 @@ const vacanciesList = [
   {
     id: shortid.generate(),
     Icon: Vacancies_icon3,
-    title: 'Գլխավոր հաշվապահ',
+    title: 'general_accountant',
     textSteps: [
       {
         id: shortid.generate(),
@@ -100,7 +100,7 @@ const vacanciesList = [
   {
     id: shortid.generate(),
     Icon: Vacancies_icon4,
-    title: 'Հաշվապահության դասընթացավար',
+    title: 'accounting_trainer',
     textSteps: [
       {
         id: shortid.generate(),
@@ -118,7 +118,7 @@ const vacanciesList = [
   },
   {
     id: shortid.generate(),
-    title: 'Հաշվետար',
+    title: 'accountant',
     Icon: Vacancies_icon1,
     textSteps: [
       {
@@ -146,7 +146,7 @@ const vacanciesList = [
   {
     id: shortid.generate(),
     Icon: Vacancies_icon2,
-    title: 'Հաշվապահ',
+    title: 'clerk',
     textSteps: [
       {
         id: shortid.generate(),
@@ -177,7 +177,7 @@ const vacanciesList = [
   {
     id: shortid.generate(),
     Icon: Vacancies_icon3,
-    title: 'Գլխավոր հաշվապահ',
+    title: 'general_accountant',
     textSteps: [
       {
         id: shortid.generate(),
@@ -208,7 +208,7 @@ const vacanciesList = [
   {
     id: shortid.generate(),
     Icon: Vacancies_icon4,
-    title: 'Հաշվապահության դասընթացավար',
+    title: 'accounting_trainer',
     textSteps: [
       {
         id: shortid.generate(),
