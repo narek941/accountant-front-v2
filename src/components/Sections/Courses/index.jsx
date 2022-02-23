@@ -88,15 +88,15 @@ const CoursesSection = () => {
             <div className={styles.course__priceList}>
               <div className={styles.course__priceList_item}>
                 <TimeIcon />
-                <span>{selectedCourse?.period}</span>
+                <span>{t(selectedCourse?.period)}</span>
               </div>
               <div className={styles.course__priceList_item}>
                 <LessonsIcon />
-                <span>{selectedCourse?.lessons}</span>
+                <span>{t(selectedCourse?.lessons)}</span>
               </div>
               <div className={styles.course__priceList_item}>
                 <PriceIcon />
-                <span>{selectedCourse?.price}</span>
+                <span>{t(selectedCourse?.price)}</span>
               </div>
               <Button
                 onClick={setIsOpen}
