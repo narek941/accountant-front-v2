@@ -11,166 +11,58 @@ const vacanciesList = [
   {
     id: shortid.generate(),
     Icon: Vacancies_icon1,
-    title: 'Հաշվետար',
+    title: 'clerk',
     textSteps: [
       {
         id: shortid.generate(),
-        text: '6-12 ամսվա աշխատանային փորձ',
+        text: 'vacancies_clerk_step_one',
       },
       {
         id: shortid.generate(),
-        text: 'ՀԾ հաշվապահ 7 ՝ հաշվապահական և պահեստի բլոկ և E-invoicing ծրագրի գերազանց իմացություն',
+        text: 'vacancies_clerk_step_two',
       },
       {
         id: shortid.generate(),
-        text: 'Microsoft Excel բազային գիտելիքներ',
+        text: 'vacancies_clerk_step_three',
       },
       {
         id: shortid.generate(),
-        text: 'Աշխատակիցների աշխատանքի ընդունում, ազատում, փաստաթղթերի կազմում',
+        text: 'vacancies_clerk_step_four',
       },
       {
         id: shortid.generate(),
-        text: 'Թիմում աշխատելու և սովորելու մեծ ցանկություն',
+        text: 'vacancies_clerk_step_five',
       },
     ],
   },
   {
     id: shortid.generate(),
     Icon: Vacancies_icon2,
-    title: 'clerk',
-    textSteps: [
-      {
-        id: shortid.generate(),
-        text: '1-3 տարվա աշխատանքային փորձ',
-      },
-      {
-        id: shortid.generate(),
-        text: 'ՀԾ Հաշվապահ, ՀԾ առևտուր, E-Invoicing ծրագրերի գերազանց իմացություն',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Աշխատանքային և հարկային օրենսգրքին տիրապետում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Ինքնարժեքի հարշվարկ, ԵՏՄ հաշվետվությունների հանձնում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Microsoft Excel-ի գերազանց տիրապետում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Թիմում աշխատելու և մասնագիտական աճ գրանցելու ձգտում',
-      },
-    ],
-  },
-  {
-    id: shortid.generate(),
-    Icon: Vacancies_icon3,
-    title: 'general_accountant',
-    textSteps: [
-      {
-        id: shortid.generate(),
-        text: '3+ տարվա աշխատանքային փորձ',
-      },
-      {
-        id: shortid.generate(),
-        text: 'ՀԾ հաշվապահ և առևտուր ծրագրերի գերազանց տիրապետում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Հարկային և աշխատանքային օրենսրքերի գերազանց տիրապետում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Թիմ կառավարելու փորձ',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Փորձ հաճախորդների հետ շփման գործում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Անալիտիկ մտածելակերպ',
-      },
-    ],
-  },
-  {
-    id: shortid.generate(),
-    Icon: Vacancies_icon4,
-    title: 'accounting_trainer',
-    textSteps: [
-      {
-        id: shortid.generate(),
-        text: 'Դասավանդելու փորձ',
-      },
-      {
-        id: shortid.generate(),
-        text: ' Հարկային և աշխատանքային օրենսգրքերի գերազանց տիրապետում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'ՀԾ հաշվապահ և առևտուր ծրագրի գերազանց տիրապետում',
-      },
-    ],
-  },
-  {
-    id: shortid.generate(),
     title: 'accountant',
-    Icon: Vacancies_icon1,
     textSteps: [
       {
         id: shortid.generate(),
-        text: '6-12 ամսվա աշխատանային փորձ',
+        text: 'vacancies_accountant_step_one',
       },
       {
         id: shortid.generate(),
-        text: 'ՀԾ հաշվապահ 7 ՝ հաշվապահական և պահեստի բլոկ և E-invoicing ծրագրի գերազանց իմացություն',
+        text: 'vacancies_accountant_step_two',
       },
       {
         id: shortid.generate(),
-        text: 'Microsoft Excel բազային գիտելիքներ',
+        text: 'vacancies_accountant_step_three',
       },
       {
         id: shortid.generate(),
-        text: 'Աշխատակիցների աշխատանքի ընդունում, ազատում, փաստաթղթերի կազմում',
+        text: 'vacancies_accountant_step_four',
       },
       {
         id: shortid.generate(),
-        text: 'Թիմում աշխատելու և սովորելու մեծ ցանկություն',
-      },
-    ],
-  },
-  {
-    id: shortid.generate(),
-    Icon: Vacancies_icon2,
-    title: 'clerk',
-    textSteps: [
-      {
-        id: shortid.generate(),
-        text: '1-3 տարվա աշխատանքային փորձ',
+        text: 'vacancies_accountant_step_five',
       },
       {
         id: shortid.generate(),
-        text: 'ՀԾ Հաշվապահ, ՀԾ առևտուր, E-Invoicing ծրագրերի գերազանց իմացություն',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Աշխատանքային և հարկային օրենսգրքին տիրապետում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Ինքնարժեքի հարշվարկ, ԵՏՄ հաշվետվությունների հանձնում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Microsoft Excel-ի գերազանց տիրապետում',
-      },
-      {
-        id: shortid.generate(),
-        text: 'Թիմում աշխատելու և մասնագիտական աճ գրանցելու ձգտում',
+        text: 'vacancies_accountant_step_six',
       },
     ],
   },
@@ -181,27 +73,27 @@ const vacanciesList = [
     textSteps: [
       {
         id: shortid.generate(),
-        text: '3+ տարվա աշխատանքային փորձ',
+        text: 'vacancies_general_accountant_step_one',
       },
       {
         id: shortid.generate(),
-        text: 'ՀԾ հաշվապահ և առևտուր ծրագրերի գերազանց տիրապետում',
+        text: 'vacancies_general_accountant_step_two',
       },
       {
         id: shortid.generate(),
-        text: 'Հարկային և աշխատանքային օրենսրքերի գերազանց տիրապետում',
+        text: 'vacancies_general_accountant_step_three',
       },
       {
         id: shortid.generate(),
-        text: 'Թիմ կառավարելու փորձ',
+        text: 'vacancies_general_accountant_step_four',
       },
       {
         id: shortid.generate(),
-        text: 'Փորձ հաճախորդների հետ շփման գործում',
+        text: 'vacancies_general_accountant_step_five',
       },
       {
         id: shortid.generate(),
-        text: 'Անալիտիկ մտածելակերպ',
+        text: 'vacancies_general_accountant_step_six',
       },
     ],
   },
@@ -212,15 +104,123 @@ const vacanciesList = [
     textSteps: [
       {
         id: shortid.generate(),
-        text: 'Դասավանդելու փորձ',
+        text: 'vacancies_accounting_trainer_step_one',
       },
       {
         id: shortid.generate(),
-        text: ' Հարկային և աշխատանքային օրենսգրքերի գերազանց տիրապետում',
+        text: 'vacancies_accounting_trainer_step_two',
       },
       {
         id: shortid.generate(),
-        text: 'ՀԾ հաշվապահ և առևտուր ծրագրի գերազանց տիրապետում',
+        text: 'vacancies_accounting_trainer_step_three',
+      },
+    ],
+  },
+  {
+    id: shortid.generate(),
+    Icon: Vacancies_icon1,
+    title: 'clerk',
+    textSteps: [
+      {
+        id: shortid.generate(),
+        text: 'vacancies_clerk_step_one',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_clerk_step_two',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_clerk_step_three',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_clerk_step_four',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_clerk_step_five',
+      },
+    ],
+  },
+  {
+    id: shortid.generate(),
+    Icon: Vacancies_icon2,
+    title: 'accountant',
+    textSteps: [
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accountant_step_one',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accountant_step_two',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accountant_step_three',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accountant_step_four',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accountant_step_five',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accountant_step_six',
+      },
+    ],
+  },
+  {
+    id: shortid.generate(),
+    Icon: Vacancies_icon3,
+    title: 'general_accountant',
+    textSteps: [
+      {
+        id: shortid.generate(),
+        text: 'vacancies_general_accountant_step_one',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_general_accountant_step_two',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_general_accountant_step_three',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_general_accountant_step_four',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_general_accountant_step_five',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_general_accountant_step_six',
+      },
+    ],
+  },
+  {
+    id: shortid.generate(),
+    Icon: Vacancies_icon4,
+    title: 'accounting_trainer',
+    textSteps: [
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accounting_trainer_step_one',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accounting_trainer_step_two',
+      },
+      {
+        id: shortid.generate(),
+        text: 'vacancies_accounting_trainer_step_three',
       },
     ],
   },
