@@ -48,7 +48,7 @@ const AboutusForm = () => {
         className={styles.form_submit}
         disabled={!isValid || requestSent}
       >
-        Ուղարկել
+        send
       </Button>
     </FormWrapper>
   );

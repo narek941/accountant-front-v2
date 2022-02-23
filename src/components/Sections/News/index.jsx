@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 
 import { newsList } from 'utils/index';
+import { I18nContext } from 'context/index';
 
 import Slide from './Slide';
 import styles from './News.scss';
@@ -9,6 +10,8 @@ import NextArrow from './NextArrow';
 import PrevArrow from './PrevArrow';
 
 const NewsSection = () => {
+  const t = useContext(I18nContext);
+
   const settings = {
     dots: false,
     speed: 500,
@@ -35,7 +38,7 @@ const NewsSection = () => {
 
   return (
     <div className="container">
-      <h2 className={styles.title}>Նորություններ</h2>
+      <h2 className={styles.title}>{t('news')}</h2>
       <Slider {...settings}>{renderNewsList}</Slider>
     </div>
   );

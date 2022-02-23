@@ -2,30 +2,28 @@ import * as Yup from 'yup';
 
 const composeFormSchema = (fields) => {
   const schemaMap = {
-    name: Yup.string().required('Այս դաշտը պարտադիր է'),
+    name: Yup.string().required('this_field_required'),
     phoneNumber: Yup.number()
-      .typeError('Հեռախոսահամարը պետք է բաղկացած լինի թվերից')
-      .required('Այս դաշտը պարտադիր է'),
-    email: Yup.string()
-      .required('Այս դաշտը պարտադիր է')
-      .email('Էլեկտրոնային հասցեն անբավարար է'),
+      .typeError('phone_consist_numbers')
+      .required('this_field_required'),
+    email: Yup.string().required('this_field_required').email('invalid_email'),
     lessonFormation: Yup.string(),
     lessonType: Yup.string(),
-    tin: Yup.number().typeError('ՀՎՀՀ-ն պետք է բաղկացած լինի թվերից'),
+    tin: Yup.number().typeError('vat_consist_numbers'),
     organizationName: Yup.string(),
     organizationType: Yup.string(),
     taxType: Yup.string(),
     address: Yup.string(),
     quantityOfEmployees: Yup.number()
-      .typeError('Այս դաշտը պետք է բաղկացած լինի թվերից')
-      .required('Այս դաշտը պարտադիր է'),
-    activityDescription: Yup.string().required('Այս դաշտը պարտադիր է'),
-    birthday: Yup.string().required('Այս դաշտը պարտադիր է'),
-    profession: Yup.string().required('Այս դաշտը պարտադիր է'),
+      .typeError('field_consist_numbers')
+      .required('this_field_required'),
+    activityDescription: Yup.string().required('this_field_required'),
+    birthday: Yup.string().required('this_field_required'),
+    profession: Yup.string().required('this_field_required'),
     experience: Yup.number()
-      .typeError('Այս դաշտը պետք է բաղկացած լինի թվերից')
-      .required('Այս դաշտը պարտադիր է'),
-    interests: Yup.string().required('Այս դաշտը պարտադիր է'),
+      .typeError('field_consist_numbers')
+      .required('this_field_required'),
+    interests: Yup.string().required('this_field_required'),
   };
 
   const schema = fields.reduce(

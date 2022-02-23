@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 
 import { partnersList } from 'utils/index';
+import { I18nContext } from 'context/index';
 
 import styles from './Partners.scss';
 import NextArrow from './NextArrow';
 import PrevArrow from './PrevArrow';
 
 const PartnersSection = () => {
+  const t = useContext(I18nContext);
+
   const settings = {
     dots: false,
     speed: 500,
@@ -34,7 +37,7 @@ const PartnersSection = () => {
 
   return (
     <div className={`container `}>
-      <h2 className={styles.title}>Գործընկերներ</h2>
+      <h2 className={styles.title}>{t('partners')}</h2>
       <Slider {...settings}>{renderPartnersList}</Slider>
     </div>
   );

@@ -50,7 +50,7 @@ const LanguageDrop = ({ data, handleFlags }) => {
       <span>
         <item.Icon />
       </span>
-      <span>{t(item.code)}</span>
+      <span>{item.nativeCode}</span>
     </div>
   ));
 
@@ -63,7 +63,7 @@ const LanguageDrop = ({ data, handleFlags }) => {
           [styles.header__open]: isOpen,
         })}
       >
-        <p className={styles.header__text}>{t(data[activeIndex].code)}</p>
+        <p className={styles.header__text}>{t(data[activeIndex].nativeCode)}</p>
         <ArrowIcon
           className={styles.header__icon}
           style={{ transform: `rotate(${!isOpen ? 180 : 0}deg)` }}
