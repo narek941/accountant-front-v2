@@ -41,7 +41,7 @@ const AboutUsSection = () => {
           </div>
         </div>
       </div>
-      <div className={styles.footer}>
+      <div className={styles.copyright}>
         <p>{t('copyright')}</p>
         <p>Powered by ShellLogix</p>
       </div>

@@ -99,12 +99,9 @@
   @include breakpoint(tablet) {
     height: 171px;
   }
-  @include breakpoint(tablet-m) {
-    height: 133px;
-  }
 }
 
-.footer {
+.copyright {
   padding: 60px 0 24px;
 
   p {
