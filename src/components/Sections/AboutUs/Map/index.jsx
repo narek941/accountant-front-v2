@@ -27,8 +27,8 @@ const InjectableGoogleMap = () => (
     <Marker
       position={location}
       icon={{
-        url: '',
-        scaledSize: new window.google.maps.Size(50, 50),
+        url: 'images/MapLocation.svg',
+        scaledSize: new window.google.maps.Size(48.13, 64),
       }}
     />
   </GoogleMap>
