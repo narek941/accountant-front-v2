@@ -71,9 +71,13 @@
   width: 100%;
   height: fit-content;
   max-width: 574px;
+  @extend %shadow;
   @extend %form;
   @extend %blur;
 
+  @include breakpoint(tablet) {
+    margin-bottom: 27px;
+  }
   &_submit {
     width: 100%;
     color: $white;
@@ -84,6 +88,7 @@
     @extend %regular-16;
 
     &:disabled {
+      border: 1px solid rgba(143, 155, 201, 0.4);
       color: $grey-200;
       @extend %blur;
     }
@@ -96,9 +101,6 @@
   overflow: hidden;
   max-width: 587px;
   border-radius: 20px;
-  @include breakpoint(tablet) {
-    height: 171px;
-  }
 }
 
 .copyright {
