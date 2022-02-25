@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import usePortal from 'react-useportal';
 
+import { useLockBodyScroll, useOutsideClick } from 'hooks/index';
+import { I18nContext } from 'context/index';
 import noop from 'utils/noop';
 
 import styles from './Request.scss';
@@ -10,21 +13,40 @@ import { Button } from '../index';
 import { LogoIcon } from '../../icons';
 
 const Request = ({ handleBack, isSent }) => {
-  return (
-    <div className={`container ${styles.wrapper}`}>
-      <LogoIcon className={styles.wrapper__logo} />
-      {isSent ? (
-        <p className={styles.wrapper__title}>Ձեր հայտը հաստատվել է։</p>
-      ) : (
-        <p className={classNames(styles.wrapper__title, styles.wrapper__alert)}>
-          Ձեր հայտը չի հաստատվել,Խնդրում ենք փորձել մի փոքր ուշ:
-        </p>
-      )}
+  const t = useContext(I18nContext);
+  const { Portal } = usePortal();
+  const ref = useRef(null);
 
-      <Button className={styles.wrapper__btn} onClick={handleBack}>
-        Գլխավոր էջ
-      </Button>
-    </div>
+  useLockBodyScroll();
+
+  useOutsideClick(ref, () => {
+    handleBack();
+  });
+
+  return (
+    <Portal>
+      <div className={styles.wrapper}>
+        <div ref={ref}>
+          <LogoIcon className={styles.wrapper__logo} />
+          {isSent ? (
+            <p className={styles.wrapper__title}>{t('request_sent')}</p>
+          ) : (
+            <p
+              className={classNames(
+                styles.wrapper__title,
+                styles.wrapper__alert,
+              )}
+            >
+              {t('request_not_sent')}
+            </p>
+          )}
+
+          <Button className={styles.wrapper__btn} onClick={handleBack}>
+            {t('close')}
+          </Button>
+        </div>
+      </div>
+    </Portal>
   );
 };
 

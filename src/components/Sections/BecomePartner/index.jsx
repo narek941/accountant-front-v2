@@ -10,7 +10,10 @@ import PartnerForm from './PartnerForm';
 const BecomePartnerSection = () => {
   const t = useContext(I18nContext);
   const [isOpen, setIsOpen] = useToggle(false);
-  const handleBack = () => setIsOpen();
+
+  const handleBack = () => {
+    setIsOpen();
+  };
 
   return (
     <div className={`container ${styles.wrapper}`}>
