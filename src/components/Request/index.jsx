@@ -26,7 +26,7 @@ const Request = ({ handleBack, isSent }) => {
   return (
     <Portal>
       <div className={styles.wrapper}>
-        <div ref={ref}>
+        <div className={styles.inner} ref={ref}>
           <LogoIcon className={styles.wrapper__logo} />
           {isSent ? (
             <p className={styles.wrapper__title}>{t('request_sent')}</p>
