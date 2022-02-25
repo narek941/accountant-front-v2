@@ -46,7 +46,6 @@
       max-width: 372px;
       max-height: 288px;
       width: 100%;
-
       @extend %semiBold-16;
 
       @include breakpoint(desktop) {
@@ -70,7 +69,14 @@
         max-width: 100vw;
         gap: 16px;
       }
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
 
+      &::-webkit-scrollbar-thumb {
+        background: $blue-300;
+        border-radius: 16px;
+      }
       &_tabs {
         color: $blue-100;
         cursor: pointer;

@@ -74,6 +74,15 @@
         text-align: center;
         margin-bottom: 16px;
         @extend %semiBold-14;
+
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $blue-300;
+          border-radius: 16px;
+        }
       }
 
       button {

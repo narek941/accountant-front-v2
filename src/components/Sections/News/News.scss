@@ -19,6 +19,7 @@
     padding: 32px;
     @extend %blur;
     @extend %shadow;
+
     &_wrapper {
       @include breakpoint(tablet-m) {
         flex-direction: column;
