@@ -14,9 +14,11 @@
     max-width: 660px;
     width: 100%;
     border-radius: 8px;
-    min-height: 455px;
+    max-height: 455px;
+    height: 100%;
     padding: 32px;
     @extend %blur;
+    @extend %shadow;
     &_wrapper {
       @include breakpoint(tablet-m) {
         flex-direction: column;
@@ -67,6 +69,7 @@
   position: absolute;
   transform: rotate(-90deg);
   border-radius: 50%;
+  @extend %shadow;
   @extend %blur;
   @extend %flex-center;
   &__next {

@@ -19,12 +19,10 @@
   grid-template-columns: repeat(4, minmax(320px, 1fr));
 
   @include breakpoint(wide-l) {
-    grid-gap: 5px;
     grid-template-columns: repeat(3, minmax(320px, 1fr));
   }
 
   @include breakpoint(desktop) {
-    grid-gap: 10px;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
 
@@ -43,6 +41,7 @@
     min-height: 262px;
     border-radius: 8px;
     flex-direction: column;
+    @extend %shadow;
     @extend %blur;
     @extend %flex-center;
 
@@ -87,13 +86,16 @@
       }
     }
 
-    &:nth-last-child(1):nth-child(odd) {
+    &:nth-last-child(2):nth-child(odd) {
       @include breakpoint(desktop) {
-        margin: 20px auto;
+        margin: 0 auto;
         grid-column: span 2;
+        width: calc(50% - 10px);
       }
+
       @include breakpoint(tablet-m) {
         grid-column: unset;
+        width: unset;
       }
     }
   }

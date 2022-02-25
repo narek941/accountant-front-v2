@@ -24,6 +24,8 @@
     gap: 20px;
     display: flex;
     justify-content: space-between;
+    padding: 24px 0;
+    @extend %shadow;
 
     @include breakpoint(tablet-l) {
       display: grid;
@@ -44,6 +46,7 @@
       max-width: 372px;
       max-height: 288px;
       width: 100%;
+
       @extend %semiBold-16;
 
       @include breakpoint(desktop) {
@@ -77,6 +80,7 @@
         align-items: center;
         border-radius: 5px 25px 25px 5px;
         background-color: $white;
+        border: 1px solid rgba(143, 155, 201, 0.4);
         @extend %blur;
 
         @include breakpoint(tablet-m) {
@@ -120,6 +124,8 @@
     &__info {
       width: 100%;
       text-align: left;
+      margin-bottom: 24px;
+
       @extend %regular-14;
 
       @include breakpoint(tablet-l) {
@@ -136,6 +142,7 @@
           width: 100%;
           cursor: pointer;
           padding: 8px 0;
+          @extend %shadow;
           @extend %blur;
           @extend %flex-align;
 
@@ -179,6 +186,7 @@
           color: $blue-100;
           padding-top: 21px;
           background-color: unset;
+
           @include breakpoint(tablet-m) {
             display: block;
           }
@@ -188,16 +196,15 @@
 
     &__priceList {
       height: fit-content;
-      margin-top: 72px;
       width: 100%;
-      padding: 36px 20px;
+      padding: 0 20px 20px 20px;
+      @extend %shadow;
       @extend %blur;
 
       @include breakpoint(tablet-l) {
         grid-column: 3;
         grid-row: 1;
         margin-top: 0;
-        padding: 0 0 20px 20px;
       }
 
       @include breakpoint(tablet-m) {
@@ -213,14 +220,14 @@
       &_login {
         color: $white;
         padding: 14px 0 13px;
-        max-width: 288px;
+        min-width: 288px;
         width: 100%;
         background: $blue-100;
         border-radius: 48px;
         @extend %regular-16;
 
         @include breakpoint(tablet) {
-          min-width: 230px;
+          min-width: 210px;
         }
         @include breakpoint(tablet-m) {
           max-width: unset;
