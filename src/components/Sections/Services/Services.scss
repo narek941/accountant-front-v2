@@ -7,12 +7,14 @@
   @include breakpoint(tablet-l) {
     margin: 0 auto 24px;
   }
+
   @include breakpoint(tablet-m) {
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
   }
 }
+
 .list {
   display: grid;
   grid-gap: 20px;
@@ -90,7 +92,7 @@
         color: $white;
         padding: 14px 24px 13px 24px;
         background: $blue-100;
-        border-radius: 48px;
+        border-radius: 8px;
         @extend %regular-16;
       }
     }
@@ -117,7 +119,7 @@
     margin: 0 auto;
     padding: 14px 24px 13px 24px;
     background: $blue-100;
-    border-radius: 48px;
+    border-radius: 8px;
 
     @include breakpoint(tablet-m) {
       display: block;

@@ -3,12 +3,14 @@
   padding: 56px 0;
   text-align: center;
   @extend %semiBold-32;
+
   @include breakpoint(tablet-m) {
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
   }
 }
+
 .slider {
   &__item {
     max-width: 660px;
@@ -18,7 +20,7 @@
     height: 100%;
     padding: 32px;
     @extend %blur;
-    @extend %shadow;
+
 
     &_wrapper {
       @include breakpoint(tablet-m) {
@@ -28,6 +30,7 @@
         margin: 0 auto;
       }
     }
+
     &_img {
       max-height: 212px;
       max-width: 50%;
@@ -36,10 +39,12 @@
       float: left;
       padding: 0 16px 8px 0;
       box-sizing: content-box;
+
       @include breakpoint(tablet-m) {
         max-width: 100%;
       }
     }
+
     &_title {
       color: $blue-100;
       @extend %semiBold-20;
@@ -49,17 +54,20 @@
       @extend %regular-14;
       margin-top: 17px;
     }
+
     &_showBtn {
       display: none;
       color: $blue-100;
       padding-top: 21px;
       background-color: unset;
+
       @include breakpoint(tablet-m) {
         display: block;
       }
     }
   }
 }
+
 .arrow {
   left: calc(50% - 58px);
   width: 48px;
@@ -73,11 +81,13 @@
   @extend %shadow;
   @extend %blur;
   @extend %flex-center;
+
   &__next {
     left: unset;
     right: calc(50% - 56px);
     transform: rotate(90deg);
   }
+
   svg path {
     fill: $blue-100;
   }
