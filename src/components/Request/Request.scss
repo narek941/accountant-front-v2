@@ -9,6 +9,7 @@
     height: 116px;
     margin: 0 auto;
   }
+
   &__title {
     width: 100%;
     margin: 54px auto 0;
@@ -23,12 +24,13 @@
       line-height: 19px;
     }
   }
+
   &__btn {
     color: $white;
     min-width: 288px;
     padding: 14px 0 13px;
     background: $blue-100;
-    border-radius: 48px;
+    border-radius: 8px;
     margin-top: 18px;
     @extend %regular-16;
 
@@ -39,6 +41,7 @@
       line-height: 19px;
     }
   }
+
   &__alert {
     color: $red;
   }
