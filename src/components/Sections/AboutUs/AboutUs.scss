@@ -14,6 +14,7 @@
     font-weight: 600;
     line-height: 32px;
   }
+
   @include breakpoint(tablet-m) {
     margin: 56px 0 24px;
   }
@@ -28,6 +29,7 @@
   @include breakpoint(tablet) {
     display: block;
   }
+
   &__contact {
     width: 100%;
 
@@ -41,6 +43,7 @@
         margin: 0;
       }
     }
+
     @include breakpoint(tablet-m) {
       flex-direction: column-reverse;
     }
@@ -53,6 +56,7 @@
       width: 100%;
       max-width: 304px;
     }
+
     &__header {
       color: $blue-100;
       margin-top: 27px;
@@ -71,19 +75,25 @@
   width: 100%;
   height: fit-content;
   max-width: 574px;
+  @extend %shadow;
   @extend %form;
   @extend %blur;
+
+  @include breakpoint(tablet) {
+    margin-bottom: 27px;
+  }
 
   &_submit {
     width: 100%;
     color: $white;
     padding: 13.5px 0;
     transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
-    border-radius: 48px;
+    border-radius: 8px;
     background-color: $blue-100;
     @extend %regular-16;
 
     &:disabled {
+      border: 1px solid rgba(143, 155, 201, 0.4);
       color: $grey-200;
       @extend %blur;
     }
@@ -95,10 +105,7 @@
   height: 260px;
   overflow: hidden;
   max-width: 587px;
-  border-radius: 20px;
-  @include breakpoint(tablet) {
-    height: 171px;
-  }
+  border-radius: 8px;
 }
 
 .copyright {

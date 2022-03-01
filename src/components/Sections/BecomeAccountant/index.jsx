@@ -17,13 +17,13 @@ const BecomeAccountantSection = () => {
       {isOpen ? (
         <AccountantForm handleBack={handleBack} />
       ) : (
-        <>
+        <div className={styles.wrapper__container}>
           <h2 className={styles.title}>{t('becomeAccountant')}</h2>
           <p className={styles.subtitle}>{t('mainTitle')}</p>
           <Button className={styles.login} onClick={() => setIsOpen()}>
             {t(`register`)}
           </Button>
-        </>
+        </div>
       )}
     </div>
   );

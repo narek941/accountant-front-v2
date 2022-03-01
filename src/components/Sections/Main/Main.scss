@@ -1,8 +1,15 @@
 .wrapper {
   flex: 1;
   user-select: none;
-  flex-direction: column;
   @extend %flex-center;
+
+  &__container {
+    padding: 50px 24px 24px;
+    border-radius: 8px;
+    @extend %shadow;
+    @extend %blur;
+    @extend %flex-center-row;
+  }
 
   &__logo {
     width: 188px;

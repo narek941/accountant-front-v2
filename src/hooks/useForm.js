@@ -25,7 +25,7 @@ export const useForm = ({ schemaKeys, defaultValues, options }) => {
 // eslint-disable-next-line react/prop-types
 export const FormWrapper = ({ formMethods, className, onSubmit, children }) => (
   <FormProvider {...formMethods}>
-    <form className={className} onSubmit={onSubmit}>
+    <form className={className} onSubmit={onSubmit} id="form">
       {children}
     </form>
   </FormProvider>

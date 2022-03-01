@@ -6,6 +6,7 @@ export { default as FbIcon } from './Fb.svg';
 export { default as LogoIcon } from './Logo.svg';
 export { default as TimeIcon } from './Time.svg';
 export { default as MailIcon } from './Mail.svg';
+export { default as ExitIcon } from './Exit.svg';
 export { default as PriceIcon } from './Price.svg';
 export { default as ChartIcon } from './Chart.svg';
 export { default as ExcelIcon } from './Excel.svg';

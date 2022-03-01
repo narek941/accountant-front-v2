@@ -16,20 +16,22 @@ const MainSection = () => {
 
   return (
     <div className={`container ${styles.wrapper}`}>
-      <LogoIcon className={styles.wrapper__logo} />
-      <h3 className={styles.wrapper__title}>{t('mainTitle')}</h3>
-      <ScrollView
-        className={styles.wrapper__link}
-        link={BECOME_PARTNER_SECTION_ID}
-      >
-        {t('becomePartner')}
-      </ScrollView>
-      <ScrollView
-        className={styles.wrapper__link}
-        link={BECOME_ACCOUNTANT_SECTION_ID}
-      >
-        {t('becomeAccountant')}
-      </ScrollView>
+      <div className={styles.wrapper__container}>
+        <LogoIcon className={styles.wrapper__logo} />
+        <h3 className={styles.wrapper__title}>{t('mainTitle')}</h3>
+        <ScrollView
+          className={styles.wrapper__link}
+          link={BECOME_PARTNER_SECTION_ID}
+        >
+          {t('becomePartner')}
+        </ScrollView>
+        <ScrollView
+          className={styles.wrapper__link}
+          link={BECOME_ACCOUNTANT_SECTION_ID}
+        >
+          {t('becomeAccountant')}
+        </ScrollView>
+      </div>
     </div>
   );
 };

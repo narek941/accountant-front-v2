@@ -8,6 +8,7 @@
     margin: 0 auto 56px;
     text-align: center;
     @extend %semiBold-32;
+
     @include breakpoint(tablet-l) {
       margin: 0 auto 40px;
     }
@@ -24,6 +25,9 @@
     gap: 20px;
     display: flex;
     justify-content: space-between;
+    border-radius: 8px;
+    padding: 24px;
+    @extend %shadow;
 
     @include breakpoint(tablet-l) {
       display: grid;
@@ -36,7 +40,7 @@
 
     &__types {
       gap: 32px;
-      padding-right: 40px;
+      padding: 0 16px;
       display: flex;
       list-style: none;
       overflow-y: auto;
@@ -68,15 +72,26 @@
         gap: 16px;
       }
 
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $blue-300;
+        border-radius: 16px;
+      }
+
       &_tabs {
         color: $blue-100;
         cursor: pointer;
         min-height: 48px;
         display: flex;
-        padding: 5px 5px 5px 18px;
+        // padding: 5px 5px 5px 18px;
+        padding: 8px 31px;
         align-items: center;
-        border-radius: 5px 25px 25px 5px;
+        border-radius: 8px;
         background-color: $white;
+        border: 1px solid rgba(143, 155, 201, 0.4);
         @extend %blur;
 
         @include breakpoint(tablet-m) {
@@ -98,6 +113,7 @@
 
         &_title {
           margin: 0 5px 0 16px;
+
           @include breakpoint(tablet-m) {
             min-width: 168px;
             font-weight: 600;
@@ -120,6 +136,8 @@
     &__info {
       width: 100%;
       text-align: left;
+      margin-bottom: 24px;
+
       @extend %regular-14;
 
       @include breakpoint(tablet-l) {
@@ -135,7 +153,9 @@
         &_btn {
           width: 100%;
           cursor: pointer;
-          padding: 8px 0;
+          padding: 8px;
+          border-radius: 8px;
+          @extend %shadow;
           @extend %blur;
           @extend %flex-align;
 
@@ -144,8 +164,10 @@
           }
 
           &_active {
-            border-bottom: 2px solid $blue-100;
-            padding-bottom: 6px;
+            border: {
+              bottom: 2px solid $blue-100
+            }
+
             pointer-events: none;
           }
         }
@@ -154,8 +176,11 @@
       &_content {
         max-height: 532px;
         max-width: 455px;
+        padding: 16px;
+        border-radius: 8px;
         width: 100%;
         overflow-y: auto;
+        @extend %shadow;
         @extend %blur;
 
         @include breakpoint(tablet-l) {
@@ -179,6 +204,7 @@
           color: $blue-100;
           padding-top: 21px;
           background-color: unset;
+
           @include breakpoint(tablet-m) {
             display: block;
           }
@@ -188,16 +214,16 @@
 
     &__priceList {
       height: fit-content;
-      margin-top: 72px;
       width: 100%;
-      padding: 36px 20px;
+      padding: 20px;
+      border-radius: 8px;
+      @extend %shadow;
       @extend %blur;
 
       @include breakpoint(tablet-l) {
         grid-column: 3;
         grid-row: 1;
         margin-top: 0;
-        padding: 0 0 20px 20px;
       }
 
       @include breakpoint(tablet-m) {
@@ -206,22 +232,23 @@
 
       &_item {
         gap: 20px;
-        margin-bottom: 20px;
         @extend %flex-align;
       }
 
       &_login {
-        color: $white;
-        padding: 14px 0 13px;
-        max-width: 288px;
         width: 100%;
+        margin-top: 20px;
+        min-width: 288px;
+        border-radius: 8px;
+        padding: 14px 0 13px;
+        color: $white;
         background: $blue-100;
-        border-radius: 48px;
         @extend %regular-16;
 
         @include breakpoint(tablet) {
-          min-width: 230px;
+          min-width: 210px;
         }
+
         @include breakpoint(tablet-m) {
           max-width: unset;
         }
@@ -232,14 +259,18 @@
   &__form {
     @extend %form;
     @extend %blur;
+
+
     &_submit {
       width: 100%;
       color: $white;
       padding: 13.5px 0;
       transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
-      border-radius: 48px;
+      border-radius: 8px;
       background-color: $blue-100;
       @extend %regular-16;
+      @extend %shadow;
+
 
       &:disabled {
         color: $grey-200;

@@ -84,7 +84,7 @@ const PartnerForm = ({ handleBack }) => {
               className={styles.form_submit}
               disabled={!isValid || requestSent}
             >
-              becomePartner
+              {t("becomePartner")}
             </Button>
           </FormWrapper>
         </>

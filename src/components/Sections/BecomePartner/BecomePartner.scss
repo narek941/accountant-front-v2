@@ -1,10 +1,18 @@
 .wrapper {
   @extend %flex-center-row;
+
+  &__container {
+    border-radius: 8px;
+    padding: 24px 30px;
+    @extend %shadow;
+    @extend %blur;
+    @extend %flex-center-row;
+  }
 }
 
 .title {
   color: $blue-100;
-  margin: 56px 0 32px;
+  margin: 16px 0 26px;
   @extend %semiBold-32;
 
   @include breakpoint(tablet-m) {
@@ -14,6 +22,7 @@
     line-height: 32px;
   }
 }
+
 .subtitle {
   color: $black;
   margin-bottom: 40px;
@@ -34,7 +43,8 @@
   min-width: 288px;
   padding: 14px 0 13px;
   background: $blue-100;
-  border-radius: 48px;
+  border-radius: 8px;
+  margin-bottom: 12px;
   @extend %regular-16;
 }
 
@@ -48,10 +58,12 @@
     width: 100%;
     color: $white;
     padding: 13.5px 0;
-    border-radius: 48px;
+    border-radius: 8px;
     transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
     background-color: $blue-100;
     @extend %regular-16;
+    @extend %shadow;
+
 
     &:disabled {
       color: $grey-200;

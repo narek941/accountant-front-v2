@@ -9,8 +9,8 @@ import noop from 'utils/noop';
 
 import styles from './Request.scss';
 
-import { Button } from '../index';
-import { LogoIcon } from '../../icons';
+import { ExitIcon, LogoIcon } from '../../icons';
+// import { Button } from '../index';
 
 const Request = ({ handleBack, isSent }) => {
   const t = useContext(I18nContext);
@@ -18,7 +18,6 @@ const Request = ({ handleBack, isSent }) => {
   const ref = useRef(null);
 
   useLockBodyScroll();
-
   useOutsideClick(ref, () => {
     handleBack();
   });
@@ -26,7 +25,7 @@ const Request = ({ handleBack, isSent }) => {
   return (
     <Portal>
       <div className={styles.wrapper}>
-        <div className={styles.inner} ref={ref}>
+        <div className={styles.wrapper__container} ref={ref}>
           <LogoIcon className={styles.wrapper__logo} />
           {isSent ? (
             <p className={styles.wrapper__title}>{t('request_sent')}</p>
@@ -41,9 +40,10 @@ const Request = ({ handleBack, isSent }) => {
             </p>
           )}
 
-          <Button className={styles.wrapper__btn} onClick={handleBack}>
+          {/* <Button className={styles.wrapper__btn} onClick={handleBack}>
             {t('close')}
-          </Button>
+          </Button> */}
+          <ExitIcon className={styles.wrapper__exit} onClick={handleBack} />
         </div>
       </div>
     </Portal>

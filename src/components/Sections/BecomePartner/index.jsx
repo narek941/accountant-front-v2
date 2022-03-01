@@ -20,13 +20,13 @@ const BecomePartnerSection = () => {
       {isOpen ? (
         <PartnerForm handleBack={handleBack} />
       ) : (
-        <>
+        <div className={styles.wrapper__container}>
           <h2 className={styles.title}>{t('becomePartner')}</h2>
           <p className={styles.subtitle}>{t('mainTitle')}</p>
           <Button className={styles.login} onClick={() => setIsOpen()}>
             {t('register')}
           </Button>
-        </>
+        </div>
       )}
     </div>
   );

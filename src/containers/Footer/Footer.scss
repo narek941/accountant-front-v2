@@ -5,6 +5,7 @@
   padding: 14px 0;
   position: fixed;
   background: $white;
+  box-shadow: 0 -3px 10px rgba(143, 155, 201, 0.4);
 }
 
 .wrapper {
@@ -61,7 +62,7 @@
     cursor: pointer;
     background: $blue-100;
     margin-left: 16px;
-    border-radius: 48px;
+    border-radius: 8px;
     @extend %flex-center;
 
     &_link {
