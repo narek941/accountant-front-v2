@@ -3,31 +3,26 @@
   margin: 0 auto 56px;
   text-align: center;
   @extend %semiBold-32;
-
   @include breakpoint(tablet-l) {
     margin: 0 auto 24px;
   }
-
   @include breakpoint(tablet-m) {
+    margin: 0 auto 16px;
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
   }
 }
-
 .list {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(4, minmax(320px, 1fr));
-
   @include breakpoint(wide-l) {
     grid-template-columns: repeat(3, minmax(320px, 1fr));
   }
-
   @include breakpoint(desktop) {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
-
   @include breakpoint(tablet-m) {
     gap: 16px;
     width: 100%;
@@ -36,7 +31,6 @@
     grid-template-columns: repeat(1, 1fr);
     max-width: 288px;
   }
-
   &__item {
     padding: 24px;
     overflow: hidden;
@@ -46,21 +40,18 @@
     @extend %shadow;
     @extend %blur;
     @extend %flex-center;
-
     &:hover {
       .list__item_info {
         top: 0;
         transition: top 0.3s ease-in;
       }
     }
-
     &_text {
       max-width: 272px;
       min-height: 63px;
       text-align: center;
       @extend %regular-16;
     }
-
     &_info {
       top: -100%;
       height: 100%;
@@ -69,24 +60,20 @@
       background: $white;
       transition: top 0.2s ease-in-out;
       border-radius: 8px;
-
       &_text {
         height: calc(100% - 64px);
         overflow-y: scroll;
         text-align: center;
         margin-bottom: 16px;
         @extend %semiBold-14;
-
         &::-webkit-scrollbar {
           width: 6px;
         }
-
         &::-webkit-scrollbar-thumb {
           background: $blue-300;
           border-radius: 16px;
         }
       }
-
       button {
         width: 100%;
         color: $white;
@@ -96,21 +83,18 @@
         @extend %regular-16;
       }
     }
-
     &:nth-last-child(2):nth-child(odd) {
       @include breakpoint(desktop) {
         margin: 0 auto;
         grid-column: span 2;
         width: calc(50% - 10px);
       }
-
       @include breakpoint(tablet-m) {
         grid-column: unset;
         width: unset;
       }
     }
   }
-
   &_showBtn {
     width: 100%;
     display: none;
@@ -120,7 +104,6 @@
     padding: 14px 24px 13px 24px;
     background: $blue-100;
     border-radius: 8px;
-
     @include breakpoint(tablet-m) {
       display: block;
     }

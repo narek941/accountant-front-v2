@@ -3,7 +3,6 @@ import React, { useContext } from 'react';
 import { LanguageDrop, ScrollView } from 'components/index';
 import { I18nContext } from 'context/index';
 import { navigationList, languageList } from 'utils/index';
-import { paths } from 'routes/index';
 
 import styles from './Header.scss';
 

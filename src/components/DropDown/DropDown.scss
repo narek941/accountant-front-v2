@@ -11,9 +11,11 @@
   transition: background-color 0.2s ease-in;
   user-select: none;
   border-radius: 8px;
+  border: 1px solid rgba(143, 155, 201, 0.4);
+  
   @extend %blur;
   @extend %flex-between;
-
+ 
   &__open {
     background-color: $grey-100;
     border-radius: 8px 8px 0px 0px;

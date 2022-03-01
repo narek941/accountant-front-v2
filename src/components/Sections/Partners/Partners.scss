@@ -3,25 +3,22 @@
   padding: 56px 0;
   text-align: center;
   @extend %semiBold-32;
-
   @include breakpoint(tablet-m) {
+    padding: 0 0 24px;
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
   }
 }
-
 .slider {
   position: relative;
   max-height: 294px;
-
   &__item {
     border-radius: 8px;
     @extend %blur;
     @extend %shadow;
   }
 }
-
 .arrow {
   left: calc(50% - 42px);
   width: 48px;
@@ -35,13 +32,11 @@
   @extend %shadow;
   @extend %blur;
   @extend %flex-center;
-
   &__next {
     left: unset;
     right: calc(50% - 64px);
     transform: rotate(90deg);
   }
-
   svg path {
     fill: $blue-100;
   }
