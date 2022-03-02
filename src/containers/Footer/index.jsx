@@ -4,6 +4,14 @@ import classNames from 'classnames';
 import { useWindowSize } from 'hooks/index';
 
 import styles from './Footer.scss';
+import {
+  LOCATION_LINK,
+  PHONE_NUMBER_LINK,
+  MAIL_LINK,
+  FACEBOOK_LINK,
+  LINKEDIN_LINK,
+  INSTAGRAM_LINK,
+} from 'constants/index';
 
 import {
   FbIcon,
@@ -14,16 +22,22 @@ import {
   LinkedinIcon,
 } from '../../icons';
 
+import { NextLink } from '../../components';
+
 const FooterContainer = () => {
   const { isMobile } = useWindowSize();
   const [isOpen, setIsOpen] = useState(false);
   const isOpenHandler = () => setIsOpen(!isOpen);
+  const targetBlank = '_blank';
 
   return (
     <footer className={styles.container}>
       <div className={`container ${styles.wrapper}`}>
         {!isOpen && (
           <div className={styles.routes}>
+            <div className={styles.routes__item}>
+              <span>03</span>
+            </div>
             <div className={styles.routes__item}>
               <ArrowIcon />
             </div>
@@ -42,7 +56,9 @@ const FooterContainer = () => {
                   styles.routes__item_link,
                 )}
               >
-                <LocationIcon />
+                <NextLink href={LOCATION_LINK} target={targetBlank}>
+                  <LocationIcon />
+                </NextLink>
               </div>
               <div
                 className={classNames(
@@ -50,7 +66,9 @@ const FooterContainer = () => {
                   styles.routes__item_link,
                 )}
               >
-                <PhoneIcon />
+                <NextLink href={`tel:${PHONE_NUMBER_LINK}`}>
+                  <PhoneIcon />
+                </NextLink>
               </div>
               <div
                 className={classNames(
@@ -58,15 +76,26 @@ const FooterContainer = () => {
                   styles.routes__item_link,
                 )}
               >
-                <MailIcon />
+                <NextLink href={`mailto:${MAIL_LINK}`}>
+                  <MailIcon />
+                </NextLink>
               </div>
             </div>
             <div className={styles.routes}>
               <div className={styles.routes__item}>
-                <FbIcon />
+                <NextLink href={FACEBOOK_LINK} target={targetBlank}>
+                  <FbIcon />
+                </NextLink>
               </div>
               <div className={styles.routes__item}>
-                <LinkedinIcon />
+                <NextLink href={INSTAGRAM_LINK} target={targetBlank}>
+                  <FbIcon />
+                </NextLink>
+              </div>
+              <div className={styles.routes__item}>
+                <NextLink href={LINKEDIN_LINK} target={targetBlank}>
+                  <LinkedinIcon />
+                </NextLink>
               </div>
             </div>
           </>
@@ -77,6 +106,9 @@ const FooterContainer = () => {
                 [styles.wrapper__animation_active]: isOpen,
               })}
             >
+              <div className={styles.routes__item}>
+                <FbIcon />
+              </div>
               <div className={styles.routes__item}>
                 <FbIcon />
               </div>

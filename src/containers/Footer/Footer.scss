@@ -64,7 +64,13 @@
     margin-left: 16px;
     border-radius: 8px;
     @extend %flex-center;
-
+    span {
+      align-items: center;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 33px;
+      color: $white;
+    }
     &_link {
       background: transparent;
     }
