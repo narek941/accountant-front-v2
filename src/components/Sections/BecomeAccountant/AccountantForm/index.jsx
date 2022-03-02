@@ -48,7 +48,7 @@ const AccountantForm = ({ handleBack }) => {
   };
 
   return (
-    <>
+    <div className={`container ${styles.wrapper}`}>
       {isSent ? (
         <Request handleBack={handleBack} isSent={requestSent} />
       ) : (
@@ -74,7 +74,7 @@ const AccountantForm = ({ handleBack }) => {
           </FormWrapper>
         </>
       )}
-    </>
+    </div>
   );
 };
 AccountantForm.propTypes = {

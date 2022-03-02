@@ -21,7 +21,7 @@ const BecomeAccountantSection = () => {
           <h2 className={styles.title}>{t('becomeAccountant')}</h2>
           <p className={styles.subtitle}>{t('mainTitle')}</p>
           <Button className={styles.login} onClick={() => setIsOpen()}>
-            register
+            {t(`register`)}
           </Button>
         </div>
       )}

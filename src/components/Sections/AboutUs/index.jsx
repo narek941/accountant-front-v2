@@ -11,6 +11,7 @@ import { MailIcon, PhoneIcon, LocationIcon } from '../../../icons';
 
 const AboutUsSection = () => {
   const t = useContext(I18nContext);
+
   return (
     <div className={`container ${styles.wrapper}`}>
       <h2 className={styles.title}>{t('contact_us')}</h2>

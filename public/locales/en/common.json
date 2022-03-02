@@ -70,6 +70,9 @@
   "field_consist_numbers": "This field must contain numbers",
   "invalid_email": "Invalid email address.",
   "the_course_is_for_you": "The training is for you if:",
+  "request_sent": "Your request has been sent",
+  "request_not_sent": "Your request has not been sent, please try again later.",
+
   "course_introduction_to_accounting_info_step_one": "You do not have a higher education, but you want to study,",
   "course_introduction_to_accounting_info_step_two": "you've graduated from a university, but you can not find a good job,",
   "course_introduction_to_accounting_info_step_three": "want to work part-time with several organizations (freelance)",
