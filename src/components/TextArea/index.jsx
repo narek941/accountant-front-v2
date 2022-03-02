@@ -45,7 +45,7 @@ const TextArea = ({ name, value, label, required, placeholder }) => {
         placeholder={t(placeholder)}
       />
 
-      {errorText && <p className={styles.wrapper__error}>{errorText}</p>}
+      {errorText && <p className={styles.wrapper__error}>{t(errorText)}</p>}
     </div>
   );
 };
