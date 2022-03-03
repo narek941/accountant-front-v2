@@ -1,7 +1,6 @@
 .wrapper {
   @include breakpoint(tablet) {
     display: block;
-
   }
   &__title {
     color: $blue-100;
@@ -33,7 +32,6 @@
     @include breakpoint(tablet-m) {
       display: block;
       padding: 8px;
-
     }
     &__types {
       gap: 32px;
@@ -173,8 +171,9 @@
         &_showBtn {
           display: none;
           color: $blue-100;
-          padding-top: 21px;
+          padding: 0;
           background-color: unset;
+
           @include breakpoint(tablet-m) {
             display: block;
           }
@@ -186,16 +185,16 @@
       width: 100%;
       padding: 20px;
       border-radius: 8px;
+      min-width: max-content;
       @extend %shadow;
       @extend %blur;
+
       @include breakpoint(tablet-l) {
         grid-column: 3;
         grid-row: 1;
         margin-top: 0;
       }
-      @include breakpoint(tablet-m) {
-        padding: 0;
-      }
+
       &_item {
         gap: 20px;
         @extend %flex-align;
