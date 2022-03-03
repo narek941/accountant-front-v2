@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 
 import { useWindowSize } from 'hooks/index';
-
-import styles from './Footer.scss';
 import {
   LOCATION_LINK,
   PHONE_NUMBER_LINK,
@@ -13,6 +11,8 @@ import {
   INSTAGRAM_LINK,
 } from 'constants/index';
 
+import styles from './Footer.scss';
+
 import {
   FbIcon,
   MailIcon,
@@ -20,8 +20,8 @@ import {
   PhoneIcon,
   LocationIcon,
   LinkedinIcon,
+  InstagramIcon,
 } from '../../icons';
-
 import { NextLink } from '../../components';
 
 const FooterContainer = () => {
@@ -89,7 +89,7 @@ const FooterContainer = () => {
               </div>
               <div className={styles.routes__item}>
                 <NextLink href={INSTAGRAM_LINK} target={targetBlank}>
-                  <FbIcon />
+                  <InstagramIcon className={styles.insta} />
                 </NextLink>
               </div>
               <div className={styles.routes__item}>
@@ -110,7 +110,7 @@ const FooterContainer = () => {
                 <FbIcon />
               </div>
               <div className={styles.routes__item}>
-                <FbIcon />
+                <InstagramIcon className={styles.insta} />
               </div>
               <div className={styles.routes__item}>
                 <LinkedinIcon />
