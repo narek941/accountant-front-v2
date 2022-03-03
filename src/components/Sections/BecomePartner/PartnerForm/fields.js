@@ -1,4 +1,4 @@
-export const becomePartnerFields = {
+export const becomePartnerFieldOne = {
   name: {
     name: 'name',
     label: 'full_name',
@@ -22,6 +22,8 @@ export const becomePartnerFields = {
     label: 'tin',
     placeholder: 'tin',
   },
+};
+export const becomePartnerFieldTwo = {
   organizationName: {
     name: 'organizationName',
     placeholder: 'organization_name',
@@ -62,4 +64,6 @@ export const becomePartnerFields = {
   },
 };
 
-export const becomePartnerScheme = Object.keys(becomePartnerFields);
+export const becomePartnerSchemeOne = Object.keys(becomePartnerFieldOne);
+
+export const becomePartnerSchemeTwo = Object.keys(becomePartnerFieldTwo);

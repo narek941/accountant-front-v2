@@ -7,23 +7,34 @@ import { useForm, FormWrapper } from 'hooks/index';
 import { axiosInstance } from 'libraries/index';
 import { I18nContext } from 'context/index';
 
-import { becomePartnerFields, becomePartnerScheme } from './fields';
+import {
+  becomePartnerFieldOne,
+  becomePartnerFieldTwo,
+  becomePartnerSchemeOne,
+  becomePartnerSchemeTwo,
+} from './fields';
 
 import styles from '../BecomePartner.scss';
 
 const PartnerForm = ({ handleBack }) => {
   const [requestSent, setRequestSent] = useState(false);
   const [isSent, setIsSent] = useState(false);
+  const [step, setStep] = useState(1);
+  const [stepOneValue, setStepOneValue] = useState({});
+
   const t = useContext(I18nContext);
+  const {
+    formMethods: formMethodsOne,
+    handleSubmit: handleSubmitOne,
+    isValid: isValidOne,
+  } = useForm({
+    schemaKeys: becomePartnerSchemeOne,
+  });
   const { formMethods, handleSubmit, isValid } = useForm({
-    schemaKeys: becomePartnerScheme,
+    schemaKeys: becomePartnerSchemeTwo,
   });
 
   const handlePartnerForm = ({
-    name,
-    phoneNumber,
-    email,
-    tin,
     organizationName,
     organizationType,
     taxType,
@@ -31,6 +42,7 @@ const PartnerForm = ({ handleBack }) => {
     quantityOfEmployees,
     activityDescription,
   }) => {
+    const { name, phoneNumber, email, tin } = stepOneValue;
     axiosInstance
       .post('/mail/partnership', {
         email,
@@ -56,38 +68,57 @@ const PartnerForm = ({ handleBack }) => {
       });
   };
 
+  const handlePartnerFormOne = ({ name, phoneNumber, email, tin }) => {
+    setStep(step + 1);
+    setStepOneValue({ name, phoneNumber, email, tin });
+  };
+
+  if (isSent) {
+    return <Request handleBack={handleBack} isSent={requestSent} />;
+  }
+
   return (
     <>
-      {isSent ? (
-        <Request handleBack={handleBack} isSent={requestSent} />
-      ) : (
-        <>
-          <h2 className={styles.title}>{t('becomePartner')}</h2>
-
-          <FormWrapper
-            onSubmit={handleSubmit(handlePartnerForm)}
-            className={styles.form}
-            {...{ formMethods }}
+      <h2 className={styles.title}>{t('becomePartner')}</h2>
+      {step === 1 && (
+        <FormWrapper
+          onSubmit={handleSubmitOne(handlePartnerFormOne)}
+          className={styles.form}
+          {...{ formMethods: formMethodsOne }}
+        >
+          <Input {...becomePartnerFieldOne.name} />
+          <Input {...becomePartnerFieldOne.phoneNumber} />
+          <Input {...becomePartnerFieldOne.email} />
+          <Input {...becomePartnerFieldOne.tin} />
+          <Button
+            type="submit"
+            className={styles.form_submit}
+            disabled={!isValidOne || requestSent}
           >
-            <Input {...becomePartnerFields.name} />
-            <Input {...becomePartnerFields.phoneNumber} />
-            <Input {...becomePartnerFields.email} />
-            <Input {...becomePartnerFields.tin} />
-            <Input {...becomePartnerFields.organizationName} />
-            <Input {...becomePartnerFields.organizationType} />
-            <Input {...becomePartnerFields.taxType} />
-            <Input {...becomePartnerFields.address} />
-            <Input {...becomePartnerFields.quantityOfEmployees} />
-            <TextArea {...becomePartnerFields.activityDescription} />
-            <Button
-              type="submit"
-              className={styles.form_submit}
-              disabled={!isValid || requestSent}
-            >
-              {t("becomePartner")}
-            </Button>
-          </FormWrapper>
-        </>
+            {t('next')}
+          </Button>
+        </FormWrapper>
+      )}
+      {step === 2 && (
+        <FormWrapper
+          onSubmit={handleSubmit(handlePartnerForm)}
+          className={styles.form}
+          {...{ formMethods }}
+        >
+          <Input {...becomePartnerFieldTwo.organizationName} />
+          <Input {...becomePartnerFieldTwo.organizationType} />
+          <Input {...becomePartnerFieldTwo.taxType} />
+          <Input {...becomePartnerFieldTwo.address} />
+          <Input {...becomePartnerFieldTwo.quantityOfEmployees} />
+          <TextArea {...becomePartnerFieldTwo.activityDescription} />
+          <Button
+            type="submit"
+            className={styles.form_submit}
+            disabled={!isValid || requestSent}
+          >
+            {t('becomePartner')}
+          </Button>
+        </FormWrapper>
       )}
     </>
   );
