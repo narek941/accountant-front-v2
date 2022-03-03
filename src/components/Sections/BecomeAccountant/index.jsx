@@ -1,26 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { Button } from 'components/index';
-import { useToggle } from 'hooks/index';
 import { I18nContext } from 'context/index';
 
 import styles from './BecomeAccountant.scss';
 import AccountantForm from './AccountantForm';
 
 const BecomeAccountantSection = () => {
-  const [isOpen, setIsOpen] = useToggle(false);
-  const handleBack = () => setIsOpen();
+  const [isOpen, setIsOpen] = useState(false);
+  const handleBack = () => setIsOpen(false);
   const t = useContext(I18nContext);
 
   return (
     <div className={`container ${styles.wrapper}`}>
       {isOpen ? (
-        <AccountantForm handleBack={handleBack} />
+        <AccountantForm handleBack={handleBack} isOpen={isOpen} />
       ) : (
         <div className={styles.wrapper__container}>
           <h2 className={styles.title}>{t('becomeAccountant')}</h2>
           <p className={styles.subtitle}>{t('mainTitle')}</p>
-          <Button className={styles.login} onClick={() => setIsOpen()}>
+          <Button className={styles.login} onClick={() => setIsOpen(true)}>
             {t(`register`)}
           </Button>
         </div>

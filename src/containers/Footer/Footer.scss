@@ -14,6 +14,7 @@
   &__animation {
     width: 100%;
     transform: translateX(120%);
+
     transition: all 0.3s;
     @extend %flex-between;
 
@@ -30,8 +31,9 @@
     cursor: pointer;
     position: absolute;
     transform: rotate(-90deg);
-    @extend %flex-center;
     transition: all 0.3s;
+    background-color: $white;
+    @extend %flex-center;
 
     &_active {
       transform: rotate(90deg);

@@ -1,4 +1,3 @@
-
 .wrapper {
   user-select: none;
   position: fixed;
@@ -12,17 +11,17 @@
   @extend %blur;
   @extend %flex-center;
 
-  &__container{
+  &__container {
+    max-width: 400px;
+    width: 100%;
     flex-direction: column;
     padding: 50px 24px 24px;
     border-radius: 8px;
     @extend %shadow;
     background-color: $white;
     @extend %flex-center-row;
-  
   }
   &__logo {
-    
     width: 188px;
     height: 116px;
     margin: 0 auto;
@@ -61,7 +60,7 @@
     }
   }
 
-  &__exit{
+  &__exit {
     position: absolute;
     top: 32px;
     right: 32px;

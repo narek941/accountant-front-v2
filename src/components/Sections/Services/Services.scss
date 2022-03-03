@@ -36,10 +36,12 @@
     overflow: hidden;
     min-height: 262px;
     border-radius: 8px;
+    position: relative;
     flex-direction: column;
     @extend %shadow;
     @extend %blur;
     @extend %flex-center;
+
     &:hover {
       .list__item_info {
         top: 0;
@@ -60,11 +62,13 @@
       background: $white;
       transition: top 0.2s ease-in-out;
       border-radius: 8px;
+
       &_text {
         height: calc(100% - 64px);
         overflow-y: scroll;
         text-align: center;
         margin-bottom: 16px;
+
         @extend %semiBold-14;
         &::-webkit-scrollbar {
           width: 6px;
