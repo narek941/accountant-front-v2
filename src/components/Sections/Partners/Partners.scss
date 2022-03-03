@@ -32,6 +32,9 @@
   @extend %shadow;
   @extend %blur;
   @extend %flex-center;
+  @include breakpoint(tablet-l) {
+    bottom: -80px;
+  }
   &__next {
     left: unset;
     right: calc(50% - 64px);
