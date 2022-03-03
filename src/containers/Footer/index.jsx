@@ -89,7 +89,7 @@ const FooterContainer = () => {
               </div>
               <div className={styles.routes__item}>
                 <NextLink href={INSTAGRAM_LINK} target={targetBlank}>
-                  <InstagramIcon className={styles.insta} />
+                  <InstagramIcon />
                 </NextLink>
               </div>
               <div className={styles.routes__item}>
@@ -110,7 +110,7 @@ const FooterContainer = () => {
                 <FbIcon />
               </div>
               <div className={styles.routes__item}>
-                <InstagramIcon className={styles.insta} />
+                <InstagramIcon />
               </div>
               <div className={styles.routes__item}>
                 <LinkedinIcon />
