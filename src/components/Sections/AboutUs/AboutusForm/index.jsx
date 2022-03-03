@@ -59,7 +59,7 @@ const AboutusForm = () => {
           className={styles.form_submit}
           disabled={!isValid || requestSent}
         >
-          {t("send")}
+          {t('send')}
         </Button>
       </FormWrapper>
     </>

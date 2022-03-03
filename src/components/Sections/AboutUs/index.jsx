@@ -33,7 +33,7 @@ const AboutUsSection = () => {
             </div>
             <div className={styles.content__info__routes}>
               <PhoneIcon />
-              <span>+374 98 88 29 44, +374 44 06 06 19</span>
+              <span>+374 44 060619, +374 95060619</span>
             </div>
             <div className={styles.content__info__routes}>
               <LocationIcon />

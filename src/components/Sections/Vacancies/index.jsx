@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Slider from 'react-slick';
 
-import { useToggle } from 'hooks/index';
 import { vacanciesList } from 'utils/index';
 import { I18nContext } from 'context/index';
 
@@ -15,9 +14,9 @@ import Button from '../../Button';
 
 const VacanciesSection = () => {
   const t = useContext(I18nContext);
-  const [isOpen, setIsOpen] = useToggle(false);
-  const handleBack = () => setIsOpen();
-
+  const [isOpen, setIsOpen] = useState(false);
+  const handleBack = () => setIsOpen(false);
+  const headerText = !isOpen ? `${t('vacancies')}` : `${t('apply_for_job')}`;
   const settings = {
     dots: false,
     speed: 500,
@@ -55,18 +54,16 @@ const VacanciesSection = () => {
 
   return (
     <div className="container">
-      <h2 className={styles.title}>
-        {!isOpen ? `${t('vacancies')}` : `${t('apply_for_job')}`}
-      </h2>
+      <h2 className={styles.title}>{headerText}</h2>
       {!isOpen ? (
         <>
           <Slider {...settings}>{renderVacanciesList}</Slider>
-          <Button onClick={() => setIsOpen()} className={styles.button}>
+          <Button onClick={() => setIsOpen(true)} className={styles.button}>
             {t('apply')}
           </Button>
         </>
       ) : (
-        <VacanciesForm handleBack={handleBack} />
+        <VacanciesForm handleBack={handleBack} isOpen={isOpen} />
       )}
     </div>
   );
