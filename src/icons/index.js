@@ -19,4 +19,4 @@ export { default as LessonsIcon } from './Lessons.svg';
 export { default as PersonalIcon } from './Personal.svg';
 export { default as LinkedinIcon } from './Linkedin.svg';
 export { default as LocationIcon } from './Location.svg';
-export { default as InstagramIcon } from './Insta.svg';
+export { default as InstagramIcon } from './Instagram.svg';
