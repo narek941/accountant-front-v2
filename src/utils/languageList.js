@@ -1,13 +1,13 @@
 import shortid from 'shortid';
 
 import {
-  EnglishFlagCircle, 
-  RussianFlagCircle, 
-  EnglishFlag, 
+  EnglishFlagCircle,
+  RussianFlagCircle,
+  EnglishFlag,
   RussianFlag,
   ArmenianFlag,
-  ArmenianFlagCircle, 
-  } from '../icons';
+  ArmenianFlagCircle,
+} from '../icons';
 
 const languageList = [
   {

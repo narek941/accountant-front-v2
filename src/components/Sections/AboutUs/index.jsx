@@ -6,8 +6,9 @@ import { I18nContext } from 'context/index';
 import Map from './Map';
 import styles from './AboutUs.scss';
 import AboutusForm from './AboutusForm';
+
 import { MailIcon, PhoneIcon, LocationIcon } from '../../../icons';
-import { NextLink } from '../../../components/index';
+import { NextLink } from '../../index';
 
 const AboutUsSection = () => {
   const t = useContext(I18nContext);
