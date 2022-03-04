@@ -98,5 +98,13 @@
   p {
     @extend %regular-12;
     text-align: center;
+    margin-right: 6px;
+  }
+  a {
+    @extend %regular-12;
+    text-align: center;
+    margin-left: 3px;
+    color: $black;
+    text-decoration: underline !important;
   }
 }
