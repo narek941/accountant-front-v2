@@ -39,9 +39,12 @@ $wide-l: 1440px;
 %form {
   padding: 32px;
   border-radius: 8px;
-  
 }
 
 %shadow {
   box-shadow: 0 3px 10px rgba(143, 155, 201, 0.4);
+}
+
+%border {
+  border: 1px solid rgba(143, 155, 201, 0.4);
 }

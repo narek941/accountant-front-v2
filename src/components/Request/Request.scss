@@ -12,13 +12,14 @@
   @extend %flex-center;
 
   &__container {
-    max-width: 400px;
+    max-width: 350px;
     width: 100%;
     flex-direction: column;
-    padding: 50px 24px 24px;
+    margin: 16px;
+    padding: 24px;
     border-radius: 8px;
-    @extend %shadow;
     background-color: $white;
+    @extend %shadow;
     @extend %flex-center-row;
   }
   &__logo {
@@ -29,8 +30,8 @@
 
   &__title {
     width: 100%;
-    margin: 54px auto 0;
-    max-width: 516px;
+    margin: 24px auto 0;
+    max-width: 260px;
     text-align: center;
     @extend %semiBold-16;
 

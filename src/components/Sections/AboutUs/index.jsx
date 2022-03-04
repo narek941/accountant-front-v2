@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { MAP_KEY } from 'constants/index';
+import { MAP_KEY, SHELLLOGIX_LINK } from 'constants/index';
 import { I18nContext } from 'context/index';
 
 import Map from './Map';
@@ -8,9 +8,11 @@ import styles from './AboutUs.scss';
 import AboutusForm from './AboutusForm';
 
 import { MailIcon, PhoneIcon, LocationIcon } from '../../../icons';
+import { NextLink } from '../../index';
 
 const AboutUsSection = () => {
   const t = useContext(I18nContext);
+  const targetBlank = '_blank';
 
   return (
     <div className={`container ${styles.wrapper}`}>
@@ -44,7 +46,12 @@ const AboutUsSection = () => {
       </div>
       <div className={styles.copyright}>
         <p>{t('copyright')}</p>
-        <p>Powered by ShellLogix</p>
+        <p>
+          Powered by
+          <NextLink href={SHELLLOGIX_LINK} target={targetBlank}>
+            Shelllogix
+          </NextLink>
+        </p>
       </div>
     </div>
   );

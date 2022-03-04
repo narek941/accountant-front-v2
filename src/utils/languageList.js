@@ -1,12 +1,20 @@
 import shortid from 'shortid';
 
-import { ArmenianFlag, EnglishFlag, RussianFlag } from '../icons';
+import {
+  EnglishFlagCircle,
+  RussianFlagCircle,
+  EnglishFlag,
+  RussianFlag,
+  ArmenianFlag,
+  ArmenianFlagCircle,
+} from '../icons';
 
 const languageList = [
   {
     id: shortid.generate(),
     index: 0,
     Icon: EnglishFlag,
+    IconCircle: EnglishFlagCircle,
     code: 'en',
     nativeCode: 'eng',
   },
@@ -14,12 +22,14 @@ const languageList = [
     id: shortid.generate(),
     index: 1,
     Icon: RussianFlag,
+    IconCircle: RussianFlagCircle,
     code: 'ru',
     nativeCode: 'Ру',
   },
   {
     id: shortid.generate(),
     Icon: ArmenianFlag,
+    IconCircle: ArmenianFlagCircle,
     index: 2,
     code: 'am',
     nativeCode: 'Հայ',

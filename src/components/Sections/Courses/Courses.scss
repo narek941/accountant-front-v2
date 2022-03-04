@@ -214,6 +214,9 @@
     }
   }
   &__form {
+    width: 100%;
+    max-width: 574px;
+    margin: 0 auto;
     @extend %form;
     @extend %blur;
 

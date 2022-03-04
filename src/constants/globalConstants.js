@@ -19,3 +19,4 @@ export const INSTAGRAM_LINK = 'https://www.instagram.com/acc__accountant/';
 export const MAIL_LINK = 'info@acc-accountant.am';
 export const PHONE_NUMBER_LINK = '+374 44 060619';
 export const LOCATION_LINK = 'https://g.page/ACC-Accountant?share';
+export const SHELLLOGIX_LINK = 'https://shelllogix.com/';
