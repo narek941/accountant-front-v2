@@ -32,7 +32,7 @@ const ServicesSection = () => {
             <Button>{t('becomePartner')}</Button>
           </ScrollView>
         </div>
-        <Icon />
+       <Icon /> 
         <p className={styles.list__item_text}>{t(text)}</p>
       </div>
     ));

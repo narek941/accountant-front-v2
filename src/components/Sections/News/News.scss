@@ -3,6 +3,7 @@
   margin: 56px 0;
   text-align: center;
   @extend %semiBold-32;
+
   @include breakpoint(tablet-m) {
     margin: 0 0 16px;
     font-size: 24px;
@@ -17,6 +18,7 @@
     border-radius: 8px;
     max-height: 455px;
     height: 100%;
+
     padding: 32px;
     @extend %blur;
 
@@ -55,7 +57,8 @@
     &_showBtn {
       display: none;
       color: $blue-100;
-      padding-top: 21px;
+      padding: 0;
+      margin-top: 10px;
       background-color: unset;
       @include breakpoint(tablet-m) {
         display: block;

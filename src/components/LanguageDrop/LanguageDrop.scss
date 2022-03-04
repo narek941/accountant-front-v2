@@ -7,7 +7,7 @@
   width: 100%;
   color: $blue-100;
   cursor: pointer;
-  padding: 14px 24px 13px;
+  padding: 13px;
   transition: background-color 0.2s ease-in;
   user-select: none;
   border-radius: 24px;
@@ -32,9 +32,8 @@
     }
   }
   &__activeIcon {
-    display: none;
-    padding-right: 24px;
     cursor: pointer;
+    display: none;
 
     @include breakpoint(tablet) {
       display: block;
@@ -52,8 +51,8 @@
 }
 
 .content {
-  width: 100%;
   z-index: 1;
+  left: 0;
   position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
@@ -76,10 +75,13 @@
     gap: 5px;
     color: $blue-100;
     cursor: pointer;
-    padding: 14px 24px 13px;
+    padding: 13px;
     @extend %flex-align;
     @extend %regular-16;
 
+    @include breakpoint(tablet) {
+      gap: 0;
+    }
     span {
       @extend %flex-align;
     }
@@ -101,7 +103,16 @@
     &_flag {
       svg {
         @include breakpoint(tablet) {
-          border-radius: 50%;
+          display: none;
+        }
+      }
+    }
+    &_circleflag {
+      svg {
+        display: none;
+
+        @include breakpoint(tablet) {
+          display: block;
         }
       }
     }

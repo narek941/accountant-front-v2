@@ -17,7 +17,7 @@ const LanguageDrop = ({ data, handleFlags }) => {
 
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(data[0].index);
-  const ActiveIcon = data[activeIndex].Icon;
+  const ActiveIcon = data[activeIndex].IconCircle;
 
   useEffect(() => {
     const cookieLang = getCookie('next-i18next');
@@ -50,6 +50,9 @@ const LanguageDrop = ({ data, handleFlags }) => {
     >
       <span className={styles.content__item_flag}>
         <item.Icon />
+      </span>
+      <span className={styles.content__item_circleflag}>
+        <item.IconCircle />
       </span>
       <span className={styles.content__item_code}>{item.nativeCode}</span>
     </div>

@@ -15,6 +15,7 @@
   color: $blue-100;
   margin: 16px 0px 26px;
   @extend %semiBold-32;
+
   @include breakpoint(tablet-m) {
     margin: 0 0 16px;
     font-size: 24px;
@@ -47,9 +48,10 @@
 .form {
   width: 100%;
   max-width: 574px;
+  @extend %shadow;
   @extend %form;
   @extend %blur;
-  
+
   &_submit {
     width: 100%;
     color: $white;

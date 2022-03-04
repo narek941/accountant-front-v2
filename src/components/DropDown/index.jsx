@@ -55,10 +55,12 @@ const DropDown = ({ data, onChane }) => {
         })}
       >
         <p className={styles.header__text}>{t(data[activeIndex])}</p>
-        <ArrowIcon
-          className={styles.header__icon}
-          style={{ transform: `rotate(${!isOpen ? 180 : 0}deg)` }}
-        />
+        <span>
+          <ArrowIcon
+            className={styles.header__icon}
+            style={{ transform: `rotate(${!isOpen ? 180 : 0}deg)` }}
+          />
+        </span>
       </div>
       {isOpen && <div className={styles.content}>{renderoptions}</div>}
     </div>
