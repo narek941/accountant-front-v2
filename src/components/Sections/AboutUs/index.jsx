@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useRef, useContext } from 'react';
 
 import { MAP_KEY, SHELLLOGIX_LINK } from 'constants/index';
 import { I18nContext } from 'context/index';
+import { useOnScreen } from 'hooks/index';
 
 import Map from './Map';
 import styles from './AboutUs.scss';
@@ -13,9 +14,10 @@ import { NextLink } from '../../index';
 const AboutUsSection = () => {
   const t = useContext(I18nContext);
   const targetBlank = '_blank';
-
+  const ref = useRef();
+  useOnScreen(ref);
   return (
-    <div className={`container ${styles.wrapper}`}>
+    <div className={`container ${styles.wrapper}`} ref={ref}>
       <h2 className={styles.title}>{t('contact_us')}</h2>
       <div className={styles.content}>
         <AboutusForm />

@@ -1,12 +1,10 @@
-import React from 'react';
-
 import { sectionsList } from 'utils/index';
 
 import styles from './Home.scss';
 
 const HomeContainer = () => {
-  const renderSections = sectionsList.map(({ id, Component }) => (
-    <section key={id} id={id} className="section">
+  const renderSections = sectionsList.map(({ id, Component, index }) => (
+    <section key={id} id={id} dataIndex={index} className="section">
       <Component />
     </section>
   ));

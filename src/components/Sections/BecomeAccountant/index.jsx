@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 
 import { Button } from 'components/index';
 import { I18nContext } from 'context/index';
+import { useOnScreen } from 'hooks/index';
 
 import styles from './BecomeAccountant.scss';
 import AccountantForm from './AccountantForm';
@@ -10,9 +11,10 @@ const BecomeAccountantSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleBack = () => setIsOpen(false);
   const t = useContext(I18nContext);
-
+  const ref = useRef();
+  useOnScreen(ref);
   return (
-    <div className={`container ${styles.wrapper}`}>
+    <div className={`container ${styles.wrapper}`} ref={ref}>
       {isOpen ? (
         <AccountantForm handleBack={handleBack} isOpen={isOpen} />
       ) : (
