@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 
+import { ScrollView, NextLink } from 'components/index';
 import { useWindowSize } from 'hooks/index';
 import {
   LOCATION_LINK,
@@ -22,13 +24,30 @@ import {
   LinkedinIcon,
   InstagramIcon,
 } from '../../icons';
-import { NextLink } from '../../components';
+import { selectIndex } from '../../store/selectors/mainSelectors';
 
 const FooterContainer = () => {
+  const activeIndexObj = useSelector(selectIndex);
   const { isMobile } = useWindowSize();
   const [isOpen, setIsOpen] = useState(false);
   const isOpenHandler = () => setIsOpen(!isOpen);
   const targetBlank = '_blank';
+  const isNextNull =
+    activeIndexObj.next === null || typeof activeIndexObj.next === 'undefined';
+
+  const checkNextLink = isNextNull
+    ? activeIndexObj.current
+    : activeIndexObj.next;
+
+  const isPrevNull =
+    activeIndexObj.prev === null || typeof activeIndexObj.prev === 'undefined';
+  const checkPrevLink = isPrevNull
+    ? activeIndexObj.current
+    : activeIndexObj.prev;
+  const checkedIndex =
+    activeIndexObj?.index < 10
+      ? `0${activeIndexObj?.index}`
+      : activeIndexObj?.index;
 
   return (
     <footer className={styles.container}>
@@ -36,13 +55,25 @@ const FooterContainer = () => {
         {!isOpen && (
           <div className={styles.routes}>
             <div className={styles.routes__item}>
-              <span>03</span>
+              <span>{checkedIndex}</span>
             </div>
-            <div className={styles.routes__item}>
-              <ArrowIcon />
+            <div
+              className={classNames(styles.routes__item, {
+                [styles.routes__item_disable]: isNextNull,
+              })}
+            >
+              <ScrollView link={checkNextLink}>
+                <ArrowIcon className={styles.routes__rotate} />
+              </ScrollView>
             </div>
-            <div className={styles.routes__item}>
-              <ArrowIcon />
+            <div
+              className={classNames(styles.routes__item, {
+                [styles.routes__item_disable]: isPrevNull,
+              })}
+            >
+              <ScrollView link={checkPrevLink}>
+                <ArrowIcon />
+              </ScrollView>
             </div>
           </div>
         )}

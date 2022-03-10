@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useRef, useContext } from 'react';
 import Slider from 'react-slick';
 
 import { newsList } from 'utils/index';
 import { I18nContext } from 'context/index';
+import { useOnScreen } from 'hooks/index';
 
 import Slide from './Slide';
 import styles from './News.scss';
@@ -11,7 +12,8 @@ import PrevArrow from './PrevArrow';
 
 const NewsSection = () => {
   const t = useContext(I18nContext);
-
+  const ref = useRef();
+  useOnScreen(ref);
   const settings = {
     dots: false,
     speed: 500,
@@ -37,7 +39,7 @@ const NewsSection = () => {
   ));
 
   return (
-    <div className="container">
+    <div className="container" ref={ref}>
       <h2 className={styles.title}>{t('news')}</h2>
       <Slider {...settings}>{renderNewsList}</Slider>
     </div>

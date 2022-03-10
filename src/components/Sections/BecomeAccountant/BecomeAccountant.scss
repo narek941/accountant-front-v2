@@ -6,6 +6,7 @@
     @extend %shadow;
     @extend %blur;
     @extend %flex-center-row;
+    
     @include breakpoint(tablet-m) {
       padding: 8px;
     }

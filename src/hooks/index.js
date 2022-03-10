@@ -6,3 +6,4 @@ export { default as useOutsideClick } from './useOutsideClick';
 export { default as useLockBodyScroll } from './useLockBodyScroll';
 export { default as useLockIosToolbar } from './useLockIosToolbar';
 export { default as useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
+export { default as useOnScreen } from './useOnScreen';
