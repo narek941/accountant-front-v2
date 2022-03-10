@@ -107,13 +107,19 @@ const FooterContainer = () => {
               })}
             >
               <div className={styles.routes__item}>
-                <FbIcon />
+              <NextLink href={FACEBOOK_LINK} target={targetBlank}>
+                  <FbIcon />
+                </NextLink>
               </div>
               <div className={styles.routes__item}>
-                <InstagramIcon />
+              <NextLink href={INSTAGRAM_LINK} target={targetBlank}>
+                  <InstagramIcon />
+                </NextLink>
               </div>
               <div className={styles.routes__item}>
-                <LinkedinIcon />
+              <NextLink href={LINKEDIN_LINK} target={targetBlank}>
+                  <LinkedinIcon />
+                </NextLink>
               </div>
               <div
                 className={classNames(
@@ -121,7 +127,9 @@ const FooterContainer = () => {
                   styles.routes__item_link,
                 )}
               >
-                <LocationIcon />
+               <NextLink href={LOCATION_LINK} target={targetBlank}>
+                  <LocationIcon />
+                </NextLink>
               </div>
               <div
                 className={classNames(
@@ -129,7 +137,9 @@ const FooterContainer = () => {
                   styles.routes__item_link,
                 )}
               >
-                <PhoneIcon />
+                <NextLink href={`tel:${PHONE_NUMBER_LINK}`}>
+                  <PhoneIcon />
+                </NextLink>
               </div>
               <div
                 className={classNames(
@@ -137,7 +147,9 @@ const FooterContainer = () => {
                   styles.routes__item_link,
                 )}
               >
-                <MailIcon />
+              <NextLink href={`mailto:${MAIL_LINK}`}>
+                  <MailIcon />
+                </NextLink>
               </div>
             </div>
             <div
