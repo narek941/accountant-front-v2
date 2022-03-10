@@ -51,6 +51,8 @@
   "more": "More",
   "less": "Less",
   "next": "Next",
+  "oops":"Page not found",
+  "goToHomePage":"Home",
   "accounting_services": "Accounting services",
   "reporting": "Reporting",
   "tax_planning": "Tax planning, optimization of the tax burden",

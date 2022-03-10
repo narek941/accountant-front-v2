@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { LanguageDrop, ScrollView } from 'components/index';
 import { I18nContext } from 'context/index';
-import { navigationList, languageList } from 'utils/index';
+import { navigationList, languageList, sectionsList } from 'utils/index';
 
 import styles from './Header.scss';
 
@@ -11,7 +11,7 @@ import { LogoIcon, BurgerIcon } from '../../icons';
 
 const HeaderContainer = () => {
   const t = useContext(I18nContext);
-
+  const top = sectionsList[0].id;
   const handleFlags = (code) => {
     i18n.changeLanguage(code);
   };
@@ -24,7 +24,10 @@ const HeaderContainer = () => {
   return (
     <header className={styles.container}>
       <div className={`container ${styles.wrapper}`}>
-        <LogoIcon />
+        <ScrollView link={top} className={styles.logo_link}>
+          <LogoIcon />
+        </ScrollView>
+
         <nav className={styles.nav}>
           {renderNavigationLinks}
           <BurgerIcon className={styles.burger} />
