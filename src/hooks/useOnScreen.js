@@ -27,8 +27,7 @@ const useOnScreen = (ref) => {
         ),
       {
         root: null,
-        threshold: 0.9,
-        // rootMargin: '20px',
+        threshold: 0.4,
       },
     );
     if (refCurrent) {

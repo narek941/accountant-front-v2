@@ -120,7 +120,7 @@ table {
   -webkit-tap-highlight-color: transparent;
 }
 
-input,textarea {
+input {
   font-size: 100% !important;
   box-shadow: none;
   -o-box-shadow: none;
@@ -138,7 +138,16 @@ input,textarea {
     appearance: none;
   }
 }
-
+textarea {
+  box-shadow: none;
+  -o-box-shadow: none;
+  -ms-box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 button,
 a {
   border: 0;
@@ -147,6 +156,9 @@ a {
   text-decoration: none !important;
   font-family: 'Roboto', sans-serif;
   -webkit-tap-highlight-color: transparent;
+  svg {
+    display: flex;
+  }
 }
 
 img {

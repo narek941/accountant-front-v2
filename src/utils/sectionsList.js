@@ -29,28 +29,29 @@ const sectionsList = [
   },
   {
     index: 2,
+    id: BECOME_PARTNER_SECTION_ID,
+    Component: BecomePartnerSection,
+  },
+
+  {
+    index: 3,
     id: SERVICES_SECTION_ID,
     Component: ServicesSection,
   },
   {
-    index: 3,
-    id: COURSES_SECTION_ID,
-    Component: CoursesSection,
-  },
-  {
     index: 4,
-    id: BECOME_ACCOUNTANT_SECTION_ID,
-    Component: BecomeAccountantSection,
-  },
-  {
-    index: 5,
     id: PARTNERS_SECTION_ID,
     Component: PartnersSection,
   },
   {
+    index: 5,
+    id: COURSES_SECTION_ID,
+    Component: CoursesSection,
+  },
+  {
     index: 6,
-    id: BECOME_PARTNER_SECTION_ID,
-    Component: BecomePartnerSection,
+    id: BECOME_ACCOUNTANT_SECTION_ID,
+    Component: BecomeAccountantSection,
   },
   {
     index: 7,

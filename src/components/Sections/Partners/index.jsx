@@ -39,7 +39,7 @@ const PartnersSection = () => {
   ));
 
   return (
-    <div className={`container `} ref={ref}>
+    <div className={`${styles.wrapper} container `} ref={ref}>
       <h2 className={styles.title}>{t('partners')}</h2>
       <Slider {...settings}>{renderPartnersList}</Slider>
     </div>

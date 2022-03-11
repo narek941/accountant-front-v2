@@ -1,3 +1,8 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .title {
   color: $blue-100;
   margin: 0 auto 56px;

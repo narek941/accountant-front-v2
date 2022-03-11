@@ -1,5 +1,8 @@
 .wrapper {
-  @extend %flex-center-row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &__container {
     border-radius: 8px;
     padding: 24px 30px;

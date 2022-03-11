@@ -8,16 +8,22 @@ import {
   CanvasContainer,
 } from 'containers/index';
 
-const HelmetLayout = ({ children, title, metaDescription, metaImg }) => (
+const HelmetLayout = ({
+  children,
+  title,
+  metaDescription,
+  metaImg,
+  isErorPage,
+}) => (
   <>
     <Head>
       {title && <title>{title}</title>}
       {metaDescription && <meta name="description" content={metaDescription} />}
       <meta property="og:image" content={metaImg} />
     </Head>
-    <HeaderContainer />
+    {isErorPage || <HeaderContainer />}
     {children}
-    <FooterContainer />
+    {isErorPage || <FooterContainer />}
     <CanvasContainer />
   </>
 );
@@ -26,6 +32,7 @@ HelmetLayout.defaultProps = {
   title: '',
   metaImg: '/images/metaImg.png',
   metaDescription: '',
+  isErorPage: false,
 };
 
 HelmetLayout.propTypes = {
@@ -33,6 +40,7 @@ HelmetLayout.propTypes = {
   metaImg: PropTypes.string,
   children: PropTypes.node.isRequired,
   metaDescription: PropTypes.string,
+  isErorPage: PropTypes.bool,
 };
 
 export default HelmetLayout;
