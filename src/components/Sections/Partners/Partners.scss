@@ -5,12 +5,12 @@
 }
 .title {
   color: $blue-100;
-  padding: 56px 0;
+  margin: 0 auto 56px;
   text-align: center;
   @extend %semiBold-32;
-  
+
   @include breakpoint(tablet-m) {
-    padding: 0 0 24px;
+    padding: 0 auto 24px;
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
