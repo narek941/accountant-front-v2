@@ -54,7 +54,7 @@ const LanguageDrop = ({ data, handleFlags }) => {
         <item.Icon />
       </span>
       <span className={styles.content__item_circleflag}>
-        <item.IconCircle />
+        {isLoad && <item.IconCircle />}
       </span>
       <span className={styles.content__item_code}>{item.nativeCode}</span>
     </div>
