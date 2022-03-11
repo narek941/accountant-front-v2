@@ -10,22 +10,21 @@ const useOnScreen = (ref) => {
   useEffect(() => {
     const refCurrent = ref.current;
     const observer = new IntersectionObserver(
-      ([entry]) => (
+      ([entry]) =>
         // Update our state when observer callback fires
         // entry?.isIntersecting &&
         // console.log(entry);
         //     console.log(entry.target.parentElement.previousElementSibling?.id);
 
         entry?.isIntersecting &&
-          dispatch(
-            setIndexAction({
-              next: entry.target.parentElement.nextElementSibling?.id,
-              prev: entry.target.parentElement.previousElementSibling?.id,
-              current: entry.target.parentElement.id,
-              index: entry.target.parentElement.attributes.dataIndex.value,
-            }),
-          )
-      ),
+        dispatch(
+          setIndexAction({
+            next: entry.target.parentElement.nextElementSibling?.id,
+            prev: entry.target.parentElement.previousElementSibling?.id,
+            current: entry.target.parentElement.id,
+            index: entry.target.parentElement.attributes.dataindex.value,
+          }),
+        ),
       {
         root: null,
         threshold: 0.9,

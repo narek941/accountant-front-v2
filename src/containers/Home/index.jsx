@@ -4,7 +4,7 @@ import styles from './Home.scss';
 
 const HomeContainer = () => {
   const renderSections = sectionsList.map(({ id, Component, index }) => (
-    <section key={id} id={id} dataIndex={index} className="section">
+    <section key={id} id={id} dataindex={index} className="section">
       <Component />
     </section>
   ));
