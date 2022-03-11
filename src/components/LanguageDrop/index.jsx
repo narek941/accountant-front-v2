@@ -24,7 +24,7 @@ const LanguageDrop = ({ data, handleFlags }) => {
     const cookieLang = getCookie('next-i18next');
     const activeLanguage = data.findIndex((item) => item.code === cookieLang);
     setActiveIndex(activeLanguage);
-    setIsLoad(true)
+    setIsLoad(true);
   }, [data]);
 
   useOutsideClick(ref, () => {
@@ -61,7 +61,6 @@ const LanguageDrop = ({ data, handleFlags }) => {
   ));
 
   return (
-  
     <div className={styles.wrapper} ref={ref}>
       <div
         role="button"
@@ -70,8 +69,9 @@ const LanguageDrop = ({ data, handleFlags }) => {
           [styles.header__open]: isOpen,
         })}
       >
-       
-        <p className={styles.header__text}> {  isLoad && t(data[activeIndex].nativeCode)}</p>
+        <p className={styles.header__text}>
+          {isLoad && t(data[activeIndex].nativeCode)}
+        </p>
         <ArrowIcon
           className={styles.header__icon}
           style={{ transform: `rotate(${!isOpen ? 180 : 0}deg)` }}
