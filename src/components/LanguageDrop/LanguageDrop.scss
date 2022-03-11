@@ -44,6 +44,7 @@
   }
 
   &__text {
+    min-width: 17px;
     @include breakpoint(tablet) {
       display: none;
     }
@@ -108,6 +109,10 @@
       }
     }
     &_circleflag {
+      @include breakpoint(tablet) {
+        min-width: 25px;
+      }
+
       svg {
         display: none;
 
