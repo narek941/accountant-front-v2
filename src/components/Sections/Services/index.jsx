@@ -39,7 +39,7 @@ const ServicesSection = () => {
       </div>
     ));
   return (
-    <div className="container" ref={ref}>
+    <div className={`${styles.wrapper} container`} ref={ref}>
       <h2 className={styles.title}>{t('services')}</h2>
       <div className={styles.list}>
         {renderServicesList}

@@ -28,11 +28,17 @@ import {
 const FooterContainer = () => {
   const activeIndexObj = useSelector(selectIndex);
   const [isOpen, setIsOpen] = useState(false);
+  const [isDisable, setIsDisable] = useState(false);
   const isOpenHandler = () => setIsOpen(!isOpen);
   const targetBlank = '_blank';
   const isNextNull =
     activeIndexObj.next === null || typeof activeIndexObj.next === 'undefined';
-
+  const handleDisable = () => {
+    setIsDisable(true);
+    setTimeout(() => {
+      setIsDisable(false);
+    }, 300);
+  };
   const checkNextLink = isNextNull
     ? activeIndexObj.current
     : activeIndexObj.next;
@@ -60,20 +66,26 @@ const FooterContainer = () => {
               <span>{checkedIndex}</span>
             </div>
             <div
+              role="button"
+              onClick={handleDisable}
               className={classNames(styles.routes__item, {
                 [styles.routes__item_disable]: isNextNull,
+                [styles.click_disable]: isDisable,
               })}
             >
-              <ScrollView link={checkNextLink}>
+              <ScrollView link={checkNextLink} className={styles.scrollButton}>
                 <ArrowIcon className={styles.routes__rotate} />
               </ScrollView>
             </div>
             <div
+              role="button"
+              onClick={handleDisable}
               className={classNames(styles.routes__item, {
                 [styles.routes__item_disable]: isPrevNull,
+                [styles.click_disable]: isDisable,
               })}
             >
-              <ScrollView link={checkPrevLink}>
+              <ScrollView link={checkPrevLink} className={styles.scrollButton}>
                 <ArrowIcon />
               </ScrollView>
             </div>

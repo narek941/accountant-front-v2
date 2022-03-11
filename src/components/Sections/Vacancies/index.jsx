@@ -19,6 +19,7 @@ const VacanciesSection = () => {
   const handleBack = () => setIsOpen(false);
   const ref = useRef();
   useOnScreen(ref);
+
   const headerText = !isOpen ? `${t('vacancies')}` : `${t('apply_for_job')}`;
 
   const settings = {
@@ -57,7 +58,7 @@ const VacanciesSection = () => {
   );
 
   return (
-    <div className="container" ref={ref}>
+    <div className={`container ${styles.wrapper}`} ref={ref}>
       <h2 className={styles.title}>{headerText}</h2>
       {!isOpen ? (
         <>

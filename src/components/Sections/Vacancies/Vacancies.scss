@@ -1,8 +1,14 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .title {
   color: $blue-100;
   margin: 56px 0;
   text-align: center;
   @extend %semiBold-32;
+
   @include breakpoint(tablet-l) {
     margin: 0 auto 24px;
   }
@@ -100,6 +106,7 @@
   width: 100%;
   @extend %form;
   @extend %blur;
+
   &_submit {
     width: 100%;
     color: $white;
@@ -108,8 +115,10 @@
     transition: background-color 0.3s ease-in, color 0.3s ease-in-out;
     background-color: $blue-100;
     @extend %regular-16;
+
     &:disabled {
       color: $grey-200;
+      @extend %shadow;
       @extend %blur;
     }
   }

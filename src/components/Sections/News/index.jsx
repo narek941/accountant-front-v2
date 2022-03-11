@@ -39,7 +39,7 @@ const NewsSection = () => {
   ));
 
   return (
-    <div className="container" ref={ref}>
+    <div className={`container ${styles.wrapper}`} ref={ref}>
       <h2 className={styles.title}>{t('news')}</h2>
       <Slider {...settings}>{renderNewsList}</Slider>
     </div>
