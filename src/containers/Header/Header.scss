@@ -10,6 +10,10 @@
 
 .wrapper {
   @extend %flex-between;
+  
+  .logo_link{
+    cursor: pointer;
+  }
 }
 
 .nav {

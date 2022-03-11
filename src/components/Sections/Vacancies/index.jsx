@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import Slider from 'react-slick';
 
 import { vacanciesList } from 'utils/index';
 import { I18nContext } from 'context/index';
+import { useOnScreen } from 'hooks/index';
 
 import Slide from './Slide';
 import styles from './Vacancies.scss';
@@ -16,7 +17,10 @@ const VacanciesSection = () => {
   const t = useContext(I18nContext);
   const [isOpen, setIsOpen] = useState(false);
   const handleBack = () => setIsOpen(false);
+  const ref = useRef();
+  useOnScreen(ref);
   const headerText = !isOpen ? `${t('vacancies')}` : `${t('apply_for_job')}`;
+
   const settings = {
     dots: false,
     speed: 500,
@@ -53,7 +57,7 @@ const VacanciesSection = () => {
   );
 
   return (
-    <div className="container">
+    <div className="container" ref={ref}>
       <h2 className={styles.title}>{headerText}</h2>
       {!isOpen ? (
         <>

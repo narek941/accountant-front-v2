@@ -1,0 +1,47 @@
+.container{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 3;
+    position: fixed;
+}
+.wrapper{
+    padding: 24px 90px;
+    border-radius: 8px;
+    color: $blue-100;
+    @extend %flex-center-row;
+    @extend %shadow;
+    @extend %blur;
+
+    @include breakpoint(tablet-m) {
+        padding: 13px 10px;
+        
+      }
+    h1{
+        font-size: 128px;
+        @include breakpoint(tablet-m) {
+            font-size: 120px;
+            line-height: 159px;
+          }
+    }
+    p{
+        padding: 16px 0;
+        @include breakpoint(tablet-m) {
+            padding: 8px 0 16px;;
+          }
+    }
+    a{
+        color: #fff;
+        max-width: 288px;
+        width: 100%;
+        padding: 14px 0 13px;
+        margin-bottom: 14px;
+        background: #243b98;
+        border-radius: 8px;
+        text-align: center;
+       
+    }
+}

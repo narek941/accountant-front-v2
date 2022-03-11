@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 
 import { servicesList } from 'utils/index';
 import { I18nContext } from 'context/index';
 import { BECOME_PARTNER_SECTION_ID } from 'constants/index';
 import { Button } from 'components/index';
-import { useWindowSize } from 'hooks/index';
+import { useWindowSize, useOnScreen } from 'hooks/index';
 
 import styles from './Services.scss';
 
@@ -21,6 +21,8 @@ const ServicesSection = () => {
   };
   const loadCount = isShow || !isMobile ? servicesList.length : 3;
   const buttonName = !isShow && `${t('more')}`;
+  const ref = useRef();
+  useOnScreen(ref);
 
   const renderServicesList = servicesList
     .slice(0, loadCount)
@@ -37,7 +39,7 @@ const ServicesSection = () => {
       </div>
     ));
   return (
-    <div className="container">
+    <div className="container" ref={ref}>
       <h2 className={styles.title}>{t('services')}</h2>
       <div className={styles.list}>
         {renderServicesList}

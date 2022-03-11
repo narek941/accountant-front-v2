@@ -1,7 +1,7 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import classNames from 'classnames';
 
-import { useToggle } from 'hooks/index';
+import { useToggle, useOnScreen } from 'hooks/index';
 import { I18nContext } from 'context/index';
 
 import styles from './Courses.scss';
@@ -24,7 +24,8 @@ const CoursesSection = () => {
   const [isGroup, setIsGroup] = useState(false);
   const handleBack = () => setIsOpen();
   const t = useContext(I18nContext);
-
+  const ref = useRef();
+  useOnScreen(ref);
   const selectedCourse = isGroup
     ? coursesNavigationList[active].groupCourse
     : coursesNavigationList[active].personalCourse;
@@ -33,7 +34,7 @@ const CoursesSection = () => {
     setIsGroup(!isGroup);
   };
   return (
-    <div className={`container ${styles.wrapper}`}>
+    <div className={`container ${styles.wrapper}`} ref={ref}>
       {isOpen ? (
         <CoursesForm handleBack={handleBack} />
       ) : (

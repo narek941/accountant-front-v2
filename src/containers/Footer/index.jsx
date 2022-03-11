@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import { useSelector } from 'react-redux';
+
 import {
   LOCATION_LINK,
   PHONE_NUMBER_LINK,
@@ -8,7 +10,11 @@ import {
   LINKEDIN_LINK,
   INSTAGRAM_LINK,
 } from 'constants/index';
+import { ScrollView, NextLink } from 'components/index';
+
 import styles from './Footer.scss';
+
+import { selectIndex } from '../../store/selectors/mainSelectors';
 import {
   FbIcon,
   MailIcon,
@@ -18,11 +24,29 @@ import {
   LinkedinIcon,
   InstagramIcon,
 } from '../../icons';
-import { NextLink } from '../../components';
+
 const FooterContainer = () => {
+  const activeIndexObj = useSelector(selectIndex);
   const [isOpen, setIsOpen] = useState(false);
   const isOpenHandler = () => setIsOpen(!isOpen);
   const targetBlank = '_blank';
+  const isNextNull =
+    activeIndexObj.next === null || typeof activeIndexObj.next === 'undefined';
+
+  const checkNextLink = isNextNull
+    ? activeIndexObj.current
+    : activeIndexObj.next;
+
+  const isPrevNull =
+    activeIndexObj.prev === null || typeof activeIndexObj.prev === 'undefined';
+  const checkPrevLink = isPrevNull
+    ? activeIndexObj.current
+    : activeIndexObj.prev;
+  const checkedIndex =
+    activeIndexObj?.index < 10
+      ? `0${activeIndexObj?.index}`
+      : activeIndexObj?.index;
+
   return (
     <footer className={styles.container}>
       <div
@@ -33,15 +57,25 @@ const FooterContainer = () => {
         {!isOpen && (
           <div className={styles.routes}>
             <div className={styles.routes__item}>
-              <span>03</span>
-            </div>
-            <div className={styles.routes__item}>
-              <ArrowIcon />
+              <span>{checkedIndex}</span>
             </div>
             <div
-              className={classNames(styles.routes__item, styles.arrow_rotate)}
+              className={classNames(styles.routes__item, {
+                [styles.routes__item_disable]: isNextNull,
+              })}
             >
-              <ArrowIcon />
+              <ScrollView link={checkNextLink}>
+                <ArrowIcon className={styles.routes__rotate} />
+              </ScrollView>
+            </div>
+            <div
+              className={classNames(styles.routes__item, {
+                [styles.routes__item_disable]: isPrevNull,
+              })}
+            >
+              <ScrollView link={checkPrevLink}>
+                <ArrowIcon />
+              </ScrollView>
             </div>
           </div>
         )}
@@ -102,6 +136,7 @@ const FooterContainer = () => {
             </NextLink>
           </div>
         </div>
+
         <div
           className={classNames(styles.wrapper__switcher, {
             [styles.wrapper__switcher_active]: isOpen,

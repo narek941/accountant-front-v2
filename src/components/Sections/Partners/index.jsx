@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import Slider from 'react-slick';
 
+import { useOnScreen } from 'hooks/index';
 import { partnersList } from 'utils/index';
 import { I18nContext } from 'context/index';
 
@@ -10,6 +11,8 @@ import PrevArrow from './PrevArrow';
 
 const PartnersSection = () => {
   const t = useContext(I18nContext);
+  const ref = useRef();
+  useOnScreen(ref);
 
   const settings = {
     dots: false,
@@ -36,7 +39,7 @@ const PartnersSection = () => {
   ));
 
   return (
-    <div className={`container `}>
+    <div className={`container `} ref={ref}>
       <h2 className={styles.title}>{t('partners')}</h2>
       <Slider {...settings}>{renderPartnersList}</Slider>
     </div>
