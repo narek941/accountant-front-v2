@@ -17,21 +17,27 @@
   }
 }
 .slider {
+  &__inner {
+    display: flex;
+    margin: 0 8px;
+  }
+
   &__item {
     max-width: 660px;
     width: 100%;
     border-radius: 8px;
-    max-height: 455px;
+    min-height: 455px;
     height: 100%;
-
     padding: 32px;
     @extend %blur;
-
     @include breakpoint(tablet) {
       max-height: 100%;
       padding: 16px;
     }
+
     &_wrapper {
+      display: block !important;
+
       @include breakpoint(tablet-m) {
         flex-direction: column;
         max-width: 288px;
@@ -47,6 +53,7 @@
       float: left;
       padding: 0 16px 8px 0;
       box-sizing: content-box;
+
       @include breakpoint(tablet-m) {
         max-width: 100%;
       }
@@ -56,6 +63,7 @@
       @extend %semiBold-20;
     }
     &_text {
+      display: block !important;
       @extend %regular-14;
       margin-top: 17px;
     }
@@ -65,6 +73,7 @@
       padding: 0;
       margin-top: 10px;
       background-color: unset;
+
       @include breakpoint(tablet-m) {
         display: block;
       }

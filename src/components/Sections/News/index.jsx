@@ -14,6 +14,7 @@ const NewsSection = () => {
   const t = useContext(I18nContext);
   const ref = useRef();
   useOnScreen(ref);
+
   const settings = {
     dots: false,
     speed: 500,

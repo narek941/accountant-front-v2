@@ -31,13 +31,20 @@ const VacanciesSection = () => {
     prevArrow: <PrevArrow />,
     slidesToShow: 4,
     slidesToScroll: 1,
+
     responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          rows: 2,
         },
       },
       {
@@ -58,7 +65,7 @@ const VacanciesSection = () => {
   );
 
   return (
-    <div className={`container ${styles.wrapper}`} ref={ref}>
+    <div className={`container  ${styles.wrapper}`} ref={ref}>
       <h2 className={styles.title}>{headerText}</h2>
       {!isOpen ? (
         <>

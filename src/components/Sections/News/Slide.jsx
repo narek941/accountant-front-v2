@@ -30,16 +30,18 @@ const Slide = ({ id, img, title, text }) => {
     ));
 
   return (
-    <div key={id} className={styles.slider__item}>
-      <div className={styles.slider__item_wrapper}>
-        <p className={styles.slider__item_title}>
-          <img className={styles.slider__item_img} src={img} alt="img" />
-          {t(title)}
-        </p>
-        <div className={styles.slider__item_text}>{render}</div>
-        <Button className={styles.slider__item_showBtn} onClick={handleMore}>
-          {buttonName}
-        </Button>
+    <div key={id} className={styles.slider__inner}>
+      <div key={id} className={styles.slider__item}>
+        <div className={styles.slider__item_wrapper}>
+          <p className={styles.slider__item_title}>
+            <img className={styles.slider__item_img} src={img} alt="img" />
+            {t(title)}
+          </p>
+          <div className={styles.slider__item_text}>{render}</div>
+          <Button className={styles.slider__item_showBtn} onClick={handleMore}>
+            {buttonName}
+          </Button>
+        </div>
       </div>
     </div>
   );
