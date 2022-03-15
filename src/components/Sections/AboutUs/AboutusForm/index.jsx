@@ -57,7 +57,7 @@ const AboutusForm = () => {
         <Button
           type="submit"
           className={styles.form_submit}
-          disabled={!isValid || requestSent}
+          disabled={!isValid || requestSent || isSent}
         >
           {t('send')}
         </Button>

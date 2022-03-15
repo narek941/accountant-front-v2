@@ -84,6 +84,7 @@
         background-color: $white;
         border: 1px solid rgba(143, 155, 201, 0.4);
         @extend %blur;
+
         @include breakpoint(tablet-m) {
           max-width: 70vw;
           min-width: min-content;
@@ -155,14 +156,31 @@
         max-height: 532px;
         max-width: 455px;
         padding: 16px;
+        overflow-y: auto;
         border-radius: 8px;
         width: 100%;
         @extend %shadow;
         @extend %blur;
+
         @include breakpoint(tablet-l) {
           overflow-y: hidden;
           max-height: unset;
           max-width: unset;
+        }
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+          width: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $blue-300 !important;
+          border-radius: 16px;
+        }
+
+        *:focus {
+          outline: none;
+          touch-action: manipulation;
         }
         p {
           margin-bottom: 10px;

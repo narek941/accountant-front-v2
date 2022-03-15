@@ -5,7 +5,7 @@ const initialState = {
     prev: 'section_main',
     next: 'section_services',
     current: 'section_main',
-    index: '1',
+    index: null,
   },
 };
 export const SET_INDEX = 'SET_INDEX';

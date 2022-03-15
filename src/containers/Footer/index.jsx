@@ -31,27 +31,39 @@ const FooterContainer = () => {
   const [isDisable, setIsDisable] = useState(false);
   const isOpenHandler = () => setIsOpen(!isOpen);
   const targetBlank = '_blank';
-  const isNextNull =
-    activeIndexObj.next === null || typeof activeIndexObj.next === 'undefined';
+  const isNextNull = !activeIndexObj.next;
+
   const handleDisable = () => {
     setIsDisable(true);
     setTimeout(() => {
       setIsDisable(false);
     }, 300);
   };
+
   const checkNextLink = isNextNull
     ? activeIndexObj.current
     : activeIndexObj.next;
 
-  const isPrevNull =
-    activeIndexObj.prev === null || typeof activeIndexObj.prev === 'undefined';
+  const isPrevNull = !activeIndexObj.prev;
+
   const checkPrevLink = isPrevNull
     ? activeIndexObj.current
     : activeIndexObj.prev;
+
   const checkedIndex =
-    activeIndexObj?.index < 10
-      ? `0${activeIndexObj?.index}`
-      : activeIndexObj?.index;
+    activeIndexObj.index < 10
+      ? `0${activeIndexObj.index}`
+      : activeIndexObj.index;
+
+  const arrowUpStyles = classNames(styles.routes__item, {
+    [styles.routes__item_disable]: !activeIndexObj.index || isNextNull,
+    [styles.click_disable]: isDisable,
+  });
+
+  const arrowDownStyles = classNames(styles.routes__item, {
+    [styles.routes__item_disable]: !activeIndexObj.index || isPrevNull,
+    [styles.click_disable]: isDisable,
+  });
 
   return (
     <footer className={styles.container}>
@@ -63,15 +75,12 @@ const FooterContainer = () => {
         {!isOpen && (
           <div className={styles.routes}>
             <div className={styles.routes__item}>
-              <span>{checkedIndex}</span>
+              <span>{activeIndexObj.index ? checkedIndex : '--'}</span>
             </div>
             <div
               role="button"
               onClick={handleDisable}
-              className={classNames(styles.routes__item, {
-                [styles.routes__item_disable]: isNextNull,
-                [styles.click_disable]: isDisable,
-              })}
+              className={arrowUpStyles}
             >
               <ScrollView link={checkNextLink} className={styles.scrollButton}>
                 <ArrowIcon className={styles.routes__rotate} />
@@ -80,10 +89,7 @@ const FooterContainer = () => {
             <div
               role="button"
               onClick={handleDisable}
-              className={classNames(styles.routes__item, {
-                [styles.routes__item_disable]: isPrevNull,
-                [styles.click_disable]: isDisable,
-              })}
+              className={arrowDownStyles}
             >
               <ScrollView link={checkPrevLink} className={styles.scrollButton}>
                 <ArrowIcon />

@@ -3,7 +3,7 @@
 }
 
 .header {
-  gap: 15px;
+  gap: 5px;
   width: 100%;
   color: $blue-100;
   cursor: pointer;
@@ -12,8 +12,13 @@
   user-select: none;
   border-radius: 24px;
   text-transform: capitalize;
+  min-width: 88.39px;
   @extend %blur;
   @extend %flex-center;
+
+  @include breakpoint(tablet) {
+    min-width: unset;
+  }
 
   &__open {
     border-radius: 24px 24px 0px 0px;
@@ -31,6 +36,7 @@
       fill: $blue-100;
     }
   }
+  
   &__activeIcon {
     cursor: pointer;
     display: none;
@@ -44,7 +50,6 @@
   }
 
   &__text {
-    min-width: 17px;
     @include breakpoint(tablet) {
       display: none;
     }

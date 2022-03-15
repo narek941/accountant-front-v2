@@ -189,7 +189,7 @@ body {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $blue-300;
+    background: $blue-300 !important;
     border-radius: 16px;
   }
 
