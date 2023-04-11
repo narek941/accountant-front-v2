@@ -15,6 +15,7 @@ const BecomePartnerSection = () => {
   const handleBack = () => {
     setIsOpen();
   };
+  const text = t('secondTitle');
 
   return (
     <div className={`container ${styles.wrapper}`} ref={ref}>
@@ -23,7 +24,7 @@ const BecomePartnerSection = () => {
       ) : (
         <div className={styles.wrapper__container}>
           <h2 className={styles.title}>{t('becomePartner')}</h2>
-          <p className={styles.subtitle}>{t('mainTitle')}</p>
+          <p className={styles.subtitle}>{text}</p>
           <Button className={styles.login} onClick={() => setIsOpen()}>
             {t('register')}
           </Button>

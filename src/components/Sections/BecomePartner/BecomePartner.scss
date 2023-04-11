@@ -29,7 +29,9 @@
   color: $black;
   margin-bottom: 40px;
   max-width: 566px;
-  text-align: center;
+  text-align: left;
+  white-space: pre-line;
+
   @extend %regular-16;
   @include breakpoint(tablet-m) {
     font-size: 14px;
