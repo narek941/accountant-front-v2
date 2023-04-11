@@ -1,23 +1,23 @@
 import shortid from 'shortid';
 
 import {
-  EnglishFlagCircle,
+  // EnglishFlagCircle,
   RussianFlagCircle,
-  EnglishFlag,
+  // EnglishFlag,
   RussianFlag,
   ArmenianFlag,
   ArmenianFlagCircle,
 } from '../icons';
 
 const languageList = [
-  {
-    id: shortid.generate(),
-    index: 0,
-    Icon: EnglishFlag,
-    IconCircle: EnglishFlagCircle,
-    code: 'en',
-    nativeCode: 'eng',
-  },
+  // {
+  //   id: shortid.generate(),
+  //   index: 0,
+  //   Icon: EnglishFlag,
+  //   IconCircle: EnglishFlagCircle,
+  //   code: 'en',
+  //   nativeCode: 'eng',
+  // },
   {
     id: shortid.generate(),
     index: 1,

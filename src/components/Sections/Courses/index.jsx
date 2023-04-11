@@ -89,10 +89,7 @@ const CoursesSection = () => {
                   <p>{t('individual')}</p>
                 </div>
               </div>
-              <CourseContent
-                infoSteps={coursesNavigationList[active].infoSteps}
-                course={selectedCourse}
-              />
+              <CourseContent course={selectedCourse} />
             </div>
 
             <div className={styles.course__priceList}>
