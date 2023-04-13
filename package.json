@@ -2,6 +2,9 @@
   "name": "Accountant-front",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "dev": "next dev -p 3097",
     "build": "next build",
@@ -34,7 +37,7 @@
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "next": "10.0.5",
+    "next": "10.0.6",
     "next-compose-plugins": "^2.2.0",
     "next-i18next": "^7.0.1",
     "next-offline": "^5.0.2",
