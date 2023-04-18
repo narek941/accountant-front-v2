@@ -22,7 +22,7 @@ const useOnScreen = (ref) => {
             next: entry.target.parentElement.nextElementSibling?.id,
             prev: entry.target.parentElement.previousElementSibling?.id,
             current: entry.target.parentElement.id,
-            index: entry.target.parentElement.attributes.dataindex.value,
+            index: entry.target.parentElement.attributes['data-index'].value,
           }),
         ),
       {

@@ -30,17 +30,17 @@ const NextLink = ({
   return asPath === to ? (
     <span className={anchorClasses}>{children}</span>
   ) : (
-    <Link href={to} {...linkProps}>
-      <a
-        ref={ref}
-        role="button"
-        target={target}
-        className={anchorClasses}
-        {...anchorProps}
-        onClick={onClick}
-      >
-        {children}
-      </a>
+    <Link
+      href={to}
+      {...linkProps}
+      ref={ref}
+      role="button"
+      target={target}
+      className={anchorClasses}
+      {...anchorProps}
+      onClick={onClick}
+    >
+      {children}
     </Link>
   );
 };
