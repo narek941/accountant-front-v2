@@ -2,10 +2,10 @@ import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import noop from 'utils/noop';
-import { Button, Input, Request, TextArea } from 'components/index';
-import { useForm, FormWrapper } from 'hooks/index';
-import { axiosInstance } from 'libraries/index';
-import { I18nContext } from 'context/index';
+import { useForm, FormWrapper } from 'hooks';
+import { I18nContext } from 'context';
+import submitEmail from 'utils/submitEmail';
+import { Button, Input, Request, TextArea } from 'components';
 
 import {
   becomePartnerFieldOne,
@@ -34,38 +34,19 @@ const PartnerForm = ({ handleBack }) => {
     schemaKeys: becomePartnerSchemeTwo,
   });
 
-  const handlePartnerForm = ({
-    organizationName,
-    organizationType,
-    taxType,
-    address,
-    quantityOfEmployees,
-    activityDescription,
-  }) => {
-    const { name, phoneNumber, email, tin } = stepOneValue;
-    axiosInstance
-      .post('/mail/partnership', {
-        email,
-        fullName: name,
-        phoneNumber,
-        tin,
-        companyName: organizationName,
-        legalForm: organizationType,
-        taxType,
-        address,
-        quantityOfEmployees,
-        activityDescription,
-      })
-      .then(() => {
-        setRequestSent(true);
-        setIsSent(true);
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error, '/mail/partnership');
-        setRequestSent(false);
-        setIsSent(true);
+  const handlePartnerForm = async (data) => {
+    try {
+      setRequestSent(true);
+      await submitEmail('Become Partner', {
+        ...data,
+        ...stepOneValue,
       });
+      setIsSent(true);
+      document.getElementById('form').reset();
+    } catch (error) {
+      setRequestSent(false);
+      setIsSent(true);
+    }
   };
 
   const handlePartnerFormOne = ({ name, phoneNumber, email, tin }) => {

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import noop from 'utils/noop';
 import { Button, Input, Request } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/index';
-import { axiosInstance } from 'libraries/index';
 import { I18nContext } from 'context/index';
+import submitEmail from 'utils/submitEmail';
 
 import { becomeAccountantFields, becomeAccountantScheme } from './fields';
 
@@ -20,31 +20,16 @@ const AccountantForm = ({ handleBack }) => {
     schemaKeys: becomeAccountantScheme,
   });
 
-  const handleBecomeAccountantForm = ({
-    email,
-    name,
-    phoneNumber,
-    lessonType,
-    lessonFormation,
-  }) => {
-    axiosInstance
-      .post('/mail/accountant', {
-        email,
-        fullName: name,
-        phoneNumber,
-        courseType: lessonType,
-        courseKind: lessonFormation,
-      })
-      .then(() => {
-        setRequestSent(true);
-        setIsSent(true);
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error, 'mail/accountant');
-        setRequestSent(false);
-        setIsSent(true);
-      });
+  const handleBecomeAccountantForm = async (data) => {
+    try {
+      await submitEmail('Become accountant', data);
+      setRequestSent(true);
+      setIsSent(true);
+      document.getElementById('form').reset();
+    } catch (error) {
+      setRequestSent(false);
+      setIsSent(true);
+    }
   };
 
   return (

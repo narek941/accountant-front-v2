@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import noop from 'utils/noop';
-import { Button, Input, Request } from 'components/index';
-import { useForm, FormWrapper } from 'hooks/index';
-import { axiosInstance } from 'libraries/index';
+import submitEmail from 'utils/submitEmail';
+import { useForm, FormWrapper } from 'hooks';
+import { Button, Input, Request } from 'components';
 
 import { becomeEmployeeFields, becomeEmployeeScheme } from './fields';
 
@@ -18,33 +18,16 @@ const VacanciesForm = ({ handleBack }) => {
     schemaKeys: becomeEmployeeScheme,
   });
 
-  const handleBecomeEmployeeForm = ({
-    name,
-    phoneNumber,
-    email,
-    birthday,
-    profession,
-    experience,
-  }) => {
-    axiosInstance
-      .post('/mail/job', {
-        email,
-        fullName: name,
-        phoneNumber,
-        profession,
-        experience: Number(experience),
-        dateOfBirth: birthday,
-      })
-      .then(() => {
-        setRequestSent(true);
-        setIsSent(true);
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error, '/mail/job');
-        setRequestSent(false);
-        setIsSent(true);
-      });
+  const handleBecomeEmployeeForm = async (data) => {
+    try {
+      setRequestSent(true);
+      await submitEmail('Employee', data);
+      setIsSent(true);
+      document.getElementById('form').reset();
+    } catch (error) {
+      setRequestSent(false);
+      setIsSent(true);
+    }
   };
 
   return (

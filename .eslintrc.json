@@ -6,7 +6,7 @@
     "node": true
   },
   "extends": ["airbnb", "prettier", "prettier/react", "plugin:import/warnings"],
-  "plugins": ["react", "react-hooks", "prettier", "import","next"],
+  "plugins": ["react", "react-hooks", "prettier", "import"],
   "settings": {
     "import/resolver": {
       "alias": {

@@ -1,10 +1,9 @@
 import React, { useState, useContext } from 'react';
-import axios from 'axios';
 
 import { Button, Input, TextArea, Request } from 'components/index';
 import { useForm, FormWrapper } from 'hooks/index';
-import { axiosInstance } from 'libraries/index';
 import { I18nContext } from 'context/index';
+import { submitEmail } from 'utils/';
 
 import { contactUsFields, contactUsScheme } from './fields';
 
@@ -20,33 +19,21 @@ const AboutusForm = () => {
   });
   const handleBack = () => {
     setIsSent(false);
+    formMethods.clearErrors();
+    formMethods.reset();
+    setRequestSent(false);
   };
 
-  const handleContactUsForm = ({ email, name, phoneNumber, interests }) => {
-    const emailData = {
-      to: 'recipient@example.com', // Replace with the desired recipient email address
-      subject: 'Contact Us Form Submission',
-      text: `Name: ${name}\nEmail: ${email}\nPhone Number: ${phoneNumber}\nInterests: ${interests}`,
-      html: `
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone Number:</strong> ${phoneNumber}</p>
-        <p><strong>Interests:</strong> ${interests}</p>
-      `,
-    };
-
-    axios
-      .post('/api/sendEmail', emailData)
-      .then(() => {
-        setRequestSent(true);
-        setIsSent(true);
-        document.getElementById('form').reset();
-      })
-      .catch((error) => {
-        console.error('Error sending email:', error);
-        setRequestSent(false);
-        setIsSent(true);
-      });
+  const handleContactUsForm = async (data) => {
+    try {
+      setRequestSent(true);
+      await submitEmail('Contact Us', data);
+      setIsSent(true);
+      document.getElementById('form').reset();
+    } catch (error) {
+      setRequestSent(false);
+      setIsSent(true);
+    }
   };
 
   return (
@@ -65,7 +52,7 @@ const AboutusForm = () => {
         <Button
           type="submit"
           className={styles.form_submit}
-          disabled={!isValid || requestSent || isSent}
+          disabled={!isValid || requestSent}
         >
           {t('send')}
         </Button>

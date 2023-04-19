@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+
 import config from '../../env.config';
 
 export default async (req, res) => {
@@ -32,6 +33,7 @@ export default async (req, res) => {
       const info = await transporter.sendMail(mailOptions);
       res.status(200).json({ message: 'Email sent', info });
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Error sending email:', error);
       res.status(500).json({ message: 'Email not sent', error });
     }

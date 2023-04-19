@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import noop from 'utils/noop';
 import { useForm, FormWrapper } from 'hooks/index';
-import { axiosInstance } from 'libraries/index';
 import { Request } from 'components/index';
 import { I18nContext } from 'context/index';
+import submitEmail from 'utils/submitEmail';
 
 import { coursesScheme, coursesFields } from './fields';
 
@@ -21,32 +21,18 @@ const CoursesForm = ({ handleBack }) => {
     schemaKeys: coursesScheme,
   });
 
-  const handleCoursesForm = ({
-    email,
-    name,
-    phoneNumber,
-    lessonType,
-    lessonFormation,
-  }) => {
-    axiosInstance
-      .post('/mail/course', {
-        email,
-        fullName: name,
-        phoneNumber,
-        courseType: lessonType,
-        courseKind: lessonFormation,
-      })
-      .then(() => {
-        setRequestSent(true);
-        setIsSent(true);
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error, 'mail/course');
-        setRequestSent(false);
-        setIsSent(true);
-      });
+  const handleCoursesForm = async (data) => {
+    try {
+      setRequestSent(true);
+      await submitEmail('Courses', data);
+      setIsSent(true);
+      document.getElementById('form').reset();
+    } catch (error) {
+      setRequestSent(false);
+      setIsSent(true);
+    }
   };
+
   return (
     <>
       {isSent ? (
