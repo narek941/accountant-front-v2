@@ -28,6 +28,7 @@
     "@next/bundle-analyzer": "^9.5.5",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
+    "context": "^3.0.5",
     "country-flag-icons": "^1.4.0",
     "cross-env": "^7.0.2",
     "css-loader": "^6.7.3",
